@@ -6,18 +6,47 @@ Aplicação web moderna, minimalista e responsiva para catálogo e organização
 
 ---
 
+## ⚡ Deploy na Netlify (Configuração Automática)
+
+O projeto inclui o arquivo `netlify.toml` e `public/_redirects` pré-configurados na raiz para resolver permanentemente qualquer erro de MIME type ou tela branca no Netlify.
+
+### Configurações Ativas no `netlify.toml`:
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+### Se o seu repositório já está conectado na Netlify:
+Basta fazer o commit e push das novas alterações no seu repositório:
+```bash
+git add .
+git commit -m "fix: configurar build e publish dist para Netlify"
+git push
+```
+A Netlify detectará o arquivo `netlify.toml` automaticamente, executará o comando `npm run build` e publicará a pasta `dist`.
+
+> **Dica no painel da Netlify (se configurado manualmente):**
+> Em **Site configuration > Build & deploy > Continuous deployment > Build settings**:
+> - **Build command:** `npm run build`
+> - **Publish directory:** `dist`
+
+---
+
 ## 🚀 Como Publicar no GitHub Pages (Passo a Passo)
 
-Este repositório já está 100% configurado com **GitHub Actions** e caminhos relativos (`base: './'`), permitindo publicação automática.
+Este repositório também inclui automação via **GitHub Actions** em `.github/workflows/deploy.yml`.
 
 ### 1. Criar o repositório no GitHub
-1. Acesse o [GitHub](https://github.com) e clique em **New repository**.
-2. Dê um nome (por exemplo: `previas-we-media`).
-3. Escolha **Public** e clique em **Create repository**.
+1. Acesse o [GitHub](https://github.com) e crie um novo repositório.
+2. Escolha **Public** e clique em **Create repository**.
 
 ### 2. Enviar os arquivos para o GitHub
-No seu computador ou terminal local, execute:
-
 ```bash
 git init
 git add .
@@ -28,18 +57,12 @@ git push -u origin main
 ```
 
 ### 3. Ativar o GitHub Pages
-1. No seu repositório no GitHub, clique na aba **Settings** (Configurações).
-2. No menu lateral esquerdo, clique em **Pages**.
-3. Em **Build and deployment > Source**, selecione:
-   - **GitHub Actions**
-4. Pronto! O GitHub irá executar o workflow automaticamente e seu site estará no ar em poucos segundos no endereço:
-   - `https://SEU_USUARIO.github.io/NOME_DO_REPOSITORIO/`
+1. No seu repositório no GitHub, vá em **Settings > Pages**.
+2. Em **Build and deployment > Source**, escolha **GitHub Actions**.
 
 ---
 
 ## 💻 Desenvolvimento Local
-
-Caso queira executar ou testar o projeto no seu computador:
 
 ```bash
 # 1. Instalar as dependências
@@ -48,10 +71,10 @@ npm install
 # 2. Iniciar o servidor de desenvolvimento
 npm run dev
 
-# 3. Gerar a build de produção
+# 3. Gerar a build de produção (gera a pasta dist/)
 npm run build
 
-# 4. Pré-visualizar a build de produção localmente
+# 4. Pré-visualizar a build de produção
 npm run preview
 ```
 
