@@ -47,7 +47,7 @@ export const INITIAL_REFERENCES: PhotoReference[] = SEED_PROMPTS.map((item) => (
 }));
 
 const STORAGE_KEYS = {
-  REFERENCES: 'wemedia_references_v5',
+  REFERENCES: 'wemedia_references_v6',
   CATEGORIES: 'wemedia_categories_v2',
   ADMIN_AUTH: 'wemedia_admin_auth_v1',
   ADMIN_PIN: 'wemedia_admin_pin_v1',
@@ -84,6 +84,7 @@ class StorageService {
     if (!refs || refs.length === 0) {
       // Check previous storage versions to preserve user custom entries
       const oldRefs =
+        this.getFromStorage<PhotoReference[]>('wemedia_references_v5', []) ||
         this.getFromStorage<PhotoReference[]>('wemedia_references_v4', []) ||
         this.getFromStorage<PhotoReference[]>('wemedia_references_v3', []);
 
