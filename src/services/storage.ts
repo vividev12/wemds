@@ -47,7 +47,7 @@ export const INITIAL_REFERENCES: PhotoReference[] = SEED_PROMPTS.map((item) => (
 }));
 
 const STORAGE_KEYS = {
-  REFERENCES: 'wemedia_references_v4',
+  REFERENCES: 'wemedia_references_v5',
   CATEGORIES: 'wemedia_categories_v2',
   ADMIN_AUTH: 'wemedia_admin_auth_v1',
   ADMIN_PIN: 'wemedia_admin_pin_v1',
@@ -79,15 +79,25 @@ class StorageService {
   // --- REFERENCES ---
   getReferences(): PhotoReference[] {
     let refs = this.getFromStorage<PhotoReference[]>(STORAGE_KEYS.REFERENCES, []);
+    const seedAniver = INITIAL_REFERENCES.find((r) => r.id === 'ref-2' || r.title === 'Aniversário Marrom');
+
     if (!refs || refs.length === 0) {
-      // Check previous storage versions to preserve user custom entries while updating Profissional Masculino
-      const oldRefs = this.getFromStorage<PhotoReference[]>('wemedia_references_v3', []);
+      // Check previous storage versions to preserve user custom entries
+      const oldRefs =
+        this.getFromStorage<PhotoReference[]>('wemedia_references_v4', []) ||
+        this.getFromStorage<PhotoReference[]>('wemedia_references_v3', []);
+
       if (oldRefs && oldRefs.length > 0) {
-        refs = oldRefs.map((r) =>
-          r.id === 'ref-1' || r.title === 'Profissional Masculino'
-            ? { ...r, imageUrl: 'https://i.imgur.com/0alVVQK.jpeg', originalImage: 'https://i.imgur.com/0alVVQK.jpeg' }
-            : r
-        );
+        refs = oldRefs.map((r) => {
+          let updated = { ...r };
+          if (r.id === 'ref-1' || r.title === 'Profissional Masculino') {
+            updated = { ...updated, imageUrl: 'https://i.imgur.com/0alVVQK.jpeg', originalImage: 'https://i.imgur.com/0alVVQK.jpeg' };
+          }
+          if ((r.id === 'ref-2' || r.title === 'Aniversário Marrom') && seedAniver) {
+            updated = { ...updated, prompt: seedAniver.prompt };
+          }
+          return updated;
+        });
       } else {
         refs = INITIAL_REFERENCES;
       }
@@ -95,14 +105,19 @@ class StorageService {
       return refs;
     }
 
-    // Ensure Profissional Masculino is updated in existing storage cache
+    // Ensure models are updated in existing storage cache
     let hasUpdated = false;
     refs = refs.map((r) => {
+      let updated = { ...r };
       if ((r.id === 'ref-1' || r.title === 'Profissional Masculino') && r.imageUrl !== 'https://i.imgur.com/0alVVQK.jpeg') {
         hasUpdated = true;
-        return { ...r, imageUrl: 'https://i.imgur.com/0alVVQK.jpeg', originalImage: 'https://i.imgur.com/0alVVQK.jpeg' };
+        updated = { ...updated, imageUrl: 'https://i.imgur.com/0alVVQK.jpeg', originalImage: 'https://i.imgur.com/0alVVQK.jpeg' };
       }
-      return r;
+      if ((r.id === 'ref-2' || r.title === 'Aniversário Marrom') && seedAniver && r.prompt !== seedAniver.prompt) {
+        hasUpdated = true;
+        updated = { ...updated, prompt: seedAniver.prompt };
+      }
+      return updated;
     });
     if (hasUpdated) {
       this.setInStorage(STORAGE_KEYS.REFERENCES, refs);
