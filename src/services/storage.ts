@@ -47,7 +47,7 @@ export const INITIAL_REFERENCES: PhotoReference[] = SEED_PROMPTS.map((item) => (
 }));
 
 const STORAGE_KEYS = {
-  REFERENCES: 'wemedia_references_v6',
+  REFERENCES: 'wemedia_references_v7',
   CATEGORIES: 'wemedia_categories_v2',
   ADMIN_AUTH: 'wemedia_admin_auth_v1',
   ADMIN_PIN: 'wemedia_admin_pin_v1',
@@ -84,6 +84,7 @@ class StorageService {
     if (!refs || refs.length === 0) {
       // Check previous storage versions to preserve user custom entries
       const oldRefs =
+        this.getFromStorage<PhotoReference[]>('wemedia_references_v6', []) ||
         this.getFromStorage<PhotoReference[]>('wemedia_references_v5', []) ||
         this.getFromStorage<PhotoReference[]>('wemedia_references_v4', []) ||
         this.getFromStorage<PhotoReference[]>('wemedia_references_v3', []);
@@ -99,8 +100,18 @@ class StorageService {
           }
           return updated;
         });
+
+        // Ensure newly introduced seeds (like ref-16) are merged into migrated storage
+        for (const seed of INITIAL_REFERENCES) {
+          const exists = refs.some(
+            (r) => r.id === seed.id || r.imageUrl === seed.imageUrl || (r.title === seed.title && r.category === seed.category)
+          );
+          if (!exists) {
+            refs.push(seed);
+          }
+        }
       } else {
-        refs = INITIAL_REFERENCES;
+        refs = [...INITIAL_REFERENCES];
       }
       this.setInStorage(STORAGE_KEYS.REFERENCES, refs);
       return refs;
@@ -120,6 +131,18 @@ class StorageService {
       }
       return updated;
     });
+
+    // Check if any seed item is missing from refs and append
+    for (const seed of INITIAL_REFERENCES) {
+      const exists = refs.some(
+        (r) => r.id === seed.id || r.imageUrl === seed.imageUrl || (r.title === seed.title && r.category === seed.category)
+      );
+      if (!exists) {
+        refs.push(seed);
+        hasUpdated = true;
+      }
+    }
+
     if (hasUpdated) {
       this.setInStorage(STORAGE_KEYS.REFERENCES, refs);
     }
