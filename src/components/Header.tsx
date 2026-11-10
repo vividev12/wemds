@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, Shield, Settings, LogOut } from 'lucide-react';
+import { Plus, Settings, LogOut } from 'lucide-react';
 
 interface HeaderProps {
   isAdmin: boolean;
@@ -87,11 +87,18 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenAdminLogin}
-              className="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl border-2 border-[#FFD400]/75 hover:border-[#FFD400] bg-[#151515] hover:bg-[#FFD400] text-white hover:text-[#080808] text-xs sm:text-sm font-bold tracking-wide transition-colors duration-200 cursor-pointer whitespace-nowrap shrink-0"
-              title="Acesso restrito ao proprietário para gerenciar catálogo"
+              title="Acesso administrativo"
+              aria-label="Acesso administrativo"
+              className="p-2 -mr-1 bg-transparent border-0 inline-flex items-center justify-center cursor-pointer shrink-0 transition-opacity duration-200 hover:opacity-80 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFD400] rounded-lg"
             >
-              <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFD400] group-hover:text-[#080808] stroke-[2.2] transition-colors" />
-              <span>Acesso Admin</span>
+              <img
+                src="/account-icon-yellow.png"
+                alt="Acesso administrativo"
+                width={22}
+                height={22}
+                draggable={false}
+                className="w-[22px] h-[22px] object-contain pointer-events-none select-none"
+              />
             </button>
           )}
         </div>

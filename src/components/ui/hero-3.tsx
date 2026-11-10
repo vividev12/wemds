@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowDownRight } from 'lucide-react';
+import { ArrowDownRight, Plus, Settings, LogOut } from 'lucide-react';
+import { ShinyButton } from './shiny-button';
 
 export interface MarqueeHeroImage {
   id: string;
@@ -15,6 +16,11 @@ export interface AnimatedMarqueeHeroProps {
   ctaText: string;
   onCtaClick: () => void;
   images: MarqueeHeroImage[];
+  isAdmin?: boolean;
+  onOpenAdminLogin?: () => void;
+  onOpenAddModal?: () => void;
+  onOpenSettings?: () => void;
+  onLogoutAdmin?: () => void;
 }
 
 const CARD_COMPOSITIONS = [
@@ -35,6 +41,11 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   ctaText,
   onCtaClick,
   images,
+  isAdmin = false,
+  onOpenAdminLogin,
+  onOpenAddModal,
+  onOpenSettings,
+  onLogoutAdmin,
 }) => {
   const renderCardGroup = (prefix: string, isClone = false) => (
     <div className="hero-marquee-group" aria-hidden={isClone || undefined}>
@@ -63,8 +74,68 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   return (
     <section
       aria-label="Apresentação do Catálogo We Media"
-      className="hero-viewport-shell relative w-full overflow-x-clip bg-[#080808] border-b border-[#222222] flex flex-col justify-evenly gap-6 sm:gap-8 pt-6 pb-0 sm:pt-8 sm:pb-2"
+      className="hero-viewport-shell relative w-full overflow-x-clip bg-[#080808] border-b border-[#222222] flex flex-col justify-evenly gap-6 sm:gap-8 pt-10 pb-2 sm:pt-12 sm:pb-4"
     >
+      {/* Ícone flutuante discreto no canto superior direito da Hero (sem barra/cabeçalho) */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-40">
+        {isAdmin ? (
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {onOpenAddModal && (
+              <button
+                type="button"
+                onClick={onOpenAddModal}
+                className="flex items-center gap-1.5 bg-[#FFD400] hover:bg-[#FFCC00] active:bg-[#EAB900] text-[#080808] font-bold text-xs px-3 py-2 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap shadow-[0_4px_16px_rgba(255,212,0,0.25)]"
+                title="Cadastrar nova referência fotográfica e prompt"
+              >
+                <Plus className="w-4 h-4 stroke-[2.5]" />
+                <span>Adicionar</span>
+              </button>
+            )}
+            {onOpenSettings && (
+              <button
+                type="button"
+                onClick={onOpenSettings}
+                className="p-2 rounded-xl border border-[#323232] hover:border-[#FFD400] bg-[#151515]/90 hover:bg-[#202020] text-white transition-colors duration-200 cursor-pointer"
+                title="Configurações, Nuvem e Backup"
+                aria-label="Configurações, Nuvem e Backup"
+              >
+                <Settings className="w-4 h-4 text-[#FFD400] stroke-[2]" />
+              </button>
+            )}
+            {onLogoutAdmin && (
+              <button
+                type="button"
+                onClick={onLogoutAdmin}
+                className="p-2 rounded-xl border border-[#323232] hover:border-red-500/70 bg-[#151515]/90 hover:bg-[#241414] text-[#B5B5B5] hover:text-red-300 transition-colors duration-200 cursor-pointer"
+                title="Sair do modo administrador"
+                aria-label="Sair do modo administrador"
+              >
+                <LogOut className="w-4 h-4 stroke-[2]" />
+              </button>
+            )}
+          </div>
+        ) : (
+          onOpenAdminLogin && (
+            <button
+              type="button"
+              onClick={onOpenAdminLogin}
+              title="Acesso administrativo"
+              aria-label="Acesso administrativo"
+              className="p-1.5 bg-transparent border-0 inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 hover:opacity-80 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFD400] rounded-lg"
+            >
+              <img
+                src="/account-icon-yellow.png"
+                alt="Acesso administrativo"
+                width={22}
+                height={22}
+                draggable={false}
+                className="w-[22px] h-[22px] object-contain pointer-events-none select-none"
+              />
+            </button>
+          )
+        )}
+      </div>
+
       {/* Brilho ambiente sutil no topo */}
       <div
         aria-hidden="true"
@@ -90,16 +161,12 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
           {subtitle}
         </p>
 
-        {/* 4. Botão Amarelo ACESSAR CATÁLOGO acima da galeria */}
-        <div className="mt-4 sm:mt-6 flex justify-center relative z-30">
-          <button
-            type="button"
-            onClick={onCtaClick}
-            className="min-h-[48px] sm:min-h-[54px] px-7 sm:px-9 py-3 sm:py-3.5 rounded-xl bg-[#FFD400] hover:bg-[#FFCC00] active:bg-[#EAB900] text-[#080808] font-extrabold text-sm sm:text-base uppercase tracking-wider inline-flex items-center justify-center gap-2.5 cursor-pointer transition-colors duration-200 shadow-[0_12px_32px_rgba(8,8,8,0.92),0_6px_24px_rgba(255,212,0,0.38)] hover:shadow-[0_12px_32px_rgba(8,8,8,0.95),0_10px_32px_rgba(255,212,0,0.52)] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          >
+        {/* 4. Botão Shiny Black & Gold ACESSAR CATÁLOGO acima da galeria */}
+        <div className="mt-5 sm:mt-6 flex justify-center relative z-30">
+          <ShinyButton onClick={onCtaClick}>
             <span>{ctaText}</span>
-            <ArrowDownRight className="w-5 h-5 stroke-[2.5] shrink-0" />
-          </button>
+            <ArrowDownRight className="w-5 h-5 text-[#FFD400] stroke-[2.5] shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+          </ShinyButton>
         </div>
       </div>
 

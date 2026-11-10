@@ -207,6 +207,35 @@
   }
 }
 
+/* Shiny Button Black & Gold — feixe dourado girando em sentido horário */
+@keyframes shiny-rotate-cw {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+@keyframes shiny-sheen-cw {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+
+.shiny-btn-beam {
+  animation: shiny-rotate-cw 3.6s linear infinite;
+  will-change: transform;
+}
+
+.shiny-btn-sheen {
+  animation: shiny-sheen-cw 5.5s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spotlight-outer-glow,
   .spotlight-surface,
@@ -218,28 +247,21 @@
     animation: none;
     transform: translate3d(0, 0, 0);
   }
+
+  .shiny-btn-beam,
+  .shiny-btn-sheen {
+    animation: none;
+  }
 }
 
-/* Hero Mobile-First — ocupa a primeira tela real (100svh com fallback 100vh) */
+/* Hero Mobile-First — inicia no topo da página ocupando toda a primeira tela (100svh com fallback 100vh) */
 .hero-viewport-shell {
-  min-height: calc(100vh - 72px);
+  min-height: 100vh;
 }
 
 @supports (min-height: 100svh) {
   .hero-viewport-shell {
-    min-height: calc(100svh - 72px);
-  }
-}
-
-@media (min-width: 640px) {
-  .hero-viewport-shell {
-    min-height: calc(100vh - 88px);
-  }
-
-  @supports (min-height: 100svh) {
-    .hero-viewport-shell {
-      min-height: calc(100svh - 88px);
-    }
+    min-height: 100svh;
   }
 }
 

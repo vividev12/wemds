@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
-import { Header } from './components/Header';
 import { SearchBarAndFilters } from './components/SearchBarAndFilters';
 import { PhotoCard } from './components/PhotoCard';
 import { ReferenceDetailModal } from './components/ReferenceDetailModal';
@@ -298,17 +297,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen overflow-x-clip bg-[#080808] text-white flex flex-col font-sans selection:bg-[#FFD400]/30 selection:text-[#FFD400]">
-      {/* 1. Header */}
-      <Header
-        isAdmin={isAdmin}
-        totalReferences={references.length}
-        onOpenAddModal={handleOpenAddModal}
-        onOpenAdminLogin={() => setAdminLoginModalOpen(true)}
-        onOpenSettings={() => setSettingsModalOpen(true)}
-        onLogoutAdmin={handleLogoutAdmin}
-      />
-
-      {/* 1.5 Hero Premium com Animação Marquee */}
+      {/* 1. Hero Premium começando no topo da página */}
       <AnimatedMarqueeHero
         brandBadge="WeMedia"
         title="Crie fotos incríveis com IA."
@@ -316,13 +305,18 @@ export default function App() {
         ctaText="ACESSAR CATÁLOGO"
         onCtaClick={handleScrollToCatalog}
         images={heroImages}
+        isAdmin={isAdmin}
+        onOpenAdminLogin={() => setAdminLoginModalOpen(true)}
+        onOpenAddModal={handleOpenAddModal}
+        onOpenSettings={() => setSettingsModalOpen(true)}
+        onLogoutAdmin={handleLogoutAdmin}
       />
 
       {/* 2. Main Content Area */}
       <main
         ref={catalogRef}
         id="catalogo-referencias"
-        className="scroll-mt-24 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-14 sm:pt-10 sm:pb-16"
+        className="scroll-mt-4 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-14 sm:pt-10 sm:pb-16"
       >
         {/* Apresentação Principal Imponente */}
         <section className="mb-8 rounded-2xl bg-gradient-to-br from-[#161616] via-[#121212] to-[#0C0C0C] border border-[#282828] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
