@@ -19,65 +19,78 @@ export const Header: React.FC<HeaderProps> = ({
   onLogoutAdmin,
 }) => {
   return (
-    <header className="border-b border-[#1E1E1E] bg-[#0A0A0A]/92 backdrop-blur-md sticky top-0 z-30 transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] sm:h-20 flex items-center justify-between gap-3 sm:gap-8">
-        {/* Identidade Editorial Principal */}
-        <div className="flex flex-col justify-center min-w-0">
-          <h1 className="font-brand text-base sm:text-2xl lg:text-[26px] font-normal tracking-[0.06em] sm:tracking-[0.07em] uppercase text-[#EAE7E0] leading-none whitespace-nowrap">
-            PRÉVIAS <span className="text-[#C6A75E] font-medium">WE MEDIA</span>
-          </h1>
-          <span className="font-sans text-[8.5px] sm:text-[10px] font-light tracking-[0.22em] sm:tracking-[0.28em] uppercase text-[#929292] mt-1.5 leading-none whitespace-nowrap">
-            CATÁLOGO E MÍDIA
-          </span>
+    <header className="border-b-2 border-[#FFD400]/25 bg-[#080808]/95 backdrop-blur-md sticky top-0 z-30">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-[72px] sm:h-22 flex items-center justify-between gap-2 sm:gap-6">
+        {/* Marca Principal Forte & Imponente */}
+        <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
+          <div
+            aria-hidden="true"
+            className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#FFD400] text-[#080808] font-brand font-extrabold text-xs sm:text-base tracking-tight flex items-center justify-center shrink-0 shadow-[0_0_24px_rgba(255,212,0,0.28)]"
+          >
+            WM
+          </div>
+          <div className="flex flex-col justify-center min-w-0">
+            <h1 className="font-brand text-[13px] sm:text-2xl font-extrabold tracking-wide uppercase text-white leading-none whitespace-nowrap">
+              PRÉVIAS <span className="text-[#FFD400]">WE MEDIA</span>
+            </h1>
+            <span className="font-sans text-[9px] sm:text-xs font-bold tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[#B5B5B5] mt-1 sm:mt-1.5 leading-none whitespace-nowrap">
+              CATÁLOGO E MÍDIA
+            </span>
+          </div>
         </div>
 
-        {/* Contagem Discreta + Ações */}
-        <div className="flex items-center gap-4 sm:gap-6 shrink-0">
-          <div className="hidden md:flex items-center gap-3 text-xs font-light text-[#929292] whitespace-nowrap">
-            <span className="w-px h-4 bg-[#222222]" aria-hidden="true" />
-            <span>
-              <span className="tabular-nums font-normal text-[#EAE7E0]">{totalReferences}</span>{' '}
+        {/* Contador de Referências + Acesso Administrativo */}
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+          <div className="hidden md:flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#151515] border border-[#2C2C2C]">
+            <span className="tabular-nums font-bold text-sm text-[#FFD400]">
+              {totalReferences}
+            </span>
+            <span className="text-xs font-semibold text-[#B5B5B5] whitespace-nowrap">
               referências
             </span>
           </div>
 
           {isAdmin ? (
-            <div className="flex items-center gap-2 sm:gap-2.5">
+            <div className="flex items-center gap-1.5 sm:gap-2.5">
               <button
+                type="button"
                 onClick={onOpenAddModal}
-                className="flex items-center gap-1.5 bg-[#C6A75E] hover:bg-[#D5BD83] active:bg-[#B2934B] text-[#0A0A0A] font-medium text-[11px] sm:text-xs tracking-[0.08em] uppercase px-3 sm:px-4 py-2 rounded-md transition-colors duration-200 cursor-pointer whitespace-nowrap shrink-0"
+                className="flex items-center gap-1.5 bg-[#FFD400] hover:bg-[#FFCC00] active:bg-[#EAB900] text-[#080808] font-bold text-xs sm:text-sm px-2.5 sm:px-5 py-2 sm:py-2.5 rounded-xl transition-colors duration-200 cursor-pointer whitespace-nowrap shrink-0 shadow-[0_4px_16px_rgba(255,212,0,0.25)]"
                 title="Cadastrar nova referência fotográfica e prompt"
               >
-                <Plus className="w-3.5 h-3.5 stroke-[1.75]" />
+                <Plus className="w-4 h-4 stroke-[2.5]" />
                 <span className="hidden sm:inline">Adicionar Referência</span>
                 <span className="sm:hidden">Adicionar</span>
               </button>
 
               <button
+                type="button"
                 onClick={onOpenSettings}
-                className="p-2 sm:px-3 sm:py-2 rounded-md border border-[#242424] hover:border-[#C6A75E]/50 bg-[#111111] hover:bg-[#171717] text-[#EAE7E0] text-xs font-light transition-colors duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                className="p-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-[#323232] hover:border-[#FFD400] bg-[#151515] hover:bg-[#202020] text-white text-xs sm:text-sm font-semibold transition-colors duration-200 flex items-center gap-2 cursor-pointer whitespace-nowrap shrink-0"
                 title="Configurações, Nuvem e Backup"
               >
-                <Settings className="w-3.5 h-3.5 text-[#C6A75E] stroke-[1.35]" />
+                <Settings className="w-4 h-4 text-[#FFD400] stroke-[2]" />
                 <span className="hidden lg:inline">Configurações</span>
               </button>
 
               <button
+                type="button"
                 onClick={onLogoutAdmin}
-                className="p-2 sm:px-3 sm:py-2 rounded-md border border-[#242424] hover:border-red-900/50 bg-[#111111] hover:bg-[#1A1212] text-[#929292] hover:text-red-300 text-xs font-light transition-colors duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
+                className="p-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-[#323232] hover:border-red-500/70 bg-[#151515] hover:bg-[#241414] text-[#B5B5B5] hover:text-red-300 text-xs sm:text-sm font-semibold transition-colors duration-200 flex items-center gap-1.5 cursor-pointer whitespace-nowrap shrink-0"
                 title="Sair do modo administrador"
               >
-                <LogOut className="w-3.5 h-3.5 stroke-[1.35]" />
+                <LogOut className="w-4 h-4 stroke-[2]" />
                 <span className="hidden lg:inline">Sair</span>
               </button>
             </div>
           ) : (
             <button
+              type="button"
               onClick={onOpenAdminLogin}
-              className="flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-md border border-[#242424] hover:border-[#C6A75E]/50 bg-[#111111]/80 hover:bg-[#171717] text-[#EAE7E0] text-xs font-light tracking-wide transition-colors duration-200 cursor-pointer whitespace-nowrap shrink-0"
+              className="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl border-2 border-[#FFD400]/75 hover:border-[#FFD400] bg-[#151515] hover:bg-[#FFD400] text-white hover:text-[#080808] text-xs sm:text-sm font-bold tracking-wide transition-colors duration-200 cursor-pointer whitespace-nowrap shrink-0"
               title="Acesso restrito ao proprietário para gerenciar catálogo"
             >
-              <Shield className="w-3.5 h-3.5 text-[#C6A75E] stroke-[1.35]" />
+              <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFD400] group-hover:text-[#080808] stroke-[2.2] transition-colors" />
               <span>Acesso Admin</span>
             </button>
           )}

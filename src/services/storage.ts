@@ -8,19 +8,6 @@ export const DEFAULT_CATEGORIES: Category[] = [
   { id: 'aniversario-gospel-evangelico', name: 'Aniversário Gospel Evangélico' },
   { id: 'profissional-feminino', name: 'Profissional Feminino' },
   { id: 'ensaio-masculino-adulto', name: 'Ensaio Masculino Adulto' },
-  { id: 'aniversario', name: 'Aniversário' },
-  { id: 'casais', name: 'Casais' },
-  { id: 'profissional', name: 'Profissional' },
-  { id: 'casual', name: 'Casual' },
-  { id: 'gestante', name: 'Gestante' },
-  { id: 'sensual', name: 'Sensual' },
-  { id: 'religioso', name: 'Religioso' },
-  { id: 'feminino', name: 'Feminino' },
-  { id: 'masculino', name: 'Masculino' },
-  { id: 'formatura', name: 'Formatura' },
-  { id: 'familia', name: 'Família' },
-  { id: 'infantil', name: 'Infantil' },
-  { id: 'outros', name: 'Outros' },
 ];
 
 export function resolveImgurUrl(url: string): string {
@@ -56,6 +43,7 @@ const STORAGE_KEYS = {
   CATEGORIES: 'wemedia_categories_v3',
   BACKUP_PRE_PREVIAS: 'wemedia_backup_pre_previas_v1',
   RECLASS_52_V1: 'wemedia_reclass_52_v1',
+  PRUNE_EMPTY_CATS_V1: 'wemedia_prune_empty_cats_v1',
   ADMIN_AUTH: 'wemedia_admin_auth_v1',
   ADMIN_PIN: 'wemedia_admin_pin_v1',
   SUPABASE_CONFIG: 'wemedia_supabase_config_v1',
@@ -272,30 +260,53 @@ class StorageService {
 
   // --- CATEGORIES ---
   getCategories(): Category[] {
+    const refs = this.getReferences();
+    const populatedCatNames = new Set(
+      refs.map((r) => r.category.toLowerCase().trim())
+    );
+    const pruneDone =
+      this.getFromStorage<string>(STORAGE_KEYS.PRUNE_EMPTY_CATS_V1, '') === 'done';
+
     const saved = this.getFromStorage<Category[]>(STORAGE_KEYS.CATEGORIES, []);
     if (!saved || saved.length === 0) {
       const oldCategories = this.getFromStorage<Category[]>('wemedia_categories_v2', []);
       const merged: Category[] = [...DEFAULT_CATEGORIES];
 
-      // Preserve any custom categories created previously
+      // Preserve only previously created categories that actually have references
       if (oldCategories && oldCategories.length > 0) {
         for (const cat of oldCategories) {
+          const lowerName = cat.name.toLowerCase().trim();
           const exists = merged.some(
-            (c) => c.id === cat.id || c.name.toLowerCase() === cat.name.toLowerCase()
+            (c) => c.id === cat.id || c.name.toLowerCase() === lowerName
           );
-          if (!exists) {
+          if (!exists && populatedCatNames.has(lowerName)) {
             merged.push(cat);
           }
         }
       }
 
       this.setInStorage(STORAGE_KEYS.CATEGORIES, merged);
+      this.setInStorage(STORAGE_KEYS.PRUNE_EMPTY_CATS_V1, 'done');
       return merged;
     }
 
-    // Ensure PRÉVIAS, the 4 independent categories, and all original default categories remain present
+    // Ensure PRÉVIAS and the 4 independent categories remain present
     let changed = false;
     let result = [...saved];
+
+    // Remove built-in empty categories and run one-time cleanup of any empty cached categories
+    const filtered = result.filter((c) => {
+      const lower = c.name.toLowerCase().trim();
+      if (lower === 'todas') return true;
+      if (populatedCatNames.has(lower)) return true;
+      if (pruneDone && c.isCustom) return true;
+      return false;
+    });
+    if (filtered.length !== result.length) {
+      result = filtered;
+      changed = true;
+    }
+
     if (!result.some((c) => c.name.toLowerCase() === 'prévia' || c.name.toLowerCase() === 'prévias')) {
       const todasIdx = result.findIndex((c) => c.name.toLowerCase() === 'todas');
       result.splice(todasIdx >= 0 ? todasIdx + 1 : 0, 0, { id: 'previas', name: 'PRÉVIAS' });
@@ -318,7 +329,7 @@ class StorageService {
       }
     }
 
-    // Ensure the 4 required categories appear right after PRÉVIAS if they were previously appended at the end
+    // Ensure the 4 required categories appear right after PRÉVIAS
     const previasIdx = result.findIndex((c) => c.name.toLowerCase() === 'prévias');
     if (previasIdx >= 0) {
       const targetOrder = requiredFour.map((c) => c.name.toLowerCase());
@@ -351,8 +362,12 @@ class StorageService {
         changed = true;
       }
     }
+
     if (changed) {
       this.setInStorage(STORAGE_KEYS.CATEGORIES, result);
+    }
+    if (!pruneDone) {
+      this.setInStorage(STORAGE_KEYS.PRUNE_EMPTY_CATS_V1, 'done');
     }
 
     return result;

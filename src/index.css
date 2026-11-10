@@ -2,36 +2,35 @@
 
 @layer base {
   :root {
-    --gold: #C6A75E;
-    --gold-soft: #D5BD83;
-    --gold-dark: #9B7F3F;
-    --bg-main: #0A0A0A;
-    --bg-secondary: #111111;
-    --surface: #171717;
-    --text-primary: #EAE7E0;
-    --text-secondary: #929292;
-    --border-color: #242424;
+    --gold-primary: #FFD400;
+    --gold-intense: #FFCC00;
+    --gold-secondary: #EAB900;
+    --bg-main: #080808;
+    --card-bg: #151515;
+    --surface-secondary: #202020;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B5B5B5;
+    --border-color: #2A2A2A;
   }
 
   body {
-    background-color: #0A0A0A;
-    color: #EAE7E0;
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
-    font-weight: 300;
-    letter-spacing: 0.01em;
+    background-color: #080808;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
   }
 }
 
 .font-brand {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
 }
 
 .font-display {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
 }
 
 .font-sans {
-  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 .font-mono {
@@ -48,21 +47,200 @@
   display: none;
 }
 
-/* Custom discreet obsidian & champagne-gold scrollbar */
+/* Custom Black & Gold scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #080808;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #242424;
+  background: #2C2C2C;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C6A75E;
+  background: #FFD400;
 }
+
+/* Spotlight Card — GPU-composited dynamic pointer lighting without image zoom */
+.spotlight-card {
+  position: relative;
+  --spot-x: 50%;
+  --spot-y: 50%;
+  --spot-hsl: 217 91% 60%;
+  --spot-active: 0;
+}
+
+.spotlight-outer-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 1.15rem;
+  pointer-events: none;
+  z-index: 0;
+  opacity: calc(var(--spot-active) * 0.42);
+  background: radial-gradient(
+    300px circle at var(--spot-x) var(--spot-y),
+    hsl(var(--spot-hsl) / 0.38),
+    hsl(var(--spot-hsl) / 0.12) 45%,
+    transparent 75%
+  );
+  filter: blur(12px);
+  transition: opacity 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spotlight-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  opacity: var(--spot-active);
+  background: radial-gradient(
+    280px circle at var(--spot-x) var(--spot-y),
+    hsl(var(--spot-hsl) / 0.11),
+    hsl(var(--spot-hsl) / 0.03) 45%,
+    transparent 75%
+  );
+  transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spotlight-border-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: var(--spot-active);
+  background: radial-gradient(
+    240px circle at var(--spot-x) var(--spot-y),
+    hsl(var(--spot-hsl) / 0.95),
+    hsl(var(--spot-hsl) / 0.35) 42%,
+    hsl(var(--spot-hsl) / 0.08) 70%,
+    transparent 85%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .spotlight-card:hover {
+    --spot-active: 1;
+  }
+}
+
+.spotlight-card:focus-within {
+  --spot-active: 1;
+}
+
+/* Hero Marquee — Esteira horizontal contínua esquerda -> direita (velocidade ~0.5x) */
+.hero-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  animation-name: wemedia-marquee-right;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  will-change: transform;
+}
+
+.hero-marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: max-content;
+  gap: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 28px;
+}
+
+@media (min-width: 640px) {
+  .hero-marquee-track {
+    animation-duration: 70s;
+  }
+
+  .hero-marquee-group {
+    gap: 20px;
+    padding-right: 20px;
+    padding-top: 16px;
+    padding-bottom: 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-marquee-track {
+    animation-duration: 78s;
+  }
+
+  .hero-marquee-group {
+    gap: 24px;
+    padding-right: 24px;
+  }
+}
+
+@keyframes wemedia-marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-outer-glow,
+  .spotlight-surface,
+  .spotlight-border-ring {
+    transition: none;
+  }
+
+  .hero-marquee-track {
+    animation: none;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Hero Mobile-First — ocupa a primeira tela real (100svh com fallback 100vh) */
+.hero-viewport-shell {
+  min-height: calc(100vh - 72px);
+}
+
+@supports (min-height: 100svh) {
+  .hero-viewport-shell {
+    min-height: calc(100svh - 72px);
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-viewport-shell {
+    min-height: calc(100vh - 88px);
+  }
+
+  @supports (min-height: 100svh) {
+    .hero-viewport-shell {
+      min-height: calc(100svh - 88px);
+    }
+  }
+}
+
+

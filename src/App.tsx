@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import { Header } from './components/Header';
 import { SearchBarAndFilters } from './components/SearchBarAndFilters';
 import { PhotoCard } from './components/PhotoCard';
@@ -7,11 +7,79 @@ import { ReferenceFormModal } from './components/ReferenceFormModal';
 import { AdminLoginModal } from './components/AdminLoginModal';
 import { DeleteConfirmModal } from './components/DeleteConfirmModal';
 import { SettingsAndCloudModal } from './components/SettingsAndCloudModal';
+import { AnimatedMarqueeHero, MarqueeHeroImage } from './components/ui/hero-3';
 import { storageService } from './services/storage';
 import { PhotoReference, Category, SortOption } from './types';
+import { SPOTLIGHT_COLORS } from './components/ui/spotlight-card';
 import { ImageOff } from 'lucide-react';
 
+const HERO_CATEGORY_ROTATION = [
+  'Aniversário Feminino',
+  'Ensaio Masculino Adulto',
+  'Profissional Feminino',
+  'Aniversário Gospel Evangélico',
+  'PRÉVIAS',
+];
+
+function buildBalancedHeroImages(
+  references: PhotoReference[],
+  targetCount = 20
+): MarqueeHeroImage[] {
+  const buckets = new Map<string, PhotoReference[]>();
+  const seenUrls = new Set<string>();
+
+  for (const ref of references) {
+    if (!ref.imageUrl) continue;
+    const key = ref.category;
+    const list = buckets.get(key) ?? [];
+    list.push(ref);
+    buckets.set(key, list);
+  }
+
+  const orderedCategories = [
+    ...HERO_CATEGORY_ROTATION.filter((cat) => buckets.has(cat)),
+    ...Array.from(buckets.keys()).filter(
+      (cat) => !HERO_CATEGORY_ROTATION.includes(cat)
+    ),
+  ];
+
+  const selected: MarqueeHeroImage[] = [];
+  const cursors = new Map<string, number>();
+
+  while (selected.length < targetCount) {
+    let addedInRound = false;
+    for (const cat of orderedCategories) {
+      if (selected.length >= targetCount) break;
+      const list = buckets.get(cat) ?? [];
+      let idx = cursors.get(cat) ?? 0;
+
+      while (idx < list.length && seenUrls.has(list[idx].imageUrl)) {
+        idx += 1;
+      }
+
+      if (idx < list.length) {
+        const ref = list[idx];
+        seenUrls.add(ref.imageUrl);
+        selected.push({
+          id: ref.id,
+          src: ref.imageUrl,
+          alt: `Referência fotográfica ${ref.category} — We Media`,
+          category: ref.category,
+        });
+        cursors.set(cat, idx + 1);
+        addedInRound = true;
+      } else {
+        cursors.set(cat, idx);
+      }
+    }
+    if (!addedInRound) break;
+  }
+
+  return selected;
+}
+
 export default function App() {
+  const catalogRef = useRef<HTMLElement | null>(null);
   // --- Persistent States ---
   const [references, setReferences] = useState<PhotoReference[]>(() =>
     storageService.getReferences()
@@ -61,6 +129,11 @@ export default function App() {
   const favoritesCount = useMemo(() => {
     return references.filter((r) => r.isFavorite).length;
   }, [references]);
+
+  const heroImages = useMemo(
+    () => buildBalancedHeroImages(references, 20),
+    [references]
+  );
 
   // Filtered & Sorted References
   const filteredReferences = useMemo(() => {
@@ -162,11 +235,13 @@ export default function App() {
   const handleSaveReference = (refData: Omit<PhotoReference, 'id' | 'createdAt'>) => {
     storageService.saveReference(refData);
     setReferences(storageService.getReferences());
+    setCategories(storageService.getCategories());
   };
 
   const handleUpdateReference = (id: string, updates: Partial<PhotoReference>) => {
     storageService.updateReference(id, updates);
     setReferences(storageService.getReferences());
+    setCategories(storageService.getCategories());
   };
 
   const handleOpenDeleteConfirm = (ref: PhotoReference) => {
@@ -178,6 +253,7 @@ export default function App() {
     if (referenceToDelete) {
       storageService.deleteReference(referenceToDelete.id);
       setReferences(storageService.getReferences());
+      setCategories(storageService.getCategories());
       if (activeReferenceId === referenceToDelete.id) {
         setDetailModalOpen(false);
       }
@@ -210,8 +286,18 @@ export default function App() {
     setCategories(storageService.getCategories());
   };
 
+  const handleScrollToCatalog = useCallback(() => {
+    const reduceMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    catalogRef.current?.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-[#EAE7E0] flex flex-col font-sans selection:bg-[#C6A75E]/25 selection:text-[#D5BD83]">
+    <div className="min-h-screen overflow-x-clip bg-[#080808] text-white flex flex-col font-sans selection:bg-[#FFD400]/30 selection:text-[#FFD400]">
       {/* 1. Header */}
       <Header
         isAdmin={isAdmin}
@@ -222,40 +308,59 @@ export default function App() {
         onLogoutAdmin={handleLogoutAdmin}
       />
 
+      {/* 1.5 Hero Premium com Animação Marquee */}
+      <AnimatedMarqueeHero
+        brandBadge="WeMedia"
+        title="Crie fotos incríveis com IA."
+        subtitle="Escolha uma referência, copie o prompt e crie suas próprias imagens."
+        ctaText="ACESSAR CATÁLOGO"
+        onCtaClick={handleScrollToCatalog}
+        images={heroImages}
+      />
+
       {/* 2. Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-9 pb-14 sm:pt-12 sm:pb-16">
-        {/* Apresentação Editorial Principal */}
-        <section className="mb-8 pb-7 border-b border-[#1A1A1A] flex flex-col md:flex-row md:items-end justify-between gap-5">
-          <div className="space-y-2.5 max-w-2xl">
+      <main
+        ref={catalogRef}
+        id="catalogo-referencias"
+        className="scroll-mt-24 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-14 sm:pt-10 sm:pb-16"
+      >
+        {/* Apresentação Principal Imponente */}
+        <section className="mb-8 rounded-2xl bg-gradient-to-br from-[#161616] via-[#121212] to-[#0C0C0C] border border-[#282828] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
             <div className="flex items-center gap-3">
-              <span className="w-7 h-px bg-[#C6A75E]" aria-hidden="true" />
-              <span className="text-[10px] font-light uppercase tracking-[0.26em] text-[#C6A75E]">
-                Coleção Curada de Referências
+              <span className="w-8 h-1 rounded-full bg-[#FFD400]" aria-hidden="true" />
+              <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#FFD400]">
+                Catálogo Oficial de Referências
               </span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#EAE7E0] tracking-[-0.01em] leading-[1.12] text-balance">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-[40px] font-extrabold text-white tracking-tight leading-tight text-balance">
               Galeria de Referências Fotográficas
             </h2>
 
-            <p className="text-xs sm:text-[14px] font-light text-[#929292] leading-relaxed">
-              Fotografias selecionadas por categoria editorial. Clique para ampliar ou copie o prompt integral instantaneamente.
+            <p className="text-sm sm:text-base font-medium text-[#B5B5B5] leading-relaxed">
+              Explore as prévias por categoria e clique em{' '}
+              <span className="text-[#FFD400] font-bold">COPIAR PROMPT</span> para copiar a referência integral com um clique.
             </p>
           </div>
 
-          {/* Resumo Discreto da Seleção */}
-          <div className="flex items-center gap-2.5 text-xs font-light text-[#929292] shrink-0">
-            <span>
-              <span className="tabular-nums font-normal text-[#EAE7E0]">
+          {/* Bloco de Contagem Visível */}
+          <div className="flex flex-wrap items-center gap-3 px-4 py-3 rounded-xl bg-[#202020] border border-[#303030] shrink-0 self-start lg:self-auto">
+            <span className="text-sm font-semibold text-[#B5B5B5]">
+              Exibindo{' '}
+              <span className="tabular-nums font-extrabold text-[#FFD400] text-base">
                 {filteredReferences.length}
               </span>{' '}
               de{' '}
-              <span className="tabular-nums">{references.length}</span> referências
+              <span className="tabular-nums font-bold text-white">
+                {references.length}
+              </span>{' '}
+              referências
             </span>
             {selectedCategory.toLowerCase() !== 'todas' && (
               <>
-                <span aria-hidden="true" className="text-[#454545]">·</span>
-                <span className="text-[#D5BD83] font-normal">
+                <span aria-hidden="true" className="text-[#555555]">·</span>
+                <span className="text-sm font-bold text-[#FFD400]">
                   {selectedCategory}
                 </span>
               </>
@@ -281,12 +386,13 @@ export default function App() {
 
         {/* 4. Photo Gallery Grid */}
         {filteredReferences.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {filteredReferences.map((ref) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-6 lg:gap-7">
+            {filteredReferences.map((ref, index) => (
               <PhotoCard
                 key={ref.id}
                 reference={ref}
                 isAdmin={isAdmin}
+                spotlightColor={SPOTLIGHT_COLORS[index % SPOTLIGHT_COLORS.length]}
                 onOpenDetail={handleOpenDetail}
                 onEdit={handleOpenEditModal}
                 onDelete={handleOpenDeleteConfirm}
@@ -296,35 +402,37 @@ export default function App() {
           </div>
         ) : (
           /* Empty State */
-          <div className="py-20 px-5 text-center rounded-lg border border-[#1E1E1E] bg-[#111111]/70 max-w-lg mx-auto my-8 flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-[#171717] border border-[#242424] flex items-center justify-center text-[#6E6E6E] mb-4">
-              <ImageOff className="w-5 h-5 stroke-[1.35]" />
+          <div className="py-16 px-6 text-center rounded-2xl border-2 border-[#262626] bg-[#151515] max-w-lg mx-auto my-8 flex flex-col items-center">
+            <div className="w-14 h-14 rounded-full bg-[#202020] border border-[#333333] flex items-center justify-center text-[#FFD400] mb-4">
+              <ImageOff className="w-6 h-6 stroke-[2]" />
             </div>
-            <h3 className="font-display text-xl font-normal text-[#EAE7E0] mb-1.5">
+            <h3 className="font-display text-xl font-bold text-white mb-2">
               Nenhuma referência encontrada
             </h3>
-            <p className="text-xs font-light text-[#929292] max-w-sm mb-6 leading-relaxed">
+            <p className="text-sm font-medium text-[#B5B5B5] max-w-sm mb-6 leading-relaxed">
               {searchQuery || showOnlyFavorites || selectedCategory !== 'Todas'
                 ? 'Nenhum resultado corresponde aos filtros selecionados. Tente limpar a busca ou escolher outra categoria.'
-                : 'Seu catálogo ainda está vazio. Adicione sua primeira referência pelo painel administrativo.'}
+                : 'Seu catálogo ainda está vazio. Adicione a primeira referência pelo acesso administrativo.'}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-2.5">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               {(searchQuery || showOnlyFavorites || selectedCategory !== 'Todas') && (
                 <button
+                  type="button"
                   onClick={() => {
                     setSearchQuery('');
                     setSelectedCategory('Todas');
                     setShowOnlyFavorites(false);
                   }}
-                  className="px-4 py-2 rounded-md border border-[#262626] bg-[#171717] hover:border-[#C6A75E]/50 text-[#EAE7E0] text-xs font-light cursor-pointer transition-colors"
+                  className="px-5 py-2.5 rounded-xl border-2 border-[#363636] bg-[#202020] hover:border-[#FFD400] text-white text-sm font-bold cursor-pointer transition-colors"
                 >
                   Limpar Filtros
                 </button>
               )}
               {isAdmin && (
                 <button
+                  type="button"
                   onClick={handleOpenAddModal}
-                  className="px-4 py-2 rounded-md bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs tracking-wide cursor-pointer transition-colors"
+                  className="px-5 py-2.5 rounded-xl bg-[#FFD400] hover:bg-[#FFCC00] text-[#080808] font-bold text-sm cursor-pointer transition-colors"
                 >
                   Adicionar Referência
                 </button>
@@ -334,25 +442,25 @@ export default function App() {
         )}
       </main>
 
-      {/* 5. Minimalist Editorial Footer */}
-      <footer className="border-t border-[#181818] bg-[#0A0A0A] py-8 text-[#929292] text-xs font-light">
+      {/* 5. Footer Black & Gold */}
+      <footer className="border-t border-[#242424] bg-[#080808] py-8 text-[#B5B5B5] text-xs sm:text-sm font-medium">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
-            <span className="font-brand text-sm tracking-[0.08em] uppercase text-[#EAE7E0]">
-              PRÉVIAS <span className="text-[#C6A75E]">WE MEDIA</span>
+            <span className="font-brand text-sm sm:text-base font-extrabold tracking-wide uppercase text-white">
+              PRÉVIAS <span className="text-[#FFD400]">WE MEDIA</span>
             </span>
-            <span aria-hidden="true" className="text-[#3A3A3A]">·</span>
-            <span className="text-[11px] tracking-[0.14em] uppercase text-[#7A7A7A]">
+            <span aria-hidden="true" className="text-[#4A4A4A]">·</span>
+            <span className="text-xs font-bold tracking-widest uppercase text-[#B5B5B5]">
               Catálogo e Mídia
             </span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-[11px] text-[#7A7A7A]">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-[#B5B5B5]">
             <span>Curadoria Fotográfica</span>
-            <span aria-hidden="true" className="text-[#3A3A3A]">·</span>
+            <span aria-hidden="true" className="text-[#4A4A4A]">·</span>
             <span>Prompts Integrais</span>
-            <span aria-hidden="true" className="text-[#3A3A3A]">·</span>
-            <span className="text-[#929292]">© 2026 We Media</span>
+            <span aria-hidden="true" className="text-[#4A4A4A]">·</span>
+            <span className="text-white font-semibold">© 2026 We Media</span>
           </div>
         </div>
       </footer>

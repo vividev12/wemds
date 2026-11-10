@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Maximize2, Copy, Check, Star, Edit3, Trash2, ExternalLink, ImageOff } from 'lucide-react';
 import { PhotoReference } from '../types';
+import { SpotlightCard, SpotlightColor, SPOTLIGHT_COLORS } from './ui/spotlight-card';
 
 interface PhotoCardProps {
   reference: PhotoReference;
   isAdmin: boolean;
+  spotlightColor?: SpotlightColor;
   onOpenDetail: (ref: PhotoReference) => void;
   onEdit: (ref: PhotoReference) => void;
   onDelete: (ref: PhotoReference) => void;
@@ -17,7 +19,7 @@ interface FramingConfig {
 }
 
 const IMAGE_FRAMING_OVERRIDES: Record<string, FramingConfig> = {
-  // Square (1:1) dark studio full-body / couple shots: contain blends into #111111 and preserves 100% of composition
+  // Square (1:1) dark studio full-body / couple shots: contain blends into #0E0E0E and preserves 100% of composition
   'ref-4': { fitClass: 'object-contain', posClass: 'object-center' },
   'ref-5': { fitClass: 'object-contain', posClass: 'object-center' },
   'ref-6': { fitClass: 'object-contain', posClass: 'object-center' },
@@ -64,9 +66,18 @@ function getImageFraming(id: string, naturalRatio: number | null): FramingConfig
   return { fitClass: 'object-contain', posClass: 'object-center' };
 }
 
+function getDeterministicSpotlightColor(id: string): SpotlightColor {
+  let hash = 0;
+  for (let i = 0; i < id.length; i += 1) {
+    hash = (hash * 31 + id.charCodeAt(i)) >>> 0;
+  }
+  return SPOTLIGHT_COLORS[hash % SPOTLIGHT_COLORS.length];
+}
+
 export const PhotoCard: React.FC<PhotoCardProps> = ({
   reference,
   isAdmin,
+  spotlightColor,
   onOpenDetail,
   onEdit,
   onDelete,
@@ -88,6 +99,8 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
 
   const originalTarget = reference.originalImage || reference.imageUrl;
   const framing = getImageFraming(reference.id, naturalRatio);
+  const resolvedSpotlightColor =
+    spotlightColor ?? getDeterministicSpotlightColor(reference.id);
 
   const handleCopyPrompt = async (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -115,170 +128,168 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({
   };
 
   return (
-    <article className="group bg-[#141414] rounded-lg overflow-hidden border border-[#202020] hover:border-[#C6A75E]/60 transition-colors transition-shadow duration-300 flex flex-col justify-between shadow-sm hover:shadow-[0_18px_42px_-16px_rgba(0,0,0,0.88)]">
-      {/* Faixa Superior Externa à Fotografia: Categoria tipográfica + Favorito + Ampliar */}
-      <div className="px-3 py-2 bg-[#111111] border-b border-[#1C1C1C] flex items-center justify-between gap-2">
-        <span
-          className="text-[10px] sm:text-[11px] font-light text-[#C6A75E]/90 tracking-[0.04em] truncate"
-          title={reference.category}
-        >
-          {reference.category}
-        </span>
-
-        <div className="flex items-center gap-0.5 shrink-0">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggleFavorite(reference.id);
-            }}
-            className="p-1.5 rounded text-[#929292] hover:text-[#D5BD83] hover:bg-[#191919] transition-colors cursor-pointer"
-            title={reference.isFavorite ? 'Remover dos favoritos' : 'Favoritar referência'}
+    <article className="h-full">
+      <SpotlightCard
+        glowColor={resolvedSpotlightColor}
+        className="h-full focus-within:ring-2 focus-within:ring-[#FFD400]/80"
+      >
+        {/* Faixa Superior Externa: Categoria discreta + Ícones visíveis (sem cobrir rostos) */}
+        <div className="px-3 py-2.5 bg-[#1B1B1B]/90 border-b border-[#292929] flex items-center justify-between gap-2">
+          <span
+            className="text-xs font-bold text-[#FFD400] tracking-wide truncate"
+            title={reference.category}
           >
-            <Star
-              className={`w-3.5 h-3.5 stroke-[1.35] ${
-                reference.isFavorite ? 'fill-[#C6A75E] text-[#C6A75E]' : 'text-[#929292]'
+            {reference.category}
+          </span>
+
+          <div className="flex items-center gap-1 shrink-0">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onToggleFavorite(reference.id);
+              }}
+              aria-label={reference.isFavorite ? 'Remover dos favoritos' : 'Favoritar referência'}
+              className="p-2 rounded-lg bg-[#242424] hover:bg-[#2E2E2E] text-white hover:text-[#FFD400] border border-[#343434] hover:border-[#FFD400]/60 transition-colors cursor-pointer"
+              title={reference.isFavorite ? 'Remover dos favoritos' : 'Favoritar referência'}
+            >
+              <Star
+                className={`w-4 h-4 stroke-[2] ${
+                  reference.isFavorite ? 'fill-[#FFD400] text-[#FFD400]' : 'text-[#B5B5B5]'
+                }`}
+              />
+            </button>
+
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenDetail(reference);
+              }}
+              aria-label="Ampliar fotografia"
+              className="p-2 rounded-lg bg-[#242424] hover:bg-[#2E2E2E] text-white hover:text-[#FFD400] border border-[#343434] hover:border-[#FFD400]/60 transition-colors cursor-pointer"
+              title="Visualizar foto ampliada e prompt"
+            >
+              <Maximize2 className="w-4 h-4 stroke-[2]" />
+            </button>
+          </div>
+        </div>
+
+        {/* Fotografia de Prévia (Protagonista e absolutamente estática no hover) */}
+        <div
+          onClick={() => onOpenDetail(reference)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              onOpenDetail(reference);
+            }
+          }}
+          aria-label={`Ampliar fotografia da categoria ${reference.category}`}
+          className="relative aspect-[3/4] w-full bg-[#0E0E0E] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#FFD400]"
+        >
+          {!imageLoaded && !imageError && (
+            <div className="absolute inset-0 bg-[#171717] animate-pulse flex items-center justify-center">
+              <span className="text-xs text-[#B5B5B5] font-semibold tracking-wider uppercase">
+                Carregando
+              </span>
+            </div>
+          )}
+
+          {imageError ? (
+            <div className="absolute inset-0 bg-[#151515] p-4 flex flex-col items-center justify-center text-center">
+              <div className="w-11 h-11 rounded-full border-2 border-[#FFD400]/40 flex items-center justify-center text-[#FFD400] mb-3">
+                <ImageOff className="w-5 h-5 stroke-[2]" />
+              </div>
+              <p className="text-xs text-[#B5B5B5] font-semibold mb-3">{reference.category}</p>
+              <a
+                href={originalTarget}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#202020] hover:bg-[#2B2B2B] text-[#FFD400] text-xs font-bold border border-[#383838] transition-colors"
+              >
+                <span>Abrir imagem</span>
+                <ExternalLink className="w-3.5 h-3.5 stroke-[2]" />
+              </a>
+            </div>
+          ) : (
+            <img
+              ref={imgRef}
+              src={reference.imageUrl}
+              alt={`Referência fotográfica ${reference.category}`}
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onLoad={(e) => {
+                const img = e.currentTarget;
+                if (img.naturalWidth && img.naturalHeight) {
+                  setNaturalRatio(img.naturalWidth / img.naturalHeight);
+                }
+                setImageLoaded(true);
+              }}
+              onError={() => setImageError(true)}
+              className={`w-full h-full ${framing.fitClass} ${framing.posClass} transition-opacity duration-200 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
               }`}
             />
-          </button>
-
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onOpenDetail(reference);
-            }}
-            className="p-1.5 rounded text-[#929292] hover:text-[#EAE7E0] hover:bg-[#191919] transition-colors cursor-pointer"
-            title="Visualizar foto ampliada e prompt"
-          >
-            <Maximize2 className="w-3.5 h-3.5 stroke-[1.35]" />
-          </button>
-        </div>
-      </div>
-
-      {/* 1. Imagem de Referência (Sem obstruções e estática no hover) */}
-      <div
-        onClick={() => onOpenDetail(reference)}
-        className="relative aspect-[3/4] w-full bg-[#111111] overflow-hidden cursor-pointer"
-      >
-        {!imageLoaded && !imageError && (
-          <div className="absolute inset-0 bg-[#141414] animate-pulse flex items-center justify-center">
-            <span className="text-[10px] text-[#6E6E6E] font-light tracking-[0.2em] uppercase">
-              Carregando
-            </span>
-          </div>
-        )}
-
-        {imageError ? (
-          <div className="absolute inset-0 bg-[#121212] p-4 flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full border border-[#C6A75E]/30 flex items-center justify-center text-[#C6A75E] mb-2.5">
-              <ImageOff className="w-4 h-4 stroke-[1.35]" />
-            </div>
-            <p className="text-xs text-[#EAE7E0] font-normal mb-1 line-clamp-1">{reference.title}</p>
-            <p className="text-[11px] text-[#929292] font-light mb-3">{reference.category}</p>
-            <a
-              href={originalTarget}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#1A1A1A] hover:bg-[#222222] text-[#D5BD83] text-[11px] font-light border border-[#2C2C2C] transition-colors"
-            >
-              <span>Abrir link original</span>
-              <ExternalLink className="w-3 h-3 stroke-[1.35]" />
-            </a>
-          </div>
-        ) : (
-          <img
-            ref={imgRef}
-            src={reference.imageUrl}
-            alt={reference.title}
-            loading="lazy"
-            referrerPolicy="no-referrer"
-            onLoad={(e) => {
-              const img = e.currentTarget;
-              if (img.naturalWidth && img.naturalHeight) {
-                setNaturalRatio(img.naturalWidth / img.naturalHeight);
-              }
-              setImageLoaded(true);
-            }}
-            onError={() => setImageError(true)}
-            className={`w-full h-full ${framing.fitClass} ${framing.posClass} transition-opacity duration-200 ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-          />
-        )}
-
-        {/* Admin Floating Edit/Delete buttons */}
-        {isAdmin && (
-          <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-[#0A0A0A]/85 backdrop-blur-md p-1 rounded border border-[#2A2A2A]">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onEdit(reference);
-              }}
-              className="p-1.5 text-[#929292] hover:text-[#D5BD83] hover:bg-white/5 rounded cursor-pointer transition-colors"
-              title="Editar referência"
-            >
-              <Edit3 className="w-3.5 h-3.5 stroke-[1.35]" />
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onDelete(reference);
-              }}
-              className="p-1.5 text-[#929292] hover:text-red-400 hover:bg-white/5 rounded cursor-pointer transition-colors"
-              title="Excluir referência"
-            >
-              <Trash2 className="w-3.5 h-3.5 stroke-[1.35]" />
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* 2. Botão Dourado Refinado COPIAR PROMPT + Informações Editoriais */}
-      <div className="p-3 sm:p-3.5 flex flex-col gap-3 flex-1 justify-between bg-[#171717]">
-        <button
-          onClick={handleCopyPrompt}
-          className={`w-full py-2.5 px-3 rounded-md text-[11px] font-medium uppercase tracking-[0.12em] transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98] ${
-            copied
-              ? 'bg-[#172317] border border-[#3E6E38] text-[#9ED890]'
-              : 'bg-[#C6A75E] hover:bg-[#D5BD83] active:bg-[#B2934B] text-[#0A0A0A]'
-          }`}
-          title="Copiar prompt completo para a área de transferência"
-        >
-          {copied ? (
-            <>
-              <Check className="w-3.5 h-3.5 stroke-[2]" />
-              <span>Prompt copiado</span>
-            </>
-          ) : (
-            <>
-              <Copy className="w-3.5 h-3.5 stroke-[1.6]" />
-              <span>Copiar Prompt</span>
-            </>
           )}
-        </button>
 
-        {/* Título leve e prévia discreta do prompt */}
-        <div className="pt-2 border-t border-[#222222]">
-          <div className="flex items-baseline justify-between gap-2">
-            <h3
-              onClick={() => onOpenDetail(reference)}
-              className="font-normal text-[13px] sm:text-sm text-[#EAE7E0] hover:text-[#D5BD83] transition-colors line-clamp-1 cursor-pointer tracking-[0.01em]"
-              title={reference.title}
-            >
-              {reference.title}
-            </h3>
-            <button
-              onClick={() => onOpenDetail(reference)}
-              className="text-[11px] font-light text-[#929292] hover:text-[#D5BD83] transition-colors shrink-0 cursor-pointer"
-            >
-              Ver
-            </button>
-          </div>
-          <p className="text-[11px] font-light text-[#848484] mt-1.5 line-clamp-2 leading-relaxed">
-            {reference.prompt}
-          </p>
+          {/* Controles Administrativos */}
+          {isAdmin && (
+            <div className="absolute bottom-2.5 right-2.5 flex items-center gap-1.5 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200 bg-[#080808]/90 backdrop-blur-md p-1.5 rounded-xl border border-[#3A3A3A]">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onEdit(reference);
+                }}
+                className="p-1.5 text-white hover:text-[#FFD400] hover:bg-white/10 rounded-lg cursor-pointer transition-colors"
+                title="Editar referência"
+              >
+                <Edit3 className="w-4 h-4 stroke-[2]" />
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDelete(reference);
+                }}
+                className="p-1.5 text-white hover:text-red-400 hover:bg-white/10 rounded-lg cursor-pointer transition-colors"
+                title="Excluir referência"
+              >
+                <Trash2 className="w-4 h-4 stroke-[2]" />
+              </button>
+            </div>
+          )}
         </div>
-      </div>
+
+        {/* Botão Principal Amarelo Forte: COPIAR PROMPT (sem títulos ou textos abaixo) */}
+        <div className="p-2.5 sm:p-3.5 bg-[#151515]/85 border-t border-[#252525]">
+          <button
+            type="button"
+            onClick={handleCopyPrompt}
+            className={`w-full min-h-[46px] sm:min-h-[48px] py-3 px-2.5 sm:px-4 rounded-xl text-[11px] sm:text-sm font-extrabold uppercase tracking-[0.04em] sm:tracking-wider transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+              copied
+                ? 'bg-[#14351A] border-2 border-[#39C94A] text-[#7CFF8E]'
+                : 'bg-[#FFD400] hover:bg-[#FFCC00] active:bg-[#EAB900] text-[#080808] border-2 border-[#FFD400] hover:border-[#FFCC00] shadow-[0_4px_16px_rgba(255,212,0,0.2)]'
+            }`}
+            title="Copiar prompt completo para a área de transferência"
+          >
+            {copied ? (
+              <>
+                <Check className="w-4 h-4 stroke-[2.8] shrink-0" />
+                <span>Prompt copiado!</span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-4 h-4 stroke-[2.3] shrink-0" />
+                <span>COPIAR PROMPT</span>
+              </>
+            )}
+          </button>
+        </div>
+      </SpotlightCard>
     </article>
   );
 };

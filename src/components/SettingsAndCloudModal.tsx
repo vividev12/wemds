@@ -59,7 +59,7 @@ export const SettingsAndCloudModal: React.FC<SettingsAndCloudModalProps> = ({
   const handleSaveSupabaseConfig = (e: React.FormEvent) => {
     e.preventDefault();
     storageService.saveSupabaseConfig(supabaseConfig);
-    setSaveStatus('Configurações salvas localmente com sucesso.');
+    setSaveStatus('Configurações salvas localmente com sucesso!');
     setTimeout(() => setSaveStatus(null), 3000);
   };
 
@@ -74,7 +74,7 @@ export const SettingsAndCloudModal: React.FC<SettingsAndCloudModalProps> = ({
     link.click();
     link.remove();
     URL.revokeObjectURL(url);
-    setBackupStatus('Backup JSON exportado com sucesso.');
+    setBackupStatus('Backup JSON exportado com sucesso!');
     setTimeout(() => setBackupStatus(null), 3000);
   };
 
@@ -87,7 +87,7 @@ export const SettingsAndCloudModal: React.FC<SettingsAndCloudModalProps> = ({
       const content = event.target?.result as string;
       const res = storageService.importBackup(content);
       if (res.success) {
-        setBackupStatus(`Sucesso: ${res.count} referências restauradas.`);
+        setBackupStatus(`Sucesso! ${res.count} referências restauradas.`);
         onReloadData();
       } else {
         setBackupStatus(`Erro ao importar: ${res.error}`);
@@ -109,7 +109,7 @@ export const SettingsAndCloudModal: React.FC<SettingsAndCloudModalProps> = ({
       return;
     }
     storageService.setNewAdminPin(newPin);
-    setPinMessage('Senha de Administrador alterada com sucesso.');
+    setPinMessage('Senha de Administrador alterada com sucesso!');
     setNewPin('');
     setConfirmPin('');
     setTimeout(() => setPinMessage(null), 3000);
@@ -161,83 +161,88 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#050505]/88 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl bg-[#121212] border border-[#242424] rounded-xl overflow-hidden shadow-2xl flex flex-col my-auto max-h-[92vh]"
+        className="relative w-full max-w-3xl bg-[#151515] border-2 border-[#2E2E2E] rounded-2xl overflow-hidden shadow-2xl flex flex-col my-auto max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[#1E1E1E]">
+        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-[#262626]">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#C6A75E]/10 border border-[#C6A75E]/25 flex items-center justify-center text-[#C6A75E]">
-              <Database className="w-4 h-4 stroke-[1.35]" />
+            <div className="w-10 h-10 rounded-xl bg-[#FFD400]/15 border-2 border-[#FFD400]/45 flex items-center justify-center text-[#FFD400]">
+              <Database className="w-5 h-5 stroke-[2]" />
             </div>
             <div>
-              <h2 className="font-display text-xl sm:text-2xl font-normal text-[#EAE7E0] leading-none">
+              <h2 className="font-display text-lg sm:text-xl font-extrabold text-white leading-tight">
                 Configurações &amp; Nuvem
               </h2>
-              <p className="text-xs font-light text-[#929292] mt-1">
+              <p className="text-xs sm:text-sm font-medium text-[#B5B5B5] mt-0.5">
                 Gerencie integração Supabase, categorias, segurança e backups
               </p>
             </div>
           </div>
           <button
+            type="button"
             onClick={onClose}
-            className="p-1.5 rounded-md text-[#929292] hover:text-[#EAE7E0] hover:bg-[#1B1B1B] transition-colors cursor-pointer"
+            className="p-2 rounded-xl text-[#B5B5B5] hover:text-white hover:bg-[#242424] transition-colors cursor-pointer"
           >
-            <X className="w-4 h-4 stroke-[1.5]" />
+            <X className="w-5 h-5 stroke-[2.2]" />
           </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center border-b border-[#1E1E1E] px-6 bg-[#0D0D0D] overflow-x-auto scrollbar-none gap-4">
+        <div className="flex items-center border-b border-[#262626] px-6 bg-[#0D0D0D] overflow-x-auto scrollbar-none gap-2">
           <button
+            type="button"
             onClick={() => setActiveTab('cloud')}
-            className={`py-3 text-xs tracking-wide border-b transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`py-3.5 px-3 text-xs sm:text-sm font-bold border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               activeTab === 'cloud'
-                ? 'border-[#C6A75E] text-[#D5BD83] font-normal'
-                : 'border-transparent text-[#929292] hover:text-[#EAE7E0] font-light'
+                ? 'border-[#FFD400] text-[#FFD400]'
+                : 'border-transparent text-[#B5B5B5] hover:text-white'
             }`}
           >
-            <Database className="w-3.5 h-3.5 stroke-[1.35]" />
+            <Database className="w-4 h-4 stroke-[2]" />
             <span>Nuvem (Supabase)</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('backup')}
-            className={`py-3 text-xs tracking-wide border-b transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`py-3.5 px-3 text-xs sm:text-sm font-bold border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               activeTab === 'backup'
-                ? 'border-[#C6A75E] text-[#D5BD83] font-normal'
-                : 'border-transparent text-[#929292] hover:text-[#EAE7E0] font-light'
+                ? 'border-[#FFD400] text-[#FFD400]'
+                : 'border-transparent text-[#B5B5B5] hover:text-white'
             }`}
           >
-            <Download className="w-3.5 h-3.5 stroke-[1.35]" />
+            <Download className="w-4 h-4 stroke-[2]" />
             <span>Backup &amp; Exportar</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('categories')}
-            className={`py-3 text-xs tracking-wide border-b transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`py-3.5 px-3 text-xs sm:text-sm font-bold border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               activeTab === 'categories'
-                ? 'border-[#C6A75E] text-[#D5BD83] font-normal'
-                : 'border-transparent text-[#929292] hover:text-[#EAE7E0] font-light'
+                ? 'border-[#FFD400] text-[#FFD400]'
+                : 'border-transparent text-[#B5B5B5] hover:text-white'
             }`}
           >
-            <FolderPlus className="w-3.5 h-3.5 stroke-[1.35]" />
+            <FolderPlus className="w-4 h-4 stroke-[2]" />
             <span>Categorias ({categories.length})</span>
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab('security')}
-            className={`py-3 text-xs tracking-wide border-b transition-colors cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`py-3.5 px-3 text-xs sm:text-sm font-bold border-b-2 transition-colors cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               activeTab === 'security'
-                ? 'border-[#C6A75E] text-[#D5BD83] font-normal'
-                : 'border-transparent text-[#929292] hover:text-[#EAE7E0] font-light'
+                ? 'border-[#FFD400] text-[#FFD400]'
+                : 'border-transparent text-[#B5B5B5] hover:text-white'
             }`}
           >
-            <Key className="w-3.5 h-3.5 stroke-[1.35]" />
+            <Key className="w-4 h-4 stroke-[2]" />
             <span>Segurança Admin</span>
           </button>
         </div>
@@ -247,32 +252,32 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
           {/* TAB 1: SUPABASE */}
           {activeTab === 'cloud' && (
             <div className="space-y-5">
-              <div className="p-4 bg-[#0A0A0A] rounded-lg border border-[#1E1E1E]">
-                <h3 className="text-xs font-normal text-[#EAE7E0] uppercase tracking-[0.12em]">
+              <div className="p-4 bg-[#0B0B0B] rounded-xl border border-[#262626]">
+                <h3 className="text-xs font-extrabold text-white uppercase tracking-wider">
                   Como conectar seu banco de dados Supabase
                 </h3>
-                <ol className="text-xs font-light text-[#929292] mt-2.5 space-y-1.5 list-decimal pl-4 leading-relaxed">
+                <ol className="text-xs sm:text-sm font-medium text-[#B5B5B5] mt-2.5 space-y-1.5 list-decimal pl-4 leading-relaxed">
                   <li>
                     Crie uma conta em{' '}
                     <a
                       href="https://supabase.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#D5BD83] underline inline-flex items-center gap-0.5"
+                      className="text-[#FFD400] font-bold underline inline-flex items-center gap-0.5"
                     >
-                      supabase.com <ExternalLink className="w-3 h-3" />
+                      supabase.com <ExternalLink className="w-3.5 h-3.5" />
                     </a>{' '}
                     e crie um novo projeto.
                   </li>
-                  <li>No menu lateral do Supabase, acesse <strong className="font-normal text-[#EAE7E0]">SQL Editor</strong> e execute o script abaixo.</li>
-                  <li>Em <strong className="font-normal text-[#EAE7E0]">Project Settings → API</strong>, copie a <strong className="font-normal text-[#EAE7E0]">URL</strong> e <strong className="font-normal text-[#EAE7E0]">anon public key</strong>.</li>
+                  <li>No menu lateral do Supabase, acesse <strong className="text-white">SQL Editor</strong> e execute o script abaixo.</li>
+                  <li>Em <strong className="text-white">Project Settings → API</strong>, copie a <strong className="text-white">URL</strong> e <strong className="text-white">anon public key</strong>.</li>
                   <li>Salve as credenciais abaixo para sincronização futura entre dispositivos.</li>
                 </ol>
               </div>
 
               <form onSubmit={handleSaveSupabaseConfig} className="space-y-3.5">
                 <div>
-                  <label className="block text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.1em] mb-1">
+                  <label className="block text-xs font-bold text-white uppercase tracking-wider mb-1.5">
                     Supabase Project URL
                   </label>
                   <input
@@ -282,12 +287,12 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
                       setSupabaseConfig({ ...supabaseConfig, url: e.target.value })
                     }
                     placeholder="https://xyzcompany.supabase.co"
-                    className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none"
+                    className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border-2 border-[#2A2A2A] focus:border-[#FFD400] rounded-xl text-sm font-medium text-white placeholder-[#7A7A7A] outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.1em] mb-1">
+                  <label className="block text-xs font-bold text-white uppercase tracking-wider mb-1.5">
                     Supabase Anon Public API Key
                   </label>
                   <input
@@ -297,54 +302,55 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
                       setSupabaseConfig({ ...supabaseConfig, anonKey: e.target.value })
                     }
                     placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-                    className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-mono font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none"
+                    className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border-2 border-[#2A2A2A] focus:border-[#FFD400] rounded-xl text-xs font-mono text-white placeholder-[#7A7A7A] outline-none"
                   />
                 </div>
 
                 {saveStatus && (
-                  <div className="flex items-center gap-1.5 text-xs font-light text-[#9ED890]">
-                    <CheckCircle2 className="w-4 h-4 stroke-[1.5]" />
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#7CFF8E]">
+                    <CheckCircle2 className="w-4 h-4 stroke-[2]" />
                     <span>{saveStatus}</span>
                   </div>
                 )}
 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
-                  <p className="text-[11px] font-light text-[#7A7A7A]">
-                    Sem conexão ativa, as referências permanecem salvas localmente no navegador.
+                  <p className="text-xs font-medium text-[#B5B5B5]">
+                    Sem conexão ativa, todas as referências permanecem salvas localmente no navegador.
                   </p>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs rounded-md transition-colors cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
+                    className="px-5 py-2.5 bg-[#FFD400] hover:bg-[#FFCC00] text-[#080808] font-extrabold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-1.5 shrink-0"
                   >
-                    <Save className="w-3.5 h-3.5 stroke-[1.5]" />
+                    <Save className="w-4 h-4 stroke-[2.2]" />
                     Salvar Credenciais
                   </button>
                 </div>
               </form>
 
-              <div className="pt-4 border-t border-[#1E1E1E]">
+              <div className="pt-4 border-t border-[#262626]">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.1em]">
-                    Script SQL para tabelas no Supabase
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">
+                    Script SQL para criar as tabelas no Supabase
                   </span>
                   <button
+                    type="button"
                     onClick={copySql}
-                    className="flex items-center gap-1.5 text-xs font-light text-[#D5BD83] hover:underline cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs font-bold text-[#FFD400] hover:underline cursor-pointer"
                   >
                     {copiedSql ? (
                       <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>SQL Copiado</span>
+                        <Check className="w-4 h-4" />
+                        <span>SQL Copiado!</span>
                       </>
                     ) : (
                       <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copiar SQL</span>
+                        <Copy className="w-4 h-4" />
+                        <span>Copiar Código SQL</span>
                       </>
                     )}
                   </button>
                 </div>
-                <pre className="p-3.5 bg-[#0A0A0A] rounded-lg border border-[#1E1E1E] text-[11px] font-mono font-light text-[#929292] overflow-x-auto max-h-40 leading-relaxed">
+                <pre className="p-3.5 bg-[#0B0B0B] rounded-xl border border-[#242424] text-xs font-mono text-[#B5B5B5] overflow-x-auto max-h-40 leading-relaxed">
                   {sqlScript}
                 </pre>
               </div>
@@ -354,54 +360,55 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
           {/* TAB 2: BACKUP & EXPORTAR */}
           {activeTab === 'backup' && (
             <div className="space-y-6">
-              <div className="p-4 bg-[#0A0A0A] rounded-lg border border-[#1E1E1E] space-y-1">
-                <h3 className="text-sm font-normal text-[#EAE7E0]">
+              <div className="p-4 bg-[#0B0B0B] rounded-xl border border-[#262626] space-y-1.5">
+                <h3 className="text-sm font-extrabold text-white">
                   Backup e Portabilidade do Catálogo
                 </h3>
-                <p className="text-xs font-light text-[#929292] leading-relaxed">
-                  Exporte todo o catálogo (fotografias, títulos, categorias e prompts integrais) em um único arquivo JSON para backup ou migração.
+                <p className="text-xs sm:text-sm font-medium text-[#B5B5B5] leading-relaxed">
+                  Exporte todo o catálogo (fotografias, títulos, categorias e prompts integrais) em um único arquivo JSON para backup ou restauração.
                 </p>
               </div>
 
               {backupStatus && (
-                <div className="p-3 bg-[#142014] border border-[#2F552B] rounded-md text-xs font-light text-[#9ED890] flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 shrink-0 stroke-[1.5]" />
+                <div className="p-3.5 bg-[#14351A] border border-[#39C94A] rounded-xl text-xs sm:text-sm font-semibold text-[#7CFF8E] flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 shrink-0 stroke-[2]" />
                   <span>{backupStatus}</span>
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 bg-[#0D0D0D] border border-[#1E1E1E] rounded-lg flex flex-col justify-between">
+                <div className="p-4 bg-[#0D0D0D] border border-[#262626] rounded-xl flex flex-col justify-between">
                   <div>
-                    <h4 className="text-xs font-normal text-[#EAE7E0] uppercase tracking-[0.1em] flex items-center gap-2">
-                      <Download className="w-3.5 h-3.5 text-[#C6A75E] stroke-[1.5]" />
+                    <h4 className="text-xs font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                      <Download className="w-4 h-4 text-[#FFD400] stroke-[2.2]" />
                       Exportar Catálogo
                     </h4>
-                    <p className="text-xs font-light text-[#929292] mt-1.5">
-                      Gera um arquivo .json com todas as referências cadastradas.
+                    <p className="text-xs font-medium text-[#B5B5B5] mt-1.5">
+                      Gera um arquivo .json seguro com todas as referências cadastradas.
                     </p>
                   </div>
                   <button
+                    type="button"
                     onClick={handleExportBackup}
-                    className="mt-4 w-full py-2.5 px-4 bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs rounded-md transition-colors cursor-pointer flex items-center justify-center gap-2"
+                    className="mt-4 w-full py-2.5 px-4 bg-[#FFD400] hover:bg-[#FFCC00] text-[#080808] font-extrabold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-2"
                   >
-                    <Download className="w-3.5 h-3.5 stroke-[1.5]" />
+                    <Download className="w-4 h-4 stroke-[2.2]" />
                     Baixar Backup (.JSON)
                   </button>
                 </div>
 
-                <div className="p-4 bg-[#0D0D0D] border border-[#1E1E1E] rounded-lg flex flex-col justify-between">
+                <div className="p-4 bg-[#0D0D0D] border border-[#262626] rounded-xl flex flex-col justify-between">
                   <div>
-                    <h4 className="text-xs font-normal text-[#EAE7E0] uppercase tracking-[0.1em] flex items-center gap-2">
-                      <Upload className="w-3.5 h-3.5 text-[#C6A75E] stroke-[1.5]" />
+                    <h4 className="text-xs font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                      <Upload className="w-4 h-4 text-[#FFD400] stroke-[2.2]" />
                       Restaurar Backup
                     </h4>
-                    <p className="text-xs font-light text-[#929292] mt-1.5">
+                    <p className="text-xs font-medium text-[#B5B5B5] mt-1.5">
                       Carregue um arquivo .json salvo anteriormente para restaurar os registros.
                     </p>
                   </div>
-                  <label className="mt-4 w-full py-2.5 px-4 bg-[#171717] hover:bg-[#1E1E1E] text-[#EAE7E0] font-light text-xs rounded-md transition-colors cursor-pointer flex items-center justify-center gap-2 border border-[#282828]">
-                    <Upload className="w-3.5 h-3.5 stroke-[1.5]" />
+                  <label className="mt-4 w-full py-2.5 px-4 bg-[#202020] hover:bg-[#2A2A2A] text-white font-bold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-2 border border-[#363636]">
+                    <Upload className="w-4 h-4 stroke-[2.2]" />
                     Selecionar Arquivo .JSON
                     <input
                       type="file"
@@ -413,16 +420,17 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#1E1E1E] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="pt-4 border-t border-[#262626] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
-                  <h4 className="text-xs font-normal text-[#EAE7E0]">Restaurar referências padrão</h4>
-                  <p className="text-[11px] font-light text-[#7A7A7A]">
+                  <h4 className="text-xs sm:text-sm font-bold text-white">Restaurar referências padrão</h4>
+                  <p className="text-xs font-medium text-[#B5B5B5]">
                     Recarrega o acervo fotográfico e categorias originais do We Media.
                   </p>
                 </div>
                 <button
+                  type="button"
                   onClick={handleResetDefaults}
-                  className="px-3.5 py-1.5 border border-[#282828] hover:border-red-900/60 text-xs font-light text-[#929292] hover:text-red-400 rounded-md cursor-pointer transition-colors self-start sm:self-auto"
+                  className="px-4 py-2 border border-[#363636] hover:border-red-500/70 text-xs font-bold text-[#B5B5B5] hover:text-red-400 rounded-xl cursor-pointer transition-colors self-start sm:self-auto"
                 >
                   Restaurar Padrão
                 </button>
@@ -439,44 +447,46 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
                   value={newCatName}
                   onChange={(e) => setNewCatName(e.target.value)}
                   placeholder="Nome da nova categoria..."
-                  className="flex-1 px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none"
+                  className="flex-1 px-3.5 py-2.5 bg-[#0B0B0B] border-2 border-[#2A2A2A] focus:border-[#FFD400] rounded-xl text-sm font-medium text-white placeholder-[#7A7A7A] outline-none"
                 />
                 <button
+                  type="button"
                   onClick={() => {
                     if (newCatName.trim()) {
                       onAddCategory(newCatName.trim());
                       setNewCatName('');
                     }
                   }}
-                  className="px-4 py-2.5 bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs rounded-md transition-colors cursor-pointer whitespace-nowrap"
+                  className="px-5 py-2.5 bg-[#FFD400] hover:bg-[#FFCC00] text-[#080808] font-extrabold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer whitespace-nowrap"
                 >
-                  Adicionar
+                  + Adicionar
                 </button>
               </div>
 
-              <div className="border border-[#1E1E1E] rounded-lg overflow-hidden divide-y divide-[#1A1A1A]">
+              <div className="border border-[#262626] rounded-xl overflow-hidden divide-y divide-[#222222]">
                 {categories.map((cat) => (
                   <div
                     key={cat.id}
-                    className="flex items-center justify-between px-4 py-2.5 bg-[#0D0D0D] text-xs"
+                    className="flex items-center justify-between px-4 py-3 bg-[#0D0D0D] text-xs sm:text-sm"
                   >
-                    <span className="font-light text-[#EAE7E0]">{cat.name}</span>
-                    <div className="flex items-center gap-2">
+                    <span className="font-semibold text-white">{cat.name}</span>
+                    <div className="flex items-center gap-2.5">
                       {cat.isCustom ? (
                         <>
-                          <span className="text-[10px] text-[#C6A75E] uppercase tracking-[0.12em] font-light">
+                          <span className="text-xs text-[#FFD400] uppercase tracking-wider font-bold">
                             Personalizada
                           </span>
                           <button
+                            type="button"
                             onClick={() => onDeleteCategory(cat.id)}
-                            className="p-1 text-[#929292] hover:text-red-400 cursor-pointer transition-colors"
+                            className="p-1.5 text-[#B5B5B5] hover:text-red-400 cursor-pointer transition-colors"
                             title="Remover categoria personalizada"
                           >
-                            <Trash2 className="w-3.5 h-3.5 stroke-[1.35]" />
+                            <Trash2 className="w-4 h-4 stroke-[2]" />
                           </button>
                         </>
                       ) : (
-                        <span className="text-[10px] text-[#6E6E6E] uppercase tracking-[0.12em] font-light">
+                        <span className="text-xs text-[#B5B5B5] uppercase tracking-wider font-semibold">
                           Padrão
                         </span>
                       )}
@@ -490,19 +500,19 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
           {/* TAB 4: SEGURANÇA ADMIN */}
           {activeTab === 'security' && (
             <div className="space-y-5">
-              <div className="p-4 bg-[#0A0A0A] rounded-lg border border-[#1E1E1E]">
-                <h3 className="text-xs font-normal text-[#EAE7E0] uppercase tracking-[0.12em] flex items-center gap-2">
-                  <ShieldAlert className="w-4 h-4 text-[#C6A75E] stroke-[1.35]" />
+              <div className="p-4 bg-[#0B0B0B] rounded-xl border border-[#262626]">
+                <h3 className="text-xs font-extrabold text-white uppercase tracking-wider flex items-center gap-2">
+                  <ShieldAlert className="w-4 h-4 text-[#FFD400] stroke-[2]" />
                   Alterar Senha do Administrador
                 </h3>
-                <p className="text-xs font-light text-[#929292] mt-1.5">
+                <p className="text-xs sm:text-sm font-medium text-[#B5B5B5] mt-1.5">
                   Defina uma nova senha para proteger o cadastro, edição e exclusão de referências.
                 </p>
               </div>
 
               <form onSubmit={handleChangePin} className="space-y-3.5 max-w-md">
                 <div>
-                  <label className="block text-xs font-light text-[#EAE7E0] mb-1">
+                  <label className="block text-xs font-bold text-white mb-1.5">
                     Nova Senha
                   </label>
                   <input
@@ -511,12 +521,12 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
                     onChange={(e) => setNewPin(e.target.value)}
                     placeholder="Mínimo 4 caracteres"
                     required
-                    className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] outline-none"
+                    className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border-2 border-[#2A2A2A] focus:border-[#FFD400] rounded-xl text-sm font-medium text-white outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-light text-[#EAE7E0] mb-1">
+                  <label className="block text-xs font-bold text-white mb-1.5">
                     Confirmar Nova Senha
                   </label>
                   <input
@@ -525,17 +535,17 @@ create policy "Permitir leitura publica de categorias" on public.categories for 
                     onChange={(e) => setConfirmPin(e.target.value)}
                     placeholder="Repita a nova senha"
                     required
-                    className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] outline-none"
+                    className="w-full px-3.5 py-2.5 bg-[#0B0B0B] border-2 border-[#2A2A2A] focus:border-[#FFD400] rounded-xl text-sm font-medium text-white outline-none"
                   />
                 </div>
 
                 {pinMessage && (
-                  <p className="text-xs font-light text-[#D5BD83]">{pinMessage}</p>
+                  <p className="text-xs sm:text-sm font-bold text-[#FFD400]">{pinMessage}</p>
                 )}
 
                 <button
                   type="submit"
-                  className="px-5 py-2.5 bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs rounded-md transition-colors cursor-pointer"
+                  className="px-5 py-2.5 bg-[#FFD400] hover:bg-[#FFCC00] text-[#080808] font-extrabold text-xs sm:text-sm rounded-xl transition-colors cursor-pointer"
                 >
                   Atualizar Senha
                 </button>
