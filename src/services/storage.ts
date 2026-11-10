@@ -3,6 +3,11 @@ import { SEED_PROMPTS } from '../data/seedPrompts';
 
 export const DEFAULT_CATEGORIES: Category[] = [
   { id: 'todas', name: 'Todas' },
+  { id: 'previas', name: 'PRÉVIAS' },
+  { id: 'aniversario-feminino', name: 'Aniversário Feminino' },
+  { id: 'aniversario-gospel-evangelico', name: 'Aniversário Gospel Evangélico' },
+  { id: 'profissional-feminino', name: 'Profissional Feminino' },
+  { id: 'ensaio-masculino-adulto', name: 'Ensaio Masculino Adulto' },
   { id: 'aniversario', name: 'Aniversário' },
   { id: 'casais', name: 'Casais' },
   { id: 'profissional', name: 'Profissional' },
@@ -47,8 +52,10 @@ export const INITIAL_REFERENCES: PhotoReference[] = SEED_PROMPTS.map((item) => (
 }));
 
 const STORAGE_KEYS = {
-  REFERENCES: 'wemedia_references_v7',
-  CATEGORIES: 'wemedia_categories_v2',
+  REFERENCES: 'wemedia_references_v8',
+  CATEGORIES: 'wemedia_categories_v3',
+  BACKUP_PRE_PREVIAS: 'wemedia_backup_pre_previas_v1',
+  RECLASS_52_V1: 'wemedia_reclass_52_v1',
   ADMIN_AUTH: 'wemedia_admin_auth_v1',
   ADMIN_PIN: 'wemedia_admin_pin_v1',
   SUPABASE_CONFIG: 'wemedia_supabase_config_v1',
@@ -82,18 +89,45 @@ class StorageService {
     const seedAniver = INITIAL_REFERENCES.find((r) => r.id === 'ref-2' || r.title === 'Aniversário Marrom');
 
     if (!refs || refs.length === 0) {
-      // Check previous storage versions to preserve user custom entries
-      const oldRefs =
-        this.getFromStorage<PhotoReference[]>('wemedia_references_v6', []) ||
-        this.getFromStorage<PhotoReference[]>('wemedia_references_v5', []) ||
-        this.getFromStorage<PhotoReference[]>('wemedia_references_v4', []) ||
-        this.getFromStorage<PhotoReference[]>('wemedia_references_v3', []);
+      // Check previous storage versions to preserve all existing & custom entries
+      const candidateKeys = [
+        'wemedia_references_v7',
+        'wemedia_references_v6',
+        'wemedia_references_v5',
+        'wemedia_references_v4',
+        'wemedia_references_v3',
+      ];
+      let oldRefs: PhotoReference[] = [];
+      for (const key of candidateKeys) {
+        const found = this.getFromStorage<PhotoReference[]>(key, []);
+        if (found && found.length > 0) {
+          oldRefs = found;
+          break;
+        }
+      }
 
       if (oldRefs && oldRefs.length > 0) {
-        refs = oldRefs.map((r) => {
-          let updated = { ...r };
+        // Transactional backup snapshot before reorganizing existing references into PRÉVIAS
+        const existingBackup = this.getFromStorage<unknown>(STORAGE_KEYS.BACKUP_PRE_PREVIAS, null);
+        if (!existingBackup) {
+          this.setInStorage(STORAGE_KEYS.BACKUP_PRE_PREVIAS, {
+            backedUpAt: new Date().toISOString(),
+            references: oldRefs,
+            categories: this.getFromStorage<Category[]>('wemedia_categories_v2', DEFAULT_CATEGORIES),
+          });
+        }
+
+        const migratedRefs = oldRefs.map((r) => {
+          let updated: PhotoReference = {
+            ...r,
+            category: 'PRÉVIAS',
+          };
           if (r.id === 'ref-1' || r.title === 'Profissional Masculino') {
-            updated = { ...updated, imageUrl: 'https://i.imgur.com/0alVVQK.jpeg', originalImage: 'https://i.imgur.com/0alVVQK.jpeg' };
+            updated = {
+              ...updated,
+              imageUrl: 'https://i.imgur.com/0alVVQK.jpeg',
+              originalImage: 'https://i.imgur.com/0alVVQK.jpeg',
+            };
           }
           if ((r.id === 'ref-2' || r.title === 'Aniversário Marrom') && seedAniver) {
             updated = { ...updated, prompt: seedAniver.prompt };
@@ -101,14 +135,23 @@ class StorageService {
           return updated;
         });
 
-        // Ensure newly introduced seeds (like ref-16) are merged into migrated storage
+        // Merge any missing seeds from INITIAL_REFERENCES without duplicating
         for (const seed of INITIAL_REFERENCES) {
-          const exists = refs.some(
-            (r) => r.id === seed.id || r.imageUrl === seed.imageUrl || (r.title === seed.title && r.category === seed.category)
+          const exists = migratedRefs.some(
+            (r) => r.id === seed.id || r.imageUrl === seed.imageUrl
           );
           if (!exists) {
-            refs.push(seed);
+            migratedRefs.push({ ...seed });
           }
+        }
+
+        // Integrity check before committing
+        const uniqueIds = new Set(migratedRefs.map((r) => r.id));
+        if (migratedRefs.length >= oldRefs.length && uniqueIds.size === migratedRefs.length) {
+          refs = migratedRefs;
+        } else {
+          // Rollback to safe copy preserving all oldRefs
+          refs = oldRefs;
         }
       } else {
         refs = [...INITIAL_REFERENCES];
@@ -117,8 +160,21 @@ class StorageService {
       return refs;
     }
 
-    // Ensure models are updated in existing storage cache
+    // Ensure known seed fixes stay applied without overriding categories of future commercial entries
     let hasUpdated = false;
+    const reclassDone = this.getFromStorage<string>(STORAGE_KEYS.RECLASS_52_V1, '') === 'done';
+
+    // Map ONLY the 52 new TXT references (ref-17..ref-68) by ID and Imgur URL (never by title)
+    const previasIds = new Set(
+      INITIAL_REFERENCES.slice(0, 16).map((s) => s.id)
+    );
+    const txtById = new Map<string, string>();
+    const txtByUrl = new Map<string, string>();
+    for (const seed of INITIAL_REFERENCES.slice(16)) {
+      txtById.set(seed.id, seed.category);
+      txtByUrl.set(seed.imageUrl, seed.category);
+    }
+
     refs = refs.map((r) => {
       let updated = { ...r };
       if ((r.id === 'ref-1' || r.title === 'Profissional Masculino') && r.imageUrl !== 'https://i.imgur.com/0alVVQK.jpeg') {
@@ -129,13 +185,22 @@ class StorageService {
         hasUpdated = true;
         updated = { ...updated, prompt: seedAniver.prompt };
       }
+
+      // One-time in-place correction of category for existing 52 TXT items (PRÉVIAS ref-1..ref-16 remain untouched)
+      if (!reclassDone && !previasIds.has(r.id)) {
+        const expectedCat = txtById.get(r.id) || txtByUrl.get(r.imageUrl);
+        if (expectedCat && r.category !== expectedCat) {
+          hasUpdated = true;
+          updated = { ...updated, category: expectedCat };
+        }
+      }
       return updated;
     });
 
-    // Check if any seed item is missing from refs and append
+    // Ensure no seed item is missing from refs
     for (const seed of INITIAL_REFERENCES) {
       const exists = refs.some(
-        (r) => r.id === seed.id || r.imageUrl === seed.imageUrl || (r.title === seed.title && r.category === seed.category)
+        (r) => r.id === seed.id || r.imageUrl === seed.imageUrl
       );
       if (!exists) {
         refs.push(seed);
@@ -145,6 +210,9 @@ class StorageService {
 
     if (hasUpdated) {
       this.setInStorage(STORAGE_KEYS.REFERENCES, refs);
+    }
+    if (!reclassDone) {
+      this.setInStorage(STORAGE_KEYS.RECLASS_52_V1, 'done');
     }
 
     return refs;
@@ -206,10 +274,88 @@ class StorageService {
   getCategories(): Category[] {
     const saved = this.getFromStorage<Category[]>(STORAGE_KEYS.CATEGORIES, []);
     if (!saved || saved.length === 0) {
-      this.setInStorage(STORAGE_KEYS.CATEGORIES, DEFAULT_CATEGORIES);
-      return DEFAULT_CATEGORIES;
+      const oldCategories = this.getFromStorage<Category[]>('wemedia_categories_v2', []);
+      const merged: Category[] = [...DEFAULT_CATEGORIES];
+
+      // Preserve any custom categories created previously
+      if (oldCategories && oldCategories.length > 0) {
+        for (const cat of oldCategories) {
+          const exists = merged.some(
+            (c) => c.id === cat.id || c.name.toLowerCase() === cat.name.toLowerCase()
+          );
+          if (!exists) {
+            merged.push(cat);
+          }
+        }
+      }
+
+      this.setInStorage(STORAGE_KEYS.CATEGORIES, merged);
+      return merged;
     }
-    return saved;
+
+    // Ensure PRÉVIAS, the 4 independent categories, and all original default categories remain present
+    let changed = false;
+    let result = [...saved];
+    if (!result.some((c) => c.name.toLowerCase() === 'prévia' || c.name.toLowerCase() === 'prévias')) {
+      const todasIdx = result.findIndex((c) => c.name.toLowerCase() === 'todas');
+      result.splice(todasIdx >= 0 ? todasIdx + 1 : 0, 0, { id: 'previas', name: 'PRÉVIAS' });
+      changed = true;
+    }
+
+    const requiredFour: Category[] = [
+      { id: 'aniversario-feminino', name: 'Aniversário Feminino' },
+      { id: 'aniversario-gospel-evangelico', name: 'Aniversário Gospel Evangélico' },
+      { id: 'profissional-feminino', name: 'Profissional Feminino' },
+      { id: 'ensaio-masculino-adulto', name: 'Ensaio Masculino Adulto' },
+    ];
+
+    for (const reqCat of requiredFour) {
+      if (!result.some((c) => c.name.toLowerCase() === reqCat.name.toLowerCase())) {
+        const previasIdx = result.findIndex((c) => c.name.toLowerCase() === 'prévias');
+        const insertAfter = previasIdx >= 0 ? previasIdx + 1 : 1;
+        result.splice(insertAfter, 0, reqCat);
+        changed = true;
+      }
+    }
+
+    // Ensure the 4 required categories appear right after PRÉVIAS if they were previously appended at the end
+    const previasIdx = result.findIndex((c) => c.name.toLowerCase() === 'prévias');
+    if (previasIdx >= 0) {
+      const targetOrder = requiredFour.map((c) => c.name.toLowerCase());
+      const currentSlice = result
+        .slice(previasIdx + 1, previasIdx + 1 + requiredFour.length)
+        .map((c) => c.name.toLowerCase());
+      const needsReorder = targetOrder.some((name, idx) => currentSlice[idx] !== name);
+      if (needsReorder) {
+        const extracted: Category[] = [];
+        result = result.filter((c) => {
+          const match = requiredFour.find((req) => req.name.toLowerCase() === c.name.toLowerCase());
+          if (match) {
+            extracted.push({ ...c, id: match.id, name: match.name });
+            return false;
+          }
+          return true;
+        });
+        const orderedFour = requiredFour.map(
+          (req) => extracted.find((e) => e.name.toLowerCase() === req.name.toLowerCase()) || req
+        );
+        const newPreviasIdx = result.findIndex((c) => c.name.toLowerCase() === 'prévias');
+        result.splice(newPreviasIdx + 1, 0, ...orderedFour);
+        changed = true;
+      }
+    }
+
+    for (const defCat of DEFAULT_CATEGORIES) {
+      if (!result.some((c) => c.name.toLowerCase() === defCat.name.toLowerCase())) {
+        result.push(defCat);
+        changed = true;
+      }
+    }
+    if (changed) {
+      this.setInStorage(STORAGE_KEYS.CATEGORIES, result);
+    }
+
+    return result;
   }
 
   addCategory(name: string): Category {

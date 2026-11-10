@@ -32,101 +32,112 @@ export const SearchBarAndFilters: React.FC<SearchBarAndFiltersProps> = ({
   onSortChange,
 }) => {
   return (
-    <div className="space-y-4 mb-8">
-      {/* Upper Bar: Search Input & Controls */}
+    <div className="space-y-6 mb-9">
+      {/* Linha Superior: Busca, Favoritos e Ordenação */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-        {/* Search Input */}
+        {/* Campo de Busca Minimalista */}
         <div className="relative flex-1">
-          <Search className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <Search className="w-4 h-4 text-[#6E6E6E] stroke-[1.35] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Buscar referências..."
-            className="w-full pl-10 pr-9 py-2.5 bg-[#141414] border border-[#262626] focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-lg text-sm text-white placeholder-neutral-500 outline-none transition-colors"
+            placeholder="Buscar referências, estilos ou prompts..."
+            className="w-full pl-10 pr-9 py-2.5 bg-[#111111] border border-[#222222] hover:border-[#2E2E2E] focus:border-[#C6A75E]/60 rounded-md text-xs sm:text-sm font-light text-[#EAE7E0] placeholder-[#6E6E6E] outline-none transition-colors duration-200"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-white p-0.5 cursor-pointer"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#929292] hover:text-[#EAE7E0] p-1 cursor-pointer transition-colors"
               title="Limpar busca"
             >
-              <X className="w-4 h-4" />
+              <X className="w-3.5 h-3.5 stroke-[1.5]" />
             </button>
           )}
         </div>
 
-        {/* Favorites and Sort Controls */}
+        {/* Controles Laterais: Favoritos e Ordenação */}
         <div className="flex items-center gap-2.5 shrink-0">
-          {/* Favorites Filter Button */}
           <button
             onClick={onToggleFavoritesFilter}
-            className={`flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg text-xs sm:text-sm font-medium border transition-all cursor-pointer ${
+            className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-md text-xs font-light border transition-colors duration-200 cursor-pointer whitespace-nowrap flex-1 sm:flex-initial ${
               showOnlyFavorites
-                ? 'bg-[#D4AF37]/15 border-[#D4AF37] text-[#D4AF37]'
-                : 'bg-[#141414] border-[#262626] text-neutral-300 hover:border-neutral-600 hover:text-white'
+                ? 'bg-[#C6A75E]/10 border-[#C6A75E]/50 text-[#D5BD83]'
+                : 'bg-[#111111] border-[#222222] text-[#EAE7E0] hover:border-[#343434]'
             }`}
             title="Filtrar apenas referências marcadas como favoritas"
           >
             <Star
-              className={`w-4 h-4 ${
-                showOnlyFavorites ? 'fill-[#D4AF37] text-[#D4AF37]' : 'text-neutral-400'
+              className={`w-3.5 h-3.5 stroke-[1.35] ${
+                showOnlyFavorites ? 'fill-[#C6A75E] text-[#C6A75E]' : 'text-[#929292]'
               }`}
             />
-            <span className="whitespace-nowrap">Favoritos</span>
-            <span className="tabular-nums opacity-80 text-xs">({favoritesCount})</span>
+            <span>Favoritos</span>
+            <span className="tabular-nums text-[11px] text-[#929292]">
+              {favoritesCount}
+            </span>
           </button>
 
-          {/* Sort Selector */}
-          <div className="relative">
+          <div className="relative flex-1 sm:flex-initial">
             <select
               value={sortBy}
               onChange={(e) => onSortChange(e.target.value as SortOption)}
-              className="appearance-none bg-[#141414] border border-[#262626] hover:border-neutral-600 focus:border-[#D4AF37] rounded-lg px-3.5 py-2.5 pr-8 text-xs sm:text-sm text-neutral-200 outline-none cursor-pointer"
+              aria-label="Ordenar referências"
+              className="w-full appearance-none bg-[#111111] border border-[#222222] hover:border-[#343434] focus:border-[#C6A75E]/60 rounded-md px-3.5 py-2.5 pr-9 text-xs font-light text-[#EAE7E0] outline-none cursor-pointer transition-colors duration-200"
             >
               <option value="recent">Mais recentes</option>
               <option value="oldest">Mais antigas</option>
               <option value="alphabetical">Ordem Alfabética</option>
               <option value="favorites">Favoritos primeiro</option>
             </select>
-            <ArrowUpDown className="w-3.5 h-3.5 text-neutral-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <ArrowUpDown className="w-3.5 h-3.5 text-[#6E6E6E] stroke-[1.35] absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
         </div>
       </div>
 
-      {/* Categories Bar: Horizontal scrollable segmented tabs */}
-      <div className="overflow-x-auto pb-1 scrollbar-none flex items-center gap-1.5 border-b border-[#1A1A1A]">
-        {categories.map((cat) => {
-          const isSelected = selectedCategory.toLowerCase() === cat.name.toLowerCase();
-          const count =
-            cat.name.toLowerCase() === 'todas'
-              ? totalCount
-              : categoryCounts[cat.name] || 0;
+      {/* Barra Editorial de Categorias */}
+      <nav
+        aria-label="Filtrar por categoria"
+        className="relative border-b border-[#1D1D1D]"
+      >
+        <div className="overflow-x-auto scrollbar-none flex items-center gap-1 sm:gap-2 -mb-px">
+          {categories.map((cat, index) => {
+            const isSelected = selectedCategory.toLowerCase() === cat.name.toLowerCase();
+            const count =
+              cat.name.toLowerCase() === 'todas'
+                ? totalCount
+                : categoryCounts[cat.name] || 0;
 
-          return (
-            <button
-              key={cat.id}
-              onClick={() => onSelectCategory(cat.name)}
-              className={`px-3 py-2 text-xs font-medium whitespace-nowrap transition-all border-b-2 cursor-pointer flex items-center gap-1.5 ${
-                isSelected
-                  ? 'border-[#D4AF37] text-[#D4AF37] font-semibold bg-[#D4AF37]/5'
-                  : 'border-transparent text-neutral-400 hover:text-neutral-200 hover:border-neutral-700'
-              }`}
-            >
-              <span>{cat.name}</span>
-              <span
-                className={`text-[11px] tabular-nums px-1.5 py-0.2 rounded-full ${
-                  isSelected
-                    ? 'bg-[#D4AF37]/20 text-[#D4AF37]'
-                    : 'bg-[#1F1F1F] text-neutral-500'
-                }`}
-              >
-                {count}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+            return (
+              <React.Fragment key={cat.id}>
+                {index > 0 && (
+                  <span
+                    className="h-3 w-px bg-[#1E1E1E] shrink-0 hidden sm:inline-block"
+                    aria-hidden="true"
+                  />
+                )}
+                <button
+                  onClick={() => onSelectCategory(cat.name)}
+                  className={`px-2.5 sm:px-3 py-3 text-xs tracking-[0.02em] whitespace-nowrap transition-colors duration-200 border-b cursor-pointer flex items-baseline gap-1.5 shrink-0 ${
+                    isSelected
+                      ? 'border-[#C6A75E] text-[#D5BD83] font-normal'
+                      : 'border-transparent text-[#929292] hover:text-[#EAE7E0] font-light'
+                  }`}
+                >
+                  <span>{cat.name}</span>
+                  <span
+                    className={`text-[10px] tabular-nums transition-colors ${
+                      isSelected ? 'text-[#C6A75E]' : 'text-[#636363]'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </nav>
     </div>
   );
 };

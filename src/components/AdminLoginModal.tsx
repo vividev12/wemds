@@ -37,29 +37,29 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050505]/85 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md bg-[#141414] border border-[#2B2B2B] rounded-2xl overflow-hidden shadow-2xl p-6 sm:p-7"
+        className="relative w-full max-w-md bg-[#121212] border border-[#242424] rounded-xl overflow-hidden shadow-2xl p-6 sm:p-7"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-neutral-400 hover:text-white p-1 rounded-lg hover:bg-[#202020] transition-colors cursor-pointer"
+          className="absolute top-4 right-4 text-[#929292] hover:text-[#EAE7E0] p-1.5 rounded-md hover:bg-[#1B1B1B] transition-colors cursor-pointer"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 stroke-[1.5]" />
         </button>
 
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37]">
-            <Lock className="w-5 h-5" />
+        <div className="flex items-center gap-3.5 mb-5">
+          <div className="w-10 h-10 rounded-lg bg-[#C6A75E]/10 border border-[#C6A75E]/25 flex items-center justify-center text-[#C6A75E]">
+            <Lock className="w-4 h-4 stroke-[1.35]" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-white font-display">
+            <h3 className="font-display text-2xl font-normal text-[#EAE7E0] leading-none">
               Acesso Administrativo
             </h3>
-            <p className="text-xs text-neutral-400">
+            <p className="text-xs font-light text-[#929292] mt-1.5">
               Área restrita ao proprietário do catálogo
             </p>
           </div>
@@ -67,11 +67,11 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-medium text-neutral-300 mb-1.5">
+            <label className="block text-xs font-light text-[#EAE7E0] mb-1.5">
               Senha / Chave de Acesso
             </label>
             <div className="relative">
-              <KeyRound className="w-4 h-4 text-neutral-500 absolute left-3 top-1/2 -translate-y-1/2" />
+              <KeyRound className="w-4 h-4 text-[#6E6E6E] stroke-[1.35] absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="password"
                 value={pin}
@@ -79,30 +79,34 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
                   setPin(e.target.value);
                   setError(false);
                 }}
-                placeholder="Digite sua senha de admin..."
+                placeholder="Digite sua senha de administrador..."
                 autoFocus
                 required
-                className="w-full pl-9 pr-3.5 py-2.5 bg-[#0E0E0E] border border-[#2A2A2A] focus:border-[#D4AF37] rounded-lg text-sm text-white placeholder-neutral-600 outline-none transition-colors"
+                className="w-full pl-9 pr-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-sm font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none transition-colors"
               />
             </div>
             {error && (
-              <div className="flex items-center gap-1.5 text-xs text-red-400 mt-2">
-                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
-                <span>Senha incorreta. Tente novamente ou use a senha padrão.</span>
+              <div className="flex items-center gap-1.5 text-xs font-light text-red-400 mt-2">
+                <AlertCircle className="w-3.5 h-3.5 shrink-0 stroke-[1.5]" />
+                <span>Senha incorreta. Tente novamente ou utilize a senha padrão.</span>
               </div>
             )}
             {success && (
-              <div className="flex items-center gap-1.5 text-xs text-[#55D833] mt-2">
-                <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                <span>Autenticado com sucesso! Carregando ferramentas...</span>
+              <div className="flex items-center gap-1.5 text-xs font-light text-[#9ED890] mt-2">
+                <CheckCircle2 className="w-3.5 h-3.5 shrink-0 stroke-[1.5]" />
+                <span>Autenticado com sucesso. Carregando painel...</span>
               </div>
             )}
           </div>
 
-          <div className="p-3 bg-[#0A0A0A] border border-[#1F1F1F] rounded-lg text-xs text-neutral-400">
-            <p className="font-medium text-neutral-300">Dica de primeiro acesso:</p>
-            <p className="text-[11px] mt-0.5">
-              A senha padrão inicial é <code className="text-[#D4AF37] font-mono font-bold bg-[#1A1A1A] px-1 py-0.5 rounded">{DEFAULT_ADMIN_PIN}</code>. Você pode alterá-la no menu de configurações a qualquer momento.
+          <div className="p-3.5 bg-[#0A0A0A] border border-[#1E1E1E] rounded-md text-xs font-light text-[#929292]">
+            <p className="text-[#EAE7E0] font-normal">Primeiro acesso</p>
+            <p className="text-[11px] mt-1 leading-relaxed">
+              A senha padrão inicial é{' '}
+              <code className="text-[#D5BD83] font-mono bg-[#171717] px-1.5 py-0.5 rounded border border-[#242424]">
+                {DEFAULT_ADMIN_PIN}
+              </code>
+              . Você pode alterá-la a qualquer momento em Configurações.
             </p>
           </div>
 
@@ -110,13 +114,13 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-lg border border-[#262626] text-neutral-300 hover:text-white text-xs font-medium cursor-pointer"
+              className="px-4 py-2 rounded-md border border-[#242424] hover:border-[#343434] text-[#929292] hover:text-[#EAE7E0] text-xs font-light cursor-pointer transition-colors"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] text-black font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+              className="px-5 py-2 rounded-md bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs uppercase tracking-[0.1em] transition-colors cursor-pointer"
             >
               Entrar
             </button>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Upload, Image as ImageIcon, Plus, Check, Link as LinkIcon } from 'lucide-react';
+import { X, Upload, Plus, Check } from 'lucide-react';
 import { PhotoReference, Category } from '../types';
 import { resolveImgurUrl } from '../services/storage';
 
@@ -129,60 +129,59 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-sm overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#050505]/88 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-[#141414] border border-[#2B2B2B] rounded-2xl overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] flex flex-col my-auto"
+        className="relative w-full max-w-2xl bg-[#121212] border border-[#242424] rounded-xl overflow-hidden shadow-2xl p-6 sm:p-8 max-h-[92vh] flex flex-col my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#222222]">
+        <div className="flex items-center justify-between pb-4 border-b border-[#1E1E1E]">
           <div>
-            <h2 className="text-lg sm:text-xl font-bold text-white font-display flex items-center gap-2">
-              <span className="text-[#D4AF37]">✦</span>
+            <h2 className="font-display text-2xl font-normal text-[#EAE7E0]">
               {isEditing ? 'Editar Referência' : 'Adicionar Nova Referência'}
             </h2>
-            <p className="text-xs text-neutral-400 mt-0.5">
-              Cadastre a fotografia e associe permanentemente o prompt correspondente.
+            <p className="text-xs font-light text-[#929292] mt-1">
+              Cadastre a fotografia e associe integralmente o prompt correspondente.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-neutral-400 hover:text-white hover:bg-[#202020] transition-colors cursor-pointer"
+            className="p-1.5 rounded-md text-[#929292] hover:text-[#EAE7E0] hover:bg-[#1B1B1B] transition-colors cursor-pointer"
           >
-            <X className="w-5 h-5" />
+            <X className="w-4 h-4 stroke-[1.5]" />
           </button>
         </div>
 
         {/* Form Body */}
-        <form onSubmit={handleSubmit} className="space-y-4 pt-4 overflow-y-auto flex-1 pr-1">
+        <form onSubmit={handleSubmit} className="space-y-4 pt-5 overflow-y-auto flex-1 pr-1">
           {/* 1. Upload da Foto */}
           <div>
-            <div className="flex items-center justify-between mb-1.5">
-              <label className="text-xs font-semibold text-neutral-300 uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-2">
+              <label className="text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.12em]">
                 1. Foto de Referência *
               </label>
-              <div className="flex items-center gap-2 text-xs">
+              <div className="flex items-center gap-2 text-xs font-light">
                 <button
                   type="button"
                   onClick={() => setUploadMode('file')}
                   className={`cursor-pointer px-2 py-0.5 rounded transition-colors ${
                     uploadMode === 'file'
-                      ? 'bg-[#D4AF37]/20 text-[#D4AF37]'
-                      : 'text-neutral-500 hover:text-neutral-300'
+                      ? 'bg-[#C6A75E]/15 text-[#D5BD83]'
+                      : 'text-[#929292] hover:text-[#EAE7E0]'
                   }`}
                 >
                   Arquivo do Computador
                 </button>
-                <span className="text-neutral-600">·</span>
+                <span className="text-[#454545]">·</span>
                 <button
                   type="button"
                   onClick={() => setUploadMode('url')}
                   className={`cursor-pointer px-2 py-0.5 rounded transition-colors ${
                     uploadMode === 'url'
-                      ? 'bg-[#D4AF37]/20 text-[#D4AF37]'
-                      : 'text-neutral-500 hover:text-neutral-300'
+                      ? 'bg-[#C6A75E]/15 text-[#D5BD83]'
+                      : 'text-[#929292] hover:text-[#EAE7E0]'
                   }`}
                 >
                   URL da Web
@@ -199,12 +198,12 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
                 onDragLeave={() => setIsDragging(false)}
                 onDrop={handleDrop}
                 onClick={() => fileInputRef.current?.click()}
-                className={`relative border-2 border-dashed rounded-xl p-4 sm:p-6 text-center cursor-pointer transition-all ${
+                className={`relative border border-dashed rounded-lg p-5 text-center cursor-pointer transition-colors ${
                   isDragging
-                    ? 'border-[#D4AF37] bg-[#D4AF37]/10'
+                    ? 'border-[#C6A75E] bg-[#C6A75E]/10'
                     : imageUrl
-                    ? 'border-[#333333] bg-[#0E0E0E]'
-                    : 'border-[#262626] hover:border-[#D4AF37]/60 bg-[#111111]'
+                    ? 'border-[#2E2E2E] bg-[#0A0A0A]'
+                    : 'border-[#262626] hover:border-[#C6A75E]/50 bg-[#0D0D0D]'
                 }`}
               >
                 <input
@@ -224,23 +223,24 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
                     <img
                       src={imageUrl}
                       alt="Prévia"
-                      className="w-20 h-24 object-cover rounded-lg border border-[#333333] shadow"
+                      referrerPolicy="no-referrer"
+                      className="w-20 h-24 object-cover rounded border border-[#2C2C2C]"
                     />
                     <div className="text-left">
-                      <p className="text-xs font-semibold text-white">Foto carregada</p>
-                      <p className="text-[11px] text-neutral-400 mt-0.5">
+                      <p className="text-xs font-normal text-[#EAE7E0]">Foto carregada</p>
+                      <p className="text-[11px] font-light text-[#929292] mt-0.5">
                         Clique ou arraste outro arquivo para substituir
                       </p>
                     </div>
                   </div>
                 ) : (
                   <div className="flex flex-col items-center">
-                    <Upload className="w-8 h-8 text-[#D4AF37] mb-2 stroke-[1.5]" />
-                    <p className="text-xs text-neutral-300 font-medium">
+                    <Upload className="w-7 h-7 text-[#C6A75E] mb-2 stroke-[1.25]" />
+                    <p className="text-xs text-[#EAE7E0] font-light">
                       Clique para escolher a foto ou arraste o arquivo aqui
                     </p>
-                    <p className="text-[11px] text-neutral-500 mt-1">
-                      Suporta JPG, PNG, WEBP em alta resolução
+                    <p className="text-[11px] text-[#6E6E6E] font-light mt-1">
+                      Suporta JPG, PNG e WEBP em alta resolução
                     </p>
                   </div>
                 )}
@@ -250,29 +250,27 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
                 <input
                   type="text"
                   value={imageUrl}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    setImageUrl(val);
-                  }}
-                  placeholder="Link do Imgur ou URL direta (ex: https://i.imgur.com/... ou https://imgur.com/a/...)"
-                  className="w-full px-3.5 py-2.5 bg-[#101010] border border-[#2A2A2A] focus:border-[#D4AF37] rounded-lg text-xs text-white placeholder-neutral-500 outline-none"
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="Link do Imgur ou URL direta (ex: https://i.imgur.com/...)"
+                  className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none"
                 />
-                <p className="text-[11px] text-neutral-500">
+                <p className="text-[11px] font-light text-[#7A7A7A]">
                   Suporta links de álbuns ou imagens diretas do Imgur, ou qualquer URL HTTPS.
                 </p>
                 {imageUrl && (
-                  <div className="flex items-center gap-3 p-2.5 bg-[#0E0E0E] rounded-lg border border-[#222222]">
+                  <div className="flex items-center gap-3 p-2.5 bg-[#0A0A0A] rounded-md border border-[#1E1E1E]">
                     <img
                       src={resolveImgurUrl(imageUrl)}
                       alt="Prévia"
-                      className="w-12 h-16 object-cover rounded border border-[#333333]"
+                      referrerPolicy="no-referrer"
+                      className="w-12 h-16 object-cover rounded border border-[#282828]"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}
                     />
                     <div className="text-left overflow-hidden">
-                      <span className="text-xs text-white font-medium block">Imagem pronta</span>
-                      <span className="text-[10px] text-neutral-400 font-mono truncate block">
+                      <span className="text-xs text-[#EAE7E0] font-normal block">Imagem pronta</span>
+                      <span className="text-[10px] text-[#929292] font-mono truncate block">
                         {resolveImgurUrl(imageUrl)}
                       </span>
                     </div>
@@ -284,7 +282,7 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
 
           {/* 2. Título da Fotografia */}
           <div>
-            <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.12em] mb-1.5">
               2. Título da Fotografia *
             </label>
             <input
@@ -293,24 +291,24 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Ex: Ensaio Editorial Alta Costura"
               required
-              className="w-full px-3.5 py-2.5 bg-[#101010] border border-[#2A2A2A] focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-lg text-sm text-white placeholder-neutral-600 outline-none"
+              className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-sm font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none"
             />
           </div>
 
           {/* 3. Categoria */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-xs font-semibold text-neutral-300 uppercase tracking-wider">
+              <label className="text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.12em]">
                 3. Categoria *
               </label>
               {!isCreatingCategory ? (
                 <button
                   type="button"
                   onClick={() => setIsCreatingCategory(true)}
-                  className="text-xs text-[#D4AF37] hover:underline flex items-center gap-1 cursor-pointer"
+                  className="text-xs font-light text-[#D5BD83] hover:underline flex items-center gap-1 cursor-pointer"
                 >
-                  <Plus className="w-3.5 h-3.5" />
-                  + Nova Categoria
+                  <Plus className="w-3.5 h-3.5 stroke-[1.5]" />
+                  <span>Nova Categoria</span>
                 </button>
               ) : null}
             </div>
@@ -322,19 +320,19 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
                   value={newCategoryName}
                   onChange={(e) => setNewCategoryName(e.target.value)}
                   placeholder="Nome da nova categoria..."
-                  className="flex-1 px-3 py-2 bg-[#101010] border border-[#2A2A2A] focus:border-[#D4AF37] rounded-lg text-xs text-white outline-none"
+                  className="flex-1 px-3 py-2 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] outline-none"
                 />
                 <button
                   type="button"
                   onClick={handleCreateNewCategory}
-                  className="px-3 py-2 bg-[#D4AF37] text-black font-semibold text-xs rounded-lg hover:bg-[#E5C158] cursor-pointer"
+                  className="px-3 py-2 bg-[#C6A75E] text-[#0A0A0A] font-medium text-xs rounded-md hover:bg-[#D5BD83] cursor-pointer"
                 >
                   Criar
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsCreatingCategory(false)}
-                  className="px-2.5 py-2 bg-[#222222] text-neutral-400 hover:text-white text-xs rounded-lg cursor-pointer"
+                  className="px-2.5 py-2 bg-[#1B1B1B] text-[#929292] hover:text-[#EAE7E0] text-xs font-light rounded-md cursor-pointer"
                 >
                   Cancelar
                 </button>
@@ -343,7 +341,7 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-[#101010] border border-[#2A2A2A] focus:border-[#D4AF37] rounded-lg text-sm text-white outline-none cursor-pointer"
+                className="w-full px-3.5 py-2.5 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-sm font-light text-[#EAE7E0] outline-none cursor-pointer"
               >
                 {categories
                   .filter((c) => c.name.toLowerCase() !== 'todas')
@@ -356,13 +354,13 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
             )}
           </div>
 
-          {/* 4. Campo de Texto Grande para o Prompt Completo */}
+          {/* 4. Prompt Completo */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-xs font-semibold text-neutral-300 uppercase tracking-wider">
+              <label className="text-[11px] font-light text-[#EAE7E0] uppercase tracking-[0.12em]">
                 4. Prompt Completo *
               </label>
-              <span className="font-mono text-[11px] text-neutral-500">
+              <span className="font-mono text-[11px] font-light text-[#7A7A7A] tabular-nums">
                 {prompt.length} caracteres
               </span>
             </div>
@@ -370,41 +368,41 @@ export const ReferenceFormModal: React.FC<ReferenceFormModalProps> = ({
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               rows={6}
-              placeholder="Cole aqui o prompt integral (aceita prompts longos, múltiplos parágrafos, comandos como --ar 3:4, --v 6.1, --style raw, tags técnicas de iluminação e câmera)..."
+              placeholder="Cole aqui o prompt integral..."
               required
-              className="w-full px-3.5 py-3 bg-[#0E0E0E] border border-[#2A2A2A] focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-xl text-xs font-mono text-neutral-200 placeholder-neutral-600 outline-none leading-relaxed resize-y"
+              className="w-full px-3.5 py-3 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-mono font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none leading-relaxed resize-y"
             />
           </div>
 
           {/* 5. Notas / Observações de Uso (Opcional) */}
           <div>
-            <label className="block text-xs font-medium text-neutral-400 mb-1">
+            <label className="block text-xs font-light text-[#929292] mb-1">
               Notas adicionais (opcional)
             </label>
             <input
               type="text"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="Ex: Ensaio executivo, iluminação Rembrandt, lente 85mm"
-              className="w-full px-3.5 py-2 bg-[#101010] border border-[#2A2A2A] focus:border-[#D4AF37] rounded-lg text-xs text-white placeholder-neutral-600 outline-none"
+              placeholder="Ex: Ensaio executivo, iluminação suave, lente 85mm"
+              className="w-full px-3.5 py-2 bg-[#0A0A0A] border border-[#242424] focus:border-[#C6A75E]/60 rounded-md text-xs font-light text-[#EAE7E0] placeholder-[#5F5F5F] outline-none"
             />
           </div>
 
           {/* Footer Save Button */}
-          <div className="pt-4 border-t border-[#222222] flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-[#1E1E1E] flex items-center justify-end gap-2.5">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 rounded-lg border border-[#2A2A2A] text-neutral-300 hover:text-white hover:bg-[#1A1A1A] text-xs font-medium transition-colors cursor-pointer"
+              className="px-4 py-2.5 rounded-md border border-[#242424] text-[#929292] hover:text-[#EAE7E0] hover:bg-[#181818] text-xs font-light transition-colors cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] active:bg-[#C5A028] text-black font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md cursor-pointer flex items-center gap-1.5"
+              className="px-5 py-2.5 rounded-md bg-[#C6A75E] hover:bg-[#D5BD83] active:bg-[#B2934B] text-[#0A0A0A] font-medium text-xs uppercase tracking-[0.1em] transition-colors cursor-pointer flex items-center gap-1.5"
             >
-              <Check className="w-4 h-4 stroke-[2.5]" />
-              <span>{isEditing ? 'SALVAR ALTERAÇÕES' : 'SALVAR REFERÊNCIA'}</span>
+              <Check className="w-3.5 h-3.5 stroke-[2]" />
+              <span>{isEditing ? 'Salvar Alterações' : 'Salvar Referência'}</span>
             </button>
           </div>
         </form>

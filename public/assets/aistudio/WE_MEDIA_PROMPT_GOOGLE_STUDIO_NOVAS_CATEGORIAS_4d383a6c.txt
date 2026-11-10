@@ -1,0 +1,1462 @@
+WE MEDIA PRÉVIAS — PACOTE DE CADASTRO DE NOVAS CATEGORIAS
+PROMPT DE IMPLEMENTAÇÃO PARA GOOGLE AI STUDIO / GOOGLE STUDIO
+
+OBJETIVO
+Adicionar ao catálogo existente quatro categorias novas, com todas as referências, imagens de prévia hospedadas no Imgur, títulos e prompts completos fornecidos neste arquivo.
+
+REGRA ABSOLUTA: NÃO MODIFICAR A ESTRUTURA ATUAL DO SITE.
+Este trabalho é exclusivamente de cadastro de conteúdo. Não redesenhar, refatorar, reorganizar, renomear, excluir ou alterar qualquer parte não solicitada.
+
+CATEGORIAS A CRIAR
+1. Aniversário Feminino
+2. Aniversário Gospel Evangélico
+3. Profissional Feminino
+4. Ensaio Masculino Adulto
+
+REGRAS OBRIGATÓRIAS DE IMPLEMENTAÇÃO
+1. Antes de alterar qualquer coisa, inspecione o projeto e identifique como as categorias, cards, imagens, títulos e prompts são cadastrados atualmente.
+2. Preserve integralmente o layout, identidade visual, navegação, componentes, responsividade existente, filtros, busca, ordenação, favoritos, modal/detalhes, botão de copiar prompt e todas as demais funcionalidades.
+3. NÃO ALTERE a categoria "Prévias", nem qualquer conteúdo, imagem, prompt, registro, ordem ou vínculo que já exista dentro dela.
+4. NÃO mova, copie, exclua ou recategorize nenhum item que já esteja na categoria "Prévias" ou em outras categorias atuais.
+5. Não apague nem renomeie categorias existentes. Apenas crie as quatro categorias listadas, caso ainda não existam. Se já existirem, acrescente somente os itens correspondentes, evitando duplicatas.
+6. Cadastre cada item exclusivamente na categoria indicada no título da seção deste arquivo.
+7. Para cada item, use o título do prompt como título do card, a URL Imgur indicada como imagem de prévia e o texto integral como prompt copiável.
+8. Use as URLs Imgur exatamente como fornecidas. Não baixe, reenvie, converta, comprima, edite, substitua ou invente imagens. A prévia deve carregar diretamente da URL indicada.
+9. Preserve o texto integral de cada prompt, inclusive idioma, pontuação, números, instruções e detalhes. Não traduza, resuma, corrija, reescreva ou combine prompts.
+10. A URL deve alimentar a imagem do card; o prompt deve alimentar o campo de texto copiado. Não inclua a URL dentro do texto copiado.
+11. Se a estrutura atual usar banco de dados, siga o modelo existente e faça inserções compatíveis, preservando IDs e registros antigos. Se usar arquivos locais ou configuração estática, siga o padrão atual sem introduzir nova arquitetura.
+12. Não adicione dependências, serviços, autenticação, tabelas ou infraestrutura novas, salvo se forem estritamente indispensáveis ao mecanismo já existente. Prefira a solução de menor impacto.
+13. Não altere estilos globais, dimensões dos cards, tipografia, cores, espaçamentos, cabeçalho, rodapé ou comportamento mobile. As novas categorias devem herdar automaticamente o mesmo padrão visual das categorias atuais.
+14. Não publique/deploy automaticamente. Primeiro implemente e valide no projeto; aguarde autorização para publicar, se publicação for uma etapa separada.
+
+VALIDAÇÃO OBRIGATÓRIA
+- Confirmar que as quatro categorias aparecem na navegação exatamente com os nomes definidos.
+- Confirmar a quantidade de itens cadastrados em cada categoria.
+- Confirmar que cada card mostra a imagem correta do Imgur.
+- Abrir cada item e verificar que o prompt completo está associado à imagem correta.
+- Testar o botão de copiar prompt em pelo menos um item de cada categoria e verificar que copia o texto integral, sem incluir a URL da imagem.
+- Verificar que não há imagens quebradas, cards duplicados ou prompts truncados.
+- Confirmar que a categoria "Prévias" permanece exatamente como estava antes: mesmos itens, imagens, prompts, ordem e quantidade.
+- Confirmar que todas as demais categorias e funcionalidades existentes continuam inalteradas.
+- Testar desktop e mobile sem alterar o design existente.
+- Apresentar relatório final com totais por categoria, testes realizados e arquivos/banco de dados alterados.
+
+========================
+DADOS PARA CADASTRO
+========================
+
+
+############################################################
+CATEGORIA: Aniversário Feminino
+TOTAL DE ITENS NESTA CATEGORIA: 15
+############################################################
+
+--- ITEM 01 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: RED HEARTS BIRTHDAY CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/8iusZRP.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 01 — RED HEARTS BIRTHDAY CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic, luxurious full-body birthday photoshoot based on the attached pose reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the absolute identity reference. Preserve my exact facial features, eyes, nose, lips, face shape, skin tone, skin texture, hair color, hair length, hair texture, and natural body proportions. Do not modify my identity or physical appearance.
+
+POSE: Standing confidently with one hand resting on the waist and the opposite arm relaxed beside the body. Legs elegantly crossed at the ankles, facing the camera with a sophisticated expression. Full-body vertical composition.
+
+OUTFIT: Luxurious deep red satin strapless mini dress with a sweetheart neckline, fitted bodice, gathered bust detail, and dramatic layered ruffled skirt. Delicate pearl necklace, gold bracelet, and elegant gold ankle-strap high heels.
+
+BACKGROUND: Romantic birthday studio decorated with numerous shiny metallic red heart-shaped helium balloons at different heights, some floating and others scattered across the floor. A white cylindrical pedestal on the left holds a white birthday cake decorated with tiny red hearts, red ribbon details, and several lit candles. Large red satin bow attached to the pedestal. Small red heart confetti scattered across the beige floor. Warm taupe studio background.
+
+LIGHTING: Warm professional studio lighting with soft frontal illumination and subtle highlights on the reflective red balloons and satin dress.
+
+CAMERA: Full-frame DSLR, 50mm lens, f/3.5, full-body vertical portrait, realistic proportions, sharp facial focus, luxury birthday editorial photography, cinematic color grading, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 02 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: CHAMPAGNE AND 35TH BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/WWrxaEI.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 02 — CHAMPAGNE AND 35TH BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, hyper-realistic birthday lifestyle portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial anatomy, skin tone, natural skin texture, hair color, hairstyle, and body structure. No facial alterations or artificial beauty filters.
+
+POSE: Sitting on a small elegant wooden stool with legs crossed comfortably. One hand holding a delicate champagne coupe glass raised near shoulder level, while the other hand supports a round birthday cake on a white serving plate. Looking directly into the camera with a beautiful natural smile.
+
+OUTFIT: Relaxed elegant white oversized button-down shirt with an open collar and rolled sleeves, paired with classic high-waisted blue denim jeans. Delicate gold necklace, small gold hoop earrings, and understated jewelry.
+
+BACKGROUND: Romantic birthday studio with soft cream curtains and a luxurious white textured fabric backdrop. Rose-gold metallic balloons grouped on the right, including transparent balloons with delicate confetti. A beautiful white birthday cake decorated with pink flowers, delicate pearl details, and two illuminated rose-gold number candles reading 35.
+
+LIGHTING: Soft diffused warm studio lighting, natural facial highlights, gentle shadows, creamy beige and rose-gold tones.
+
+CAMERA: Professional mirrorless camera, 50mm lens, f/2.8, medium full-body seated composition, sharp facial details, elegant lifestyle birthday photography, 8K realism.
+
+
+==================================================
+
+--- ITEM 03 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: GOLD GLAMOUR 35TH BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/nYOSZF5.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 03 — GOLD GLAMOUR 35TH BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury birthday portrait inspired by the attached pose reference.
+
+IDENTITY PRESERVATION: Maintain my original face, skin color, natural skin texture, eyes, nose, lips, smile, hairstyle, hair color, and body proportions exactly as in my uploaded photograph.
+
+POSE: Seated facing the camera, holding a luxurious gold birthday cake with both hands at waist-to-chest height. Arms extended slightly forward to present the cake. Shoulders relaxed, posture elegant, looking directly at the camera with a warm smile.
+
+OUTFIT: Elegant sleeveless champagne-gold or ivory fitted top paired with sophisticated high-waisted ivory tailored trousers. Delicate gold jewelry and elegant manicure.
+
+CAKE: Cylindrical metallic gold birthday cake with luxurious textured gold frosting, black satin ribbon bows on the front, delicate pearl and gold decorative details, and two illuminated gold number candles reading 35. The cake must remain clearly visible.
+
+BACKGROUND: Glamorous birthday studio with large gold metallic balloons, champagne-colored balloons, warm golden decorative lights, and softly blurred festive details. Elegant neutral beige and gold palette.
+
+LIGHTING: Warm golden studio lighting, soft frontal illumination, delicate highlights on the metallic cake and balloons, natural skin tones.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.2, medium portrait framing, sharp face and cake focus, cinematic luxury birthday campaign, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 04 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: BIRTHDAY CANDLES 30
+IMAGEM_PREVIA_URL: https://i.imgur.com/vby5EVy.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 04 — BIRTHDAY CANDLES 30 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic emotional birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Keep my original facial identity, skin tone, facial features, hair color, hair texture, and body proportions completely unchanged. Use my uploaded face photograph as the identity source.
+
+POSE: Both arms extended toward the camera, hands holding two separate metallic gold number candles reading 30. The candles are positioned prominently in the foreground, with both flames lit. Fingers naturally holding the candles, shoulders relaxed, looking toward the camera with a gentle happy smile.
+
+OUTFIT: Elegant sleeveless ivory or cream dress with a refined neckline. Delicate gold bracelet and subtle rings.
+
+BACKGROUND: Deep black minimalist photography studio, creating dramatic contrast with the illuminated candles and subject.
+
+LIGHTING: Dramatic low-key studio lighting with warm illumination on the face and hands. Candle flames produce realistic golden reflections. Background remains deep black.
+
+CAMERA: Professional DSLR, 85mm lens, f/1.8, close-up portrait with strong foreground emphasis, shallow depth of field. The gold number candles and hands should be prominent, with the face softly visible behind them. Cinematic birthday photography, 8K realism.
+
+
+==================================================
+
+--- ITEM 05 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: BLACK EXECUTIVE BIRTHDAY EDITORIAL
+IMAGEM_PREVIA_URL: https://i.imgur.com/67wtbdB.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 05 — BLACK EXECUTIVE BIRTHDAY EDITORIAL 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, ultra-realistic fashion birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my original facial identity, natural facial features, skin tone, hair color, hair texture, and body proportions. Keep my face unchanged. Sunglasses are part of the styling and must not replace or modify my natural facial identity.
+
+POSE: Kneeling elegantly on one knee, with the opposite knee raised and legs positioned in a sophisticated fashion pose. Holding a small round chocolate birthday cake with both hands at waist height. Wearing black sunglasses and looking toward the camera with a confident smile.
+
+OUTFIT: Oversized black tailored blazer worn as a chic mini dress, with structured shoulders and refined lapels. Sheer black translucent pantyhose and glossy black pointed-toe stiletto pumps. Black rectangular sunglasses and delicate jewelry.
+
+CAKE: Small dark chocolate cake decorated with chocolate frosting details and two small dark number candles reading 28.
+
+BACKGROUND: Minimalist seamless light gray studio backdrop and matching gray floor. No additional decorations. Clean high-fashion editorial atmosphere.
+
+LIGHTING: Soft professional studio lighting with subtle shadows, balanced exposure, and elegant contrast against the black outfit.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/3.2, full-body fashion composition, editorial magazine aesthetic, sharp details, realistic materials, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 06 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: RED DRESS WITH HEART CAKE
+IMAGEM_PREVIA_URL: https://i.imgur.com/Z24P14u.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 06 — RED DRESS WITH HEART CAKE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic romantic birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial features, skin tone, natural skin texture, hair color, hair length, hair texture, and body proportions. Do not change my identity.
+
+POSE: Standing upright, facing the camera, holding a white round serving plate with both hands at chest level. The plate presents two small white heart-shaped birthday cakes. A lit sparkler positioned behind the cakes creates a beautiful festive effect. Direct eye contact and a calm, elegant expression.
+
+OUTFIT: Luxurious red satin strapless dress with a sweetheart neckline and gathered bust detail. Elegant fitted silhouette. Delicate pearl or crystal necklace, matching bracelet, and subtle earrings.
+
+CAKE: Two small white heart-shaped cakes decorated with red satin bows, tiny red hearts, delicate white frosting, and elegant details. Bright sparkling fountain candle behind the cakes.
+
+BACKGROUND: Warm beige and taupe birthday photography studio, with a softly blurred neutral background.
+
+LIGHTING: Soft warm studio illumination with additional golden sparkler light illuminating the cake and hands. Natural skin highlights and elegant shadows.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.2, medium close-up portrait, sharp focus on face and cake, realistic sparkler particles, luxury birthday editorial, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 07 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: CASUAL CHIC 40TH BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/QBAOPUo.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 07 — CASUAL CHIC 40TH BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic elegant birthday lifestyle portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my original face, skin tone, facial anatomy, natural hair color, hairstyle, hair texture, and body proportions exactly. No facial modifications or artificial enhancements.
+
+POSE: Sitting comfortably on a low stool or soft seating, legs crossed naturally. One hand raised near the side of the head, gently supporting the temple, while the other arm rests naturally across the raised knee. Smiling warmly at the camera. A birthday cake sits on the floor in front of the subject.
+
+OUTFIT: Oversized crisp white button-down shirt with rolled sleeves and an open collar, paired with relaxed light-blue wide-leg denim jeans. Elegant strappy silver or crystal high-heeled sandals and delicate jewelry.
+
+CAKE: White round birthday cake decorated with delicate pink hearts and subtle pearl details. Two illuminated number candles reading 40.
+
+BACKGROUND: Romantic minimalist studio with soft pale pink and cream tones, fluffy white rug covering the floor, subtle beige decorative details. A rose-gold champagne bottle positioned on the left with a delicate champagne glass nearby.
+
+LIGHTING: Soft warm diffused studio lighting with a romantic atmosphere, gentle highlights, and delicate natural shadows.
+
+CAMERA: Professional mirrorless camera, 50mm lens, f/2.8, full-body seated composition, realistic skin texture, luxury casual birthday photography, 8K quality.
+
+
+==================================================
+
+--- ITEM 08 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: ELEGANT WHITE SUIT 40TH BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/2l5Vg1N.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 08 — ELEGANT WHITE SUIT 40TH BIRTHDAY 
+================================================== 
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated luxury birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original face photograph as the exact identity reference. Maintain my facial anatomy, skin tone, natural skin texture, hair color, hairstyle, and body proportions without alterations.
+
+POSE: Sitting elegantly in a luxurious brown upholstered armchair, holding a white birthday cake on a serving plate with both hands. The cake is positioned in front of the torso. Looking directly into the camera with a beautiful natural smile.
+
+OUTFIT: Elegant white tailored pantsuit consisting of a structured white blazer, matching white trousers, and a simple white inner top. Refined gold buttons and delicate gold jewelry.
+
+CAKE: White birthday cake decorated with subtle gold details, delicate pink floral accents, and two illuminated number candles reading 40.
+
+BACKGROUND: Warm elegant birthday studio with rose-gold metallic balloons grouped behind the subject. Soft neutral beige and champagne tones, luxurious brown armchair, and warm decorative details.
+
+LIGHTING: Warm soft studio lighting, flattering facial illumination, golden highlights on the balloons, and gentle background blur.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.2, medium seated portrait, sharp focus on face and cake, luxury birthday editorial photography, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 09 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: GOLDEN 60TH BIRTHDAY CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/V5h5CQo.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 09 — GOLDEN 60TH BIRTHDAY CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant, ultra-realistic 60th birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, natural facial features, skin tone, skin texture, hair color, natural curl pattern, hair volume, and body proportions. Do not change my identity or natural appearance.
+
+POSE: Standing or seated upright, holding a luxurious tall birthday cake on a serving plate with one hand and a lit sparkler in the other. The cake is presented prominently at chest height. Looking directly at the camera with a warm, joyful smile.
+
+OUTFIT: Elegant sleeveless ivory-white dress with a refined rounded neckline and sophisticated fitted silhouette. Delicate gold pendant necklace, bracelet, and understated gold jewelry.
+
+CAKE: Tall ivory-white birthday cake decorated with vertical delicate gold drips, white pearl details, gold spheres, and an elegant gold number topper reading 60.
+
+BACKGROUND: Luxurious birthday studio with champagne-gold and cream balloons, elegant white floral arrangements, subtle golden decorations, and a sophisticated warm beige backdrop.
+
+LIGHTING: Warm golden studio lighting with beautiful highlights on the cake and jewelry. Soft shadows and natural skin tones.
+
+CAMERA: Professional DSLR, 85mm lens, f/2.2, medium portrait framing, sharp facial details, detailed cake texture, elegant milestone birthday photography, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 10 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: RED BALLOON 43RD BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/vYbejR8.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 10 — RED BALLOON 43RD BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic cheerful birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Keep my original facial identity, natural features, skin tone, hair color, hairstyle, hair texture, and body proportions exactly unchanged.
+
+POSE: Sitting on a minimalist white geometric pedestal, legs crossed elegantly. One elbow slightly bent, with one hand gently supporting the side of the face. The opposite forearm rests naturally across the raised knee. Looking at the camera with a relaxed smile.
+
+OUTFIT: Elegant white off-the-shoulder blouse with voluminous sleeves and relaxed fit, paired with light-blue straight-leg denim jeans. Red strappy high-heeled sandals with delicate ankle straps. Subtle red manicure and delicate jewelry.
+
+CAKE: White birthday cake positioned on a small white pedestal beside the subject, decorated with red satin bows, tiny red hearts, and two illuminated number candles reading 43.
+
+BACKGROUND: Minimalist light gray and beige birthday studio. On the left, a cluster of metallic red balloons and transparent balloons filled with red confetti, tied with long red ribbons. Clean studio floor and elegant geometric pedestals.
+
+LIGHTING: Soft bright studio lighting, natural shadows, realistic highlights on metallic balloons and satin details.
+
+CAMERA: Full-frame mirrorless camera, 50mm lens, f/2.8, vertical three-quarter composition, sharp facial focus, modern birthday editorial, 8K realism.
+
+
+==================================================
+
+--- ITEM 11 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: PINK BIRTHDAY SPA PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/e5DRI3D.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 11 — PINK BIRTHDAY SPA PORTRAIT 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a beautiful, ultra-realistic feminine birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial features, skin tone, natural skin texture, hair color, hair length, hairstyle, and body structure. No identity changes or artificial beauty filters.
+
+POSE: Kneeling comfortably on a luxurious white bed, holding a round birthday cake with both hands at chest level. Looking directly into the camera with a warm, joyful smile. Relaxed shoulders and natural posture.
+
+OUTFIT: Luxurious fluffy white bathrobe with a soft plush texture, tied naturally at the waist. Elegant cozy birthday spa aesthetic.
+
+CAKE: Small round vibrant pink birthday cake with detailed floral decorations, delicate pink butterflies, and a bright lit sparkler on top.
+
+BACKGROUND: Romantic bedroom decorated with soft pink balloons scattered around the bed and floor. White bedding, elegant cream headboard, blush-pink cushions, and subtle warm bedside lighting. Feminine luxury birthday atmosphere.
+
+LIGHTING: Warm diffused indoor lighting combined with gentle sparkler illumination. Soft shadows, natural skin tones, delicate pink and cream color palette.
+
+CAMERA: Professional DSLR, 50mm lens, f/2.2, medium full-body seated composition, realistic plush fabric texture, sharp facial focus, luxury birthday lifestyle photography, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 12 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: OUTDOOR BLACK DRESS BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/wRnxKjs.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 12 — OUTDOOR BLACK DRESS BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic outdoor luxury birthday photoshoot based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact facial identity, skin tone, natural facial features, hair color, hair texture, and body proportions. Preserve all original physical characteristics.
+
+POSE: Standing elegantly on a garden pathway, holding several silver helium balloons with one hand while carrying a white birthday cake on a tray with the other. Body facing the camera, legs naturally positioned, shoulders relaxed, with a gentle confident smile.
+
+OUTFIT: Sophisticated black off-the-shoulder fitted midi dress with a clean neckline and elegant body-hugging silhouette. Black high-heeled ankle-strap sandals and delicate jewelry.
+
+CAKE: White birthday cake with elegant black heart decorations, small black details, and several lit candles.
+
+BACKGROUND: Beautiful outdoor garden with a natural stone pathway, lush green bushes, manicured shrubs, white flowers, and mature trees. A cluster of transparent and silver metallic balloons with silver ribbons floats beside the subject. Softly blurred green foliage in the distance.
+
+LIGHTING: Natural late-afternoon sunlight filtering through the trees, producing beautiful highlights and soft dappled shadows. Warm cinematic outdoor atmosphere.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.8, full-body vertical portrait, shallow depth of field, realistic greenery, cinematic lifestyle photography, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 13 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: ELEGANT WHITE FLOWER BOUQUET
+IMAGEM_PREVIA_URL: https://i.imgur.com/KBY4jit.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 13 — ELEGANT WHITE FLOWER BOUQUET 
+==================================================
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, ultra-realistic floral fashion portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the exact identity reference. Preserve my facial features, skin tone, hair color, hair length, hair texture, and natural body proportions. No facial changes or body modifications.
+
+POSE: Standing gracefully, facing the camera with a warm natural smile. Holding a large luxurious bouquet of white flowers with both hands at waist level. The bouquet is positioned slightly toward the left side of the body. Relaxed shoulders and elegant posture. Full-body vertical framing.
+
+OUTFIT: Elegant fitted ivory short-sleeved top with a simple rounded neckline. Long flowing ivory maxi skirt decorated with delicate golden botanical leaf patterns. Soft lightweight fabric with natural movement and an elegant flowing silhouette. Minimal gold jewelry.
+
+FLOWERS: Large bouquet of white roses, white hydrangeas, delicate small white blossoms, and natural green foliage. Stems gathered elegantly and held visibly in both hands.
+
+BACKGROUND: Warm beige minimalist photography studio with a seamless neutral wall and matching floor. Soft natural earthy color palette, clean and elegant atmosphere.
+
+LIGHTING: Soft warm studio lighting from the front-left, delicate highlights on the flowers and hair, natural shadows and balanced exposure.
+
+CAMERA: Professional full-frame camera, 50mm lens, f/3.2, full-body vertical portrait, sharp facial details, realistic floral textures, elegant editorial photography, 8K realism.
+
+
+==================================================
+
+--- ITEM 14 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: BLACK OFF-SHOULDER BIRTHDAY CAKE
+IMAGEM_PREVIA_URL: https://i.imgur.com/E2NezzI.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 14 — BLACK OFF-SHOULDER BIRTHDAY CAKE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic elegant birthday fashion portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original facial features, natural expression, skin tone, skin texture, hair color, hair length, hairstyle, and body proportions. Do not modify my identity.
+
+POSE: Standing facing the camera, holding a round white birthday cake with both hands at waist-to-chest level. Arms gently extended forward. Looking directly at the camera with a warm natural smile. Elegant upright posture.
+
+OUTFIT: Sophisticated black fitted off-the-shoulder dress with a structured neckline, long sheer mesh sleeves, and subtle ruched detailing along the waist and hips. Elegant feminine silhouette with a refined side slit. Minimal gold jewelry.
+
+CAKE: White round cake with delicate golden sprinkles and small elegant decorative details. A bright sparkler fountain candle is positioned in the center, creating a festive golden glow.
+
+BACKGROUND: Deep black seamless studio background. Minimalist dramatic birthday environment with no unnecessary decorations.
+
+LIGHTING: Cinematic low-key studio lighting, soft illumination on the face and dress, beautiful highlights on the hair, and warm sparkler light reflecting on the cake and hands. Deep black background.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.0, medium full-body portrait, sharp face and cake details, luxury birthday editorial photography, cinematic contrast, 8K photorealism.
+
+
+==================================================
+
+--- ITEM 15 ---
+CATEGORIA: Aniversário Feminino
+TÍTULO: BLACK DRESS HAPPY BIRTHDAY CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/czP6nsT.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 15 — BLACK DRESS HAPPY BIRTHDAY CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxurious birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original face photograph as the absolute identity reference. Maintain my exact facial features, skin tone, natural skin texture, eyes, nose, lips, hair color, hair texture, and body proportions. Do not modify my natural identity.
+
+POSE: Standing elegantly, facing the camera with a subtle confident smile. Holding a white birthday cake on a small serving tray with one hand while holding a cluster of white helium balloons with the opposite hand. Arms positioned naturally, with the cake presented slightly forward. Full-body vertical composition.
+
+OUTFIT: Sophisticated fitted black sleeveless dress with a high neckline, elegant body-hugging silhouette, and a refined side slit. Long black satin or velvet gloves extending above the wrists. Elegant black high heels. Minimal gold earrings and delicate jewelry.
+
+CAKE: Elegant white cylindrical birthday cake with black satin ribbon details and delicate black decorative elements. A lit sparkler fountain candle on top. The cake should display the words "Happy Birthday" in refined elegant lettering.
+
+BACKGROUND: Warm beige and taupe birthday studio with a minimalist architectural wall. Large white helium balloons grouped on the right side, each decorated with long black satin ribbons. Warm ambient light creates subtle shadows. Neutral studio floor.
+
+LIGHTING: Warm cinematic studio lighting, soft frontal illumination, beautiful highlights on the black dress and white balloons, natural skin tones, and delicate golden sparkler reflections.
+
+CAMERA: Professional full-frame DSLR or mirrorless camera, 85mm lens, f/2.2, vertical full-body portrait, eye-level perspective, sharp facial details, realistic fabric textures, luxury birthday fashion editorial, 8K photorealism.
+
+
+############################################################
+CATEGORIA: Aniversário Gospel Evangélico
+TOTAL DE ITENS NESTA CATEGORIA: 11
+############################################################
+
+--- ITEM 01 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: BURGUNDY AND GOLD BIRTHDAY ELEGANCE
+IMAGEM_PREVIA_URL: https://i.imgur.com/g7SRbn1.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 01 — BURGUNDY AND GOLD BIRTHDAY ELEGANCE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic, luxurious full-body birthday portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the absolute identity reference. Preserve my exact facial features, face shape, eyes, nose, lips, natural smile, skin tone, skin texture, hair color, hair length, hair texture, and natural body proportions. Do not modify my identity, age, or physical appearance.
+
+POSE: Standing confidently in the center of the composition, holding two groups of balloon ribbons, one in each hand. Both arms are slightly raised and extended outward. Shoulders relaxed, facing the camera with a warm smile. Full-body vertical framing.
+
+OUTFIT: Elegant deep burgundy-red tailored blazer with structured shoulders, classic lapels, and refined front pockets. Underneath, a luxurious champagne-gold metallic knit or satin blouse. Matching long burgundy fitted skirt with a flowing mermaid-style silhouette. Delicate gold bracelet and sophisticated jewelry.
+
+BACKGROUND: Luxurious birthday studio completely decorated with large glossy burgundy, dark red, and metallic red balloons. Balloons arranged at different heights around the subject, creating a dramatic festive atmosphere. Deep wine-red background and matching floor.
+
+LIGHTING: Warm professional studio lighting with soft frontal illumination and dramatic reflections on the glossy balloons. Rich burgundy tones, beautiful highlights on the golden blouse, and natural skin tones.
+
+CAMERA: Full-frame DSLR or mirrorless camera, 50mm lens, f/3.5, full-body vertical composition, eye-level perspective, sharp facial focus, luxury birthday editorial photography, cinematic color grading, 8K photorealism.
+
+==================================================
+
+--- ITEM 02 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: GOLDEN 55TH BIRTHDAY GLAMOUR
+IMAGEM_PREVIA_URL: https://i.imgur.com/gL2Q9D5.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 02 — GOLDEN 55TH BIRTHDAY GLAMOUR 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury birthday portrait based on the attached reference photograph.
+
+IDENTITY PRESERVATION: Maintain my exact original face, facial anatomy, skin tone, natural skin texture, hair color, hairstyle, hair length, and body proportions. Do not alter my identity or natural appearance.
+
+POSE: Standing facing the camera, holding a large metallic gold helium balloon by its ribbon with one hand, raised beside the shoulder. The opposite arm rests naturally alongside the body. Relaxed shoulders and a beautiful confident smile. Medium waist-up composition.
+
+OUTFIT: Elegant black tailored blazer with structured shoulders, classic lapels, and refined tailoring. Underneath, a luxurious champagne-gold satin blouse with a soft draped cowl neckline. Delicate gold necklace with a small pendant, gold bracelet, and understated rings.
+
+BACKGROUND: Glamorous birthday studio decorated with metallic gold, champagne, and ivory balloons. Large illuminated metallic gold number balloons reading 55 positioned behind the subject. Warm golden fairy lights creating beautiful circular bokeh in the background.
+
+LIGHTING: Warm golden studio lighting with soft frontal illumination, subtle highlights on the satin blouse, natural skin texture, and beautiful reflections on the gold balloons.
+
+CAMERA: Professional full-frame DSLR, 85mm portrait lens, f/2.0, medium portrait framing, shallow depth of field, sharp facial focus, luxury milestone birthday photography, 8K realism.
+
+==================================================
+
+--- ITEM 03 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: BLACK SATIN SPARKLER CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/tEAJSLV.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 03 — BLACK SATIN SPARKLER CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a dramatic, ultra-realistic birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original facial identity, facial features, eyes, nose, lips, skin tone, natural skin texture, hair color, hair texture, and body proportions. No facial modifications or artificial beauty filters.
+
+POSE: Standing facing the camera, extending one arm toward the lens while holding a lit sparkler. The opposite hand holds a second lit sparkler near shoulder height. Arms positioned naturally, creating depth and perspective. Smiling warmly at the camera.
+
+OUTFIT: Elegant black satin dress with long sleeves, a sophisticated rounded neckline, fitted waist, and beautifully draped fabric. Subtle gathered details at the waist and hips. Gold bracelet and delicate jewelry.
+
+BACKGROUND: Dark charcoal-gray or deep chocolate photography studio. Minimalist background with no additional decorations, allowing the golden sparkler light to stand out.
+
+LIGHTING: Cinematic warm studio lighting illuminating the face and black satin dress. Golden sparkler reflections on the hands and fabric. Beautiful glowing sparks with realistic light trails.
+
+CAMERA: Full-frame DSLR, 50mm lens, f/2.0, medium portrait composition, sharp facial focus, realistic sparkler particles, shallow depth of field, cinematic birthday editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 04 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: BLACK AND IVORY BIRTHDAY CAKE
+IMAGEM_PREVIA_URL: https://i.imgur.com/T44N0Nt.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 04 — BLACK AND IVORY BIRTHDAY CAKE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic elegant birthday portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Use my original face photograph as the exclusive identity reference. Maintain my exact facial features, face shape, skin tone, skin texture, hair color, hair length, hairstyle, and body proportions. Do not modify my identity.
+
+POSE: Standing upright, facing the camera with a warm natural smile. Holding a round white birthday cake with both hands at waist-to-chest height. Elbows gently bent, cake centered in the composition. Full-body to three-quarter vertical framing.
+
+OUTFIT: Elegant black long-sleeved blouse with a sophisticated asymmetrical hemline, fitted waist, and high neckline. Flowing white or ivory maxi skirt with soft pleats and natural movement. Delicate gold bracelet and minimal jewelry.
+
+CAKE: White cylindrical birthday cake decorated with tiny black hearts, black satin ribbon bows, elegant white frosting details, and a tall lit sparkler fountain candle in the center.
+
+BACKGROUND: Minimalist medium-gray studio backdrop with a subtle textured finish. On the right side, a decorative arrangement of burgundy-red and ivory balloons with long elegant ribbons.
+
+LIGHTING: Soft frontal studio lighting, gentle shadows, natural skin tones, and beautiful warm sparkler highlights on the cake.
+
+CAMERA: Professional DSLR, 50mm lens, f/3.2, vertical three-quarter composition, sharp facial and cake details, realistic fabric textures, sophisticated birthday photography, 8K realism.
+
+==================================================
+
+--- ITEM 05 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: SAGE GREEN FIRST BIRTHDAY CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/vM9Cdd5.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 05 — SAGE GREEN FIRST BIRTHDAY CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a beautiful, ultra-realistic birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial anatomy, skin tone, skin texture, eyes, nose, lips, hairstyle, hair color, hair length, and natural body proportions. Do not alter my identity.
+
+POSE: Standing upright, holding a luxurious birthday cake with both hands at waist level. Arms gently bent, shoulders relaxed, facing the camera with a warm smile. Medium full-body vertical composition.
+
+OUTFIT: Elegant sage-green midi dress with a square neckline, short puff sleeves, fitted bodice, defined waist, and softly gathered flowing skirt. Lightweight linen or cotton fabric with a subtle natural texture. Feminine and sophisticated styling.
+
+CAKE: Round metallic champagne-gold birthday cake with delicate gold frosting, elegant decorative stars, and a central cream plaque displaying the exact text "Bella crista 1 ano". Gold star-shaped cake toppers arranged at different heights.
+
+BACKGROUND: Romantic pastel birthday studio decorated with a large balloon garland in blush pink, soft peach, ivory, and metallic gold. Cream-colored backdrop with warm elegant tones.
+
+LIGHTING: Soft warm studio lighting, delicate highlights on the golden cake and balloons, natural skin tones, and gentle shadows.
+
+CAMERA: Full-frame mirrorless camera, 85mm lens, f/2.2, medium full-body portrait, sharp focus on face and cake, elegant birthday editorial photography, 8K photorealism.
+
+==================================================
+
+--- ITEM 06 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: RED SATIN 30TH BIRTHDAY CANDLES
+IMAGEM_PREVIA_URL: https://i.imgur.com/hDAuR58.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 06 — RED SATIN 30TH BIRTHDAY CANDLES 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a dramatic, ultra-realistic milestone birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Keep my original facial identity 100% unchanged. Preserve my exact face shape, eyes, nose, lips, natural smile, skin tone, skin texture, hair color, hairstyle, and body proportions.
+
+POSE: Both arms extended forward toward the camera, holding two separate metallic gold number candles reading 30. The candles are positioned prominently in the foreground, with both flames illuminated. Fingers naturally wrapped around the candle holders. Looking directly at the camera with a warm smile.
+
+OUTFIT: Luxurious deep red satin long-sleeved dress with a high rounded neckline, elegant gathered details, and a sophisticated fitted silhouette. Rich glossy satin texture with natural folds. Delicate gold bracelet.
+
+BACKGROUND: Deep black minimalist photography studio with a completely dark background, emphasizing the red dress and golden candles.
+
+LIGHTING: Dramatic low-key lighting with warm frontal illumination on the face and hands. The candle flames produce realistic golden reflections on the satin fabric. Cinematic shadows and rich red tones.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/1.8, close-up portrait with strong foreground perspective, shallow depth of field, sharp details on candles and hands, cinematic birthday photography, 8K realism.
+
+==================================================
+
+--- ITEM 07 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: WHITE DRESS RED HEART BIRTHDAY CAKE
+IMAGEM_PREVIA_URL: https://i.imgur.com/w9ogmF9.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 07 — WHITE DRESS RED HEART BIRTHDAY CAKE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic feminine birthday portrait based on the attached reference photograph.
+
+IDENTITY PRESERVATION: Preserve my original face, facial anatomy, natural expression, skin tone, skin texture, hair color, hair length, hair texture, and body proportions exactly. No artificial facial changes.
+
+POSE: Standing upright, holding a large white birthday cake with both hands at waist-to-chest height. Cake centered in front of the torso. Elbows gently bent, shoulders relaxed, looking directly into the camera with a natural smile.
+
+OUTFIT: Elegant white midi dress with short puff sleeves, a rounded neckline, fitted waist, and a softly gathered flowing skirt. Delicate lightweight fabric with subtle texture and feminine details.
+
+CAKE: Large white cylindrical cake decorated with tiny red hearts, beautiful burgundy satin bows, delicate white frosting borders, and elegant red cursive lettering reading "happy birthday".
+
+BACKGROUND: Dark charcoal-gray studio backdrop. On the right side, a beautiful arrangement of metallic burgundy-red, deep red, and ivory balloons with long decorative ribbons.
+
+LIGHTING: Soft frontal studio lighting, realistic skin tones, delicate shadows, and gentle highlights on the white dress and cake.
+
+CAMERA: Professional DSLR, 50mm lens, f/3.2, medium full-body vertical portrait, sharp facial focus, detailed cake decorations, luxury birthday photography, 8K photorealism.
+
+==================================================
+
+--- ITEM 08 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: CHAMPAGNE LACE FAITH AND GRATITUDE
+IMAGEM_PREVIA_URL: https://i.imgur.com/Hy419ak.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 08 — CHAMPAGNE LACE FAITH AND GRATITUDE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant, ultra-realistic birthday portrait inspired by the attached reference.
+
+IDENTITY PRESERVATION: Use my original uploaded photograph as the absolute identity reference. Preserve my exact facial features, skin tone, skin texture, hair color, hairstyle, hair length, and body proportions. Do not change my identity or physical appearance.
+
+POSE: Sitting gracefully on a small white wooden stool with legs crossed elegantly. Holding an open book with both hands, positioned naturally across the lap. Looking toward the camera with a beautiful warm smile. Full-body seated composition.
+
+OUTFIT: Luxurious champagne-gold lace midi dress with delicate floral embroidery, short lace sleeves, elegant rounded neckline, defined waist, and flowing skirt. A satin champagne belt tied in a delicate bow at the waist. Matching nude or champagne ankle-strap high-heeled sandals.
+
+BACKGROUND: Romantic pastel birthday studio with blush pink and champagne decorations. Delicate white flowering branches arranged across the upper background. Elegant pale pink decorative arches, butterfly motifs, a decorative white bicycle, pink roses, and pastel balloons positioned around the scene.
+
+LIGHTING: Soft warm studio lighting with delicate highlights on the lace and satin details. Gentle shadows and romantic pastel color grading.
+
+CAMERA: Full-frame DSLR, 50mm lens, f/2.8, full-body seated portrait, eye-level perspective, realistic lace texture, elegant lifestyle editorial photography, 8K photorealism.
+
+==================================================
+
+--- ITEM 09 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: CHAMPAGNE SATIN BIRTHDAY GLAMOUR
+IMAGEM_PREVIA_URL: https://i.imgur.com/M7jMESK.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 09 — CHAMPAGNE SATIN BIRTHDAY GLAMOUR 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, hyper-realistic full-body birthday fashion portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original facial identity, facial anatomy, eyes, nose, lips, skin tone, natural skin texture, hair color, hairstyle, and body proportions. No facial modifications or body reshaping.
+
+POSE: Standing in a graceful three-quarter profile, with the torso slightly turned toward the camera and the head turned back toward the lens. One arm relaxed alongside the body, while the opposite hand holds several champagne-gold and ivory helium balloon ribbons. Legs elegantly positioned, with one foot slightly forward. Smiling naturally.
+
+OUTFIT: Luxurious champagne satin blouse with long voluminous sleeves, elegant high neckline, and soft gathered cuffs. Matching champagne satin midi skirt with a smooth flowing silhouette and delicate golden belt defining the waist. Nude or champagne pointed-toe high heels with delicate ankle straps. Elegant gold jewelry.
+
+BACKGROUND: Minimalist warm beige studio with a seamless neutral backdrop. A cluster of metallic gold, champagne, ivory, and transparent confetti balloons floating on the right side. Clean elegant floor and sophisticated editorial atmosphere.
+
+LIGHTING: Soft diffused studio lighting from the front-left, creating beautiful satin reflections and delicate shadows. Warm natural skin tones and subtle golden highlights.
+
+CAMERA: Full-frame mirrorless camera, 85mm lens, f/2.8, full-body vertical fashion portrait, eye-level perspective, realistic fabric details, luxury birthday editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 10 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: BROWN ROMANTIC BIRTHDAY CAKE PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/sCSVG6f.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 10 — BROWN ROMANTIC BIRTHDAY CAKE PORTRAIT 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a warm, elegant, ultra-realistic birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original face, facial features, natural smile, skin tone, skin texture, hair color, hair texture, and body proportions. Do not alter my identity or natural appearance.
+
+POSE: Sitting behind a table with both elbows resting gently on the surface. Hands joined delicately beneath the chin, fingers naturally interlaced. Leaning slightly forward, looking directly at the camera with a joyful genuine smile.
+
+OUTFIT: Elegant chocolate-brown blouse or dress with short layered ruffle sleeves and a sophisticated feminine neckline. Soft matte fabric with delicate gathered details. Small gold hoop earrings, subtle gold rings, and delicate jewelry.
+
+CAKE: Large round white and champagne-colored birthday cake positioned in the foreground. Elegant gradient frosting transitioning from ivory to soft caramel beige. Decorative gold pearls and delicate frosting details. Elegant metallic gold topper reading "Happy Birthday" with a small lit candle.
+
+BACKGROUND: Warm beige minimalist studio backdrop with a soft neutral palette. Elegant table surface and subtle warm decorative elements.
+
+LIGHTING: Soft warm frontal studio lighting illuminating the face and cake. Delicate shadows under the hands and beautiful golden highlights on the frosting.
+
+CAMERA: Professional full-frame DSLR, 85mm lens, f/2.0, medium close-up portrait, sharp facial details, detailed cake texture, luxury birthday editorial photography, 8K photorealism.
+
+==================================================
+
+--- ITEM 11 ---
+CATEGORIA: Aniversário Gospel Evangélico
+TÍTULO: IVORY CAPE DRESS BLACK RIBBON CAKE
+IMAGEM_PREVIA_URL: https://i.imgur.com/VUoNCas.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 11 — IVORY CAPE DRESS BLACK RIBBON CAKE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxurious birthday portrait based on the attached reference photograph.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the absolute identity reference. Preserve my exact facial anatomy, face shape, eyes, nose, lips, skin tone, natural skin texture, hair color, hairstyle, hair length, and body proportions. No changes to my identity or physical appearance.
+
+POSE: Standing elegantly facing the camera, holding a luxurious white birthday cake with both hands at waist-to-chest level. Arms gently bent, cake centered in the composition. Relaxed shoulders and a warm natural smile. Full-body to three-quarter portrait.
+
+OUTFIT: Sophisticated ivory-white fitted dress with a high neckline, long elegant cape-style sleeves, and a refined flowing silhouette. The cape fabric drapes gracefully from the shoulders and falls along the arms. Premium matte fabric with subtle structured details. Delicate gold bracelet, understated rings, and elegant jewelry.
+
+CAKE: Large cylindrical ivory-white cake with horizontal textured frosting, delicate pearl decorations, and multiple elegant black satin ribbon bows arranged around the front and sides. Refined white frosting borders and a luxurious minimalist finish.
+
+BACKGROUND: Sophisticated warm ivory studio with elegant curved architectural wall details and softly illuminated recessed niches. A decorative arrangement of delicate white branches in a vase on the right. Warm cream and beige tones.
+
+LIGHTING: Soft warm studio lighting, subtle golden ambient illumination from the architectural niches, delicate shadows, and beautiful highlights on the ivory outfit and cake.
+
+CAMERA: Full-frame DSLR or mirrorless camera, 85mm portrait lens, f/2.8, medium full-body composition, eye-level perspective, realistic skin and fabric texture, luxury birthday editorial, cinematic natural color grading, 8K photorealism.
+
+
+############################################################
+CATEGORIA: Profissional Feminino
+TOTAL DE ITENS NESTA CATEGORIA: 11
+############################################################
+
+--- ITEM 01 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: ELEGANT CORPORATE FULL-BODY PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/0VPLXJB.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+1- ### PHOTO 1 — ELEGANT CORPORATE FULL-BODY PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic, professional full-body corporate portrait based on the attached pose reference.
+
+**Identity preservation:** Use my original uploaded face photo as the absolute identity reference. Keep my facial features, face shape, eyes, nose, lips, smile, skin tone, skin texture, hair color, hair texture, and natural body proportions 100% identical. Do not beautify, reshape, slim, enlarge, or modify any physical characteristics.
+
+**Pose:** Standing confidently in a relaxed, elegant posture, facing the camera with a warm, natural smile. Both arms crossed at chest level, one hand resting gently over the opposite arm. Head slightly tilted, shoulders relaxed, and weight naturally distributed between both legs. Full-body framing, showing the entire outfit and shoes.
+
+**Outfit:** Tailored dark navy-blue blazer with structured shoulders, classic lapels, gold sleeve buttons and front details, worn over a crisp white button-down shirt. High-waisted ivory wide-leg tailored trousers with a brown leather belt and gold buckle. Beige pointed-toe high heels. Elegant gold wristwatch and delicate jewelry. Refined, sophisticated executive fashion.
+
+**Background:** Warm caramel-brown minimalist photography studio with a matte neutral wall and matching floor. A vintage cognac-brown leather armchair with wooden arms and legs positioned behind the subject, slightly to the left. Natural, uncluttered professional studio environment.
+
+**Lighting:** Soft, warm studio lighting coming from the front and slightly to the left, creating delicate shadows and natural skin highlights. Balanced exposure and warm earthy color grading.
+
+**Camera:** Professional DSLR or mirrorless camera, 50mm lens, f/4 aperture, vertical full-body composition, eye-level perspective, sharp focus on the subject, realistic fabric textures, cinematic editorial photography, ultra-detailed 8K photorealism.
+
+--- ITEM 02 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: LUXURY CORPORATE OFFICE PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/LX7v4yu.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+2- ### PHOTO 2 — LUXURY CORPORATE OFFICE PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury corporate office portrait based on the attached reference image.
+
+**Identity preservation:** Preserve my original face, facial anatomy, skin tone, skin texture, hair color, hair length, natural waves, body structure, and proportions exactly as shown in my uploaded identity photograph. No facial alterations, no artificial beauty filters, no changes to my identity.
+
+**Pose:** Seated comfortably in an elegant executive office chair behind a wooden desk. Body facing forward, shoulders relaxed, with both forearms resting naturally on the desk. Hands gently joined together in front of the body. Looking directly into the camera with a genuine, confident, friendly smile. Waist-up composition.
+
+**Outfit:** Elegant black tailored blazer with a subtle deep V neckline, gold buttons, and refined structured shoulders. Delicate layered gold necklaces, small gold earrings, gold bracelet, wristwatch, and discreet rings. Sophisticated business-casual styling.
+
+**Background:** High-end contemporary executive office. Large floor-to-ceiling window on the left with a softly blurred cityscape and greenery outside. Vertical wooden slat wall behind the subject, elegant built-in shelving on the right with books, decorative objects, a black ceramic vase, and warm integrated LED lighting. A green indoor plant adds natural elegance.
+
+**Desk details:** Natural light oak wooden desk. Open silver laptop on the left, elegant dark coffee cup and saucer in the foreground, brown leather notebook with a black and gold pen, and a few neatly arranged office accessories. Maintain realistic object proportions and placement.
+
+**Lighting:** Soft natural daylight entering through the large window from the left, combined with warm ambient shelf lighting. Beautiful balanced highlights, realistic shadows, warm professional atmosphere.
+
+**Camera:** Professional DSLR or mirrorless camera, 50mm lens, f/2.8 aperture, medium portrait framing, eye-level perspective, shallow depth of field, sharp facial focus, luxury business editorial photography, natural colors, 8K photorealism.
+
+--- ITEM 03 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: POWERFUL RED EXECUTIVE SUIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/FOWG41F.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+3- ### PHOTO 3 — POWERFUL RED EXECUTIVE SUIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury fashion-business portrait based on the attached pose reference.
+
+**Identity preservation:** Use my uploaded original photograph as the exclusive identity reference. Maintain my exact facial structure, eyes, nose, lips, smile, skin color, natural skin texture, hair color, hairstyle, and body proportions. Do not change my identity or physical characteristics.
+
+**Pose:** Standing upright, facing the camera with a confident and welcoming smile. Arms crossed naturally across the waist and chest. One forearm resting over the other, with hands gently positioned on opposite arms. Shoulders relaxed, head slightly tilted, elegant and self-assured posture. Frame from approximately mid-thigh upward.
+
+**Outfit:** Sophisticated monochromatic deep red executive suit. Structured red tailored blazer elegantly draped over the shoulders, with classic lapels and refined tailoring. Matching high-waisted red tailored trousers. Underneath, a luxurious ivory or champagne-colored silk blouse with an open collar and delicate natural folds. Gold pendant necklace, delicate bracelet, and understated gold rings. Premium fashion editorial aesthetic.
+
+**Background:** Minimalist warm beige studio backdrop with a smooth matte texture. Clean, uncluttered environment, allowing the vibrant red outfit to stand out.
+
+**Lighting:** Soft directional studio lighting from the front-left, creating gentle facial dimension, subtle shadows, and beautiful highlights on the red fabric. Warm natural skin tones and elegant cinematic contrast.
+
+**Camera:** Professional full-frame mirrorless camera, 85mm portrait lens, f/2.8 aperture, medium portrait composition, eye-level perspective, detailed fabric texture, realistic skin pores, sophisticated luxury editorial photography, 8K photorealism.
+
+--- ITEM 04 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: BLACK MONOCHROME POWER LOOK
+IMAGEM_PREVIA_URL: https://i.imgur.com/pj3SB2i.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+4- ### PHOTO 4 — BLACK MONOCHROME POWER LOOK 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury corporate fashion portrait based on the attached reference photograph.
+
+**Identity preservation:** Keep my original face and identity absolutely unchanged. Preserve my exact facial features, skin tone, skin texture, eyes, nose, lips, natural smile, hair color, hair texture, and body structure. No retouching that changes my appearance, no facial reconstruction, and no body reshaping.
+
+**Pose:** Standing with a confident, sophisticated posture, facing the camera. One arm crosses horizontally in front of the waist, while the opposite arm bends upward with the hand gently touching the blazer near the collarbone. The blazer is elegantly draped over both shoulders rather than worn conventionally. Relaxed shoulders, slightly angled body, direct gaze, and a subtle confident smile. Frame from mid-thigh upward.
+
+**Outfit:** Elegant monochromatic black ensemble. Tailored black structured blazer with defined shoulders, classic lapels, and refined straight lines, worn draped over the shoulders. Black sleeveless blouse with a soft draped cowl neckline. Matching high-waisted black tailored trousers. Delicate gold pendant necklace, thin gold bracelet, and minimal rings. Timeless, sophisticated executive style.
+
+**Background:** Minimalist warm beige and taupe textured studio wall with subtle natural imperfections. Soft sunlight creates diagonal shadows across the background, adding depth and an editorial atmosphere.
+
+**Lighting:** Directional natural-looking studio light entering from the upper left, creating delicate highlights on the face, hair, and blazer. Soft shadows with elegant cinematic contrast.
+
+**Camera:** Full-frame professional DSLR or mirrorless camera, 85mm lens, f/2.2 aperture, medium portrait framing, realistic fabric details, sharp facial focus, luxury fashion magazine aesthetic, natural skin tones, 8K photorealistic quality.
+
+--- ITEM 05 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: ELEGANT CASUAL CHIC PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/rQrSxBi.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+5- ### PHOTO 5 — ELEGANT CASUAL CHIC PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic full-body fashion portrait based on the attached pose reference.
+
+**Identity preservation:** Reproduce my exact original identity using my uploaded face photograph. Preserve my natural facial features, skin tone, skin texture, hair color, hairstyle, hair length, body proportions, and physical structure without modifications. Do not alter my face, body, or natural appearance.
+
+**Pose:** Standing in a relaxed, elegant pose, facing the camera with a beautiful natural smile. One hand placed inside the front pocket of the trousers while the opposite elbow is bent, with the hand gently supporting the chin. Head slightly tilted. One shoulder subtly lowered, with a natural shift of body weight to one leg. Full-body vertical framing.
+
+**Outfit:** Elegant dark chocolate-brown fitted long-sleeve top with an off-the-shoulder neckline, exposing both shoulders naturally. The fabric is smooth, stretchy, and fitted to the body without exaggerating proportions. High-waisted ivory-white wide-leg tailored trousers with elegant front pleats and a slim beige belt featuring a delicate gold buckle. Nude pointed-toe high heels. Small gold hoop earrings and delicate gold jewelry. Refined minimalist smart-casual fashion.
+
+**Background:** Warm neutral beige photography studio with a softly textured matte wall and matching floor. Minimalist environment with plenty of negative space around the subject.
+
+**Lighting:** Warm natural sunlight entering from the left, creating soft diagonal shadows on the floor and wall. Gentle highlights on the face and hair, with realistic fabric shadows and natural skin tones.
+
+**Camera:** Professional DSLR or mirrorless camera, 50mm lens, f/3.5 aperture, full-body vertical composition, eye-level perspective, realistic proportions, sharp focus, elegant lifestyle fashion editorial, cinematic color grading, 8K photorealism.
+
+--- ITEM 06 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: LUXURY WHITE SUIT SEATED PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/U5lP5Iv.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+6-### PHOTO 6 — LUXURY WHITE SUIT SEATED PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury executive fashion portrait based on the attached pose reference.
+
+**Identity preservation:** Use my original uploaded face photograph as the exclusive identity reference. Keep my facial features, face shape, eyes, nose, lips, smile, skin tone, natural skin texture, hair color, hair length, hair texture, and body proportions 100% identical. Do not change or reinterpret my physical identity.
+
+**Pose:** Seated elegantly on a luxurious dark brown leather Chesterfield armchair. Legs crossed gracefully, with one leg extending forward and the other resting over it. Both hands relaxed and gently joined over the upper knee. Upper body upright, shoulders relaxed, facing the camera with a warm, confident smile. Full-body seated composition, showing the entire outfit and heels.
+
+**Outfit:** Sophisticated monochromatic ivory-white tailored pantsuit. Double-breasted structured blazer with elegant lapels, gold buttons, and refined tailoring. Matching wide-leg ivory trousers. Simple ivory inner top. White pointed-toe high heels with slim heels. Delicate gold necklace, bracelet, rings, and elegant red nail polish. Premium luxury executive aesthetic.
+
+**Background:** Deep chocolate-brown studio backdrop with subtle tonal variations. A luxurious dark brown leather Chesterfield armchair with rounded arms, classic button-tufted upholstery, and decorative brass nailhead trim. Neutral taupe studio floor. Elegant, timeless, sophisticated environment.
+
+**Lighting:** Soft cinematic studio lighting illuminating the subject from the front-left, with gentle highlights on the white suit and natural facial dimension. Controlled shadows, rich brown tones, and balanced contrast.
+
+**Camera:** Professional full-frame DSLR or mirrorless camera, 85mm lens, f/2.8 aperture, full-body seated portrait, eye-level perspective, sharp focus, detailed leather and fabric textures, high-end luxury fashion editorial, natural skin texture, 8K photorealism.
+
+--- ITEM 07 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: BEIGE EXECUTIVE BLAZER WITH TABLET
+IMAGEM_PREVIA_URL: https://i.imgur.com/CifxTEn.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+7-### PHOTO 7 — BEIGE EXECUTIVE BLAZER WITH TABLET 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury corporate portrait based on the attached reference photograph.
+
+**Identity preservation:** Maintain my exact original facial identity from my uploaded face photograph. Preserve every natural detail, including facial anatomy, eyes, nose, lips, smile, skin tone, skin texture, hair color, hair length, natural waves, and body proportions. Do not modify my face, body, or natural appearance in any way.
+
+**Pose:** Standing in a relaxed, confident professional pose, facing the camera with a warm natural smile. Holding a slim dark gray tablet vertically against the torso with both hands. One hand gently supporting the tablet from the front while the other rests naturally underneath. Shoulders relaxed, body slightly angled toward the camera. Frame from approximately waist upward.
+
+**Outfit:** Elegant beige tailored blazer with structured shoulders, classic lapels, and refined minimal tailoring. Underneath, a high-neck ivory blouse with delicate soft fabric folds. Matching beige tailored trousers. Delicate gold pendant necklace, small gold earrings, gold bracelet, elegant wristwatch, and subtle gold rings. Sophisticated neutral-toned executive fashion.
+
+**Background:** Warm caramel-beige minimalist studio backdrop with a smooth matte finish. Soft, elegant, uncluttered environment that complements the neutral outfit.
+
+**Lighting:** Soft warm studio lighting from the front-left, creating beautiful natural highlights on the face, hair, and blazer. Gentle shadows and realistic depth, with balanced warm beige tones.
+
+**Camera:** Professional full-frame DSLR or mirrorless camera, 85mm portrait lens, f/2.8 aperture, medium waist-up composition, eye-level perspective, realistic skin pores, detailed hair strands, accurate fabric texture, luxury corporate editorial photography, cinematic natural color grading, ultra-realistic 8K quality.
+
+--- ITEM 08 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: NAVY BLUE ELEGANT EXECUTIVE PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/s0HV5SB.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+8- ### PHOTO 8 — NAVY BLUE ELEGANT EXECUTIVE PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury corporate portrait based on the attached pose reference.
+
+**IDENTITY PRESERVATION:** Use my original uploaded face photograph as the absolute identity reference. Preserve my exact facial features, face shape, eyes, nose, lips, smile, skin tone, natural skin texture, hair color, hairstyle, and body proportions. Do not modify, beautify, reshape, or reinterpret my identity.
+
+**POSE:** Sitting elegantly in a large, rounded, deep navy-blue upholstered armchair. Body slightly angled toward the camera. One arm resting naturally along the chair's armrest, with the hand relaxed and fingers gently extended. Legs crossed elegantly, with one hand resting over the upper knee. Shoulders relaxed, head slightly tilted, looking directly at the camera with a warm, confident smile. Full-body seated portrait.
+
+**OUTFIT:** Sophisticated monochromatic navy-blue ensemble consisting of a sleeveless high-neck blouse with a soft draped neckline and matching high-waisted wide-leg tailored trousers. A slim black leather belt with a refined gold rectangular buckle defines the waist naturally. Black pointed-toe high heels. Delicate gold bracelet, elegant gold wristwatch, and subtle rings. Timeless executive elegance.
+
+**BACKGROUND:** Luxurious contemporary interior with a large rounded navy-blue upholstered armchair featuring a subtle gold metal base. On the left, a tall green leafy plant in a textured beige cylindrical planter. Warm beige architectural walls with beautiful natural sunlight creating organic leaf shadows. Light beige stone flooring and a sophisticated minimalist atmosphere.
+
+**LIGHTING:** Warm natural sunlight entering from the upper left, producing soft highlights on the face and subtle shadows across the background. Realistic sunlight patterns, balanced exposure, warm neutral tones.
+
+**CAMERA:** Professional full-frame DSLR or mirrorless camera, 50mm lens, f/2.8 aperture, vertical full-body composition, eye-level perspective, crisp facial details, realistic fabric textures, cinematic luxury corporate editorial photography, natural skin tones, ultra-realistic 8K quality.
+
+--- ITEM 09 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: FOREST GREEN POWER SUIT PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/p4vtbVk.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+9-### PHOTO 9 — FOREST GREEN POWER SUIT PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury executive fashion portrait based on the attached reference photograph.
+
+**IDENTITY PRESERVATION:** Maintain my exact original identity using my uploaded face photograph. Preserve my facial anatomy, natural expression, eyes, nose, lips, skin tone, skin texture, hair color, hair length, hairstyle, and natural body proportions. No facial changes, no artificial skin smoothing, and no body alterations.
+
+**POSE:** Sitting elegantly in a sophisticated upholstered armchair with wooden armrests. Body slightly turned toward the camera. One elbow resting on the armrest, with the hand gently supporting the chin. The opposite forearm rests naturally across the lap, with the hand relaxed. Legs crossed gracefully. Head slightly tilted, gaze directed toward the camera with a subtle, confident expression and gentle smile. Medium-to-three-quarter portrait composition.
+
+**OUTFIT:** Luxurious deep forest-green tailored pantsuit. Structured blazer with classic lapels, refined shoulder construction, and elegant gold buttons on the sleeves. Matching tailored trousers. Sophisticated green fabric with a matte finish and beautiful natural folds. Delicate gold pendant necklace, small gold earrings, elegant gold wristwatch, and discreet rings. Refined, powerful, timeless executive styling.
+
+**BACKGROUND:** Warm, elegant contemporary interior with beige textured walls and a softly illuminated window area on the left. Natural sunlight creates soft geometric shadows across the wall. Neutral beige upholstery and wooden chair details complement the deep green outfit. Minimalist luxury environment with shallow background depth.
+
+**LIGHTING:** Soft natural daylight coming from the left side, illuminating the face with gentle golden highlights. Subtle shadows create facial depth and dimension. Warm cinematic color grading with rich forest-green tones.
+
+**CAMERA:** Professional full-frame mirrorless camera, 85mm portrait lens, f/2.0 aperture, medium portrait composition, shallow depth of field, sharp focus on the eyes, realistic skin texture, luxury business magazine photography, 8K photorealistic rendering.
+
+--- ITEM 10 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: MONOCHROMATIC IVORY LUXURY LOOK
+IMAGEM_PREVIA_URL: https://i.imgur.com/n7RsZjE.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+10- ### PHOTO 10 — MONOCHROMATIC IVORY LUXURY LOOK 
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury fashion-business portrait based on the attached reference image.
+
+**IDENTITY PRESERVATION:** Use my original uploaded photograph as the exclusive identity reference. Keep my face, facial structure, eyes, nose, lips, smile, skin tone, natural skin texture, hair color, hair length, hair texture, and body proportions exactly unchanged. Do not alter my identity or physical characteristics.
+
+**POSE:** Standing against a minimalist architectural wall, with the upper back and shoulders gently leaning against the wall. Body facing the camera, legs naturally positioned with one knee slightly bent and one foot subtly forward. Both hands placed casually inside the front pockets of the trousers. Shoulders relaxed and head facing forward, with a confident natural smile. Elegant full-body to three-quarter framing.
+
+**OUTFIT:** Sophisticated monochromatic ivory-white ensemble. Fitted strapless or square-neck structured ivory top with elegant clean lines and a subtly sculpted waist. High-waisted ivory tailored wide-leg trousers with front pleats and discreet side pockets. A long ivory tailored blazer draped elegantly over both shoulders, hanging naturally without the arms inside the sleeves. Luxurious smooth fabric with a matte finish. Statement polished gold collar necklace, delicate bracelet, and elegant gold rings. Red manicure for a subtle contrast. Refined high-end minimalist fashion.
+
+**BACKGROUND:** Modern minimalist architectural setting with a smooth warm ivory and light beige wall. Strong natural sunlight creates geometric architectural shadows on the wall and floor. Neutral stone flooring and clean lines, sophisticated editorial studio atmosphere.
+
+**LIGHTING:** Direct natural sunlight entering from the upper left, creating defined but elegant shadows and beautiful highlights on the ivory outfit. Warm skin tones, realistic light falloff, high contrast without losing detail in the white clothing.
+
+**CAMERA:** Professional DSLR or mirrorless camera, 50mm lens, f/3.2 aperture, vertical three-quarter to full-body composition, eye-level perspective, detailed fabric texture, sharp facial focus, cinematic fashion editorial photography, natural colors, ultra-realistic 8K quality.
+
+--- ITEM 11 ---
+CATEGORIA: Profissional Feminino
+TÍTULO: OLIVE GREEN KNITWEAR CORPORATE LIFESTYLE PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/Qp3dhl3.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+11- ### PHOTO 11 — OLIVE GREEN KNITWEAR CORPORATE LIFESTYLE PORTRAIT 
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic elegant corporate lifestyle portrait based on the attached reference photograph.
+
+**IDENTITY PRESERVATION:** Preserve my exact original facial identity using my uploaded face photograph. Maintain my natural facial anatomy, eyes, nose, lips, smile, skin tone, skin texture, hair color, hair length, hairstyle, and body proportions. Do not change my appearance, reshape my face, or apply artificial beauty filters.
+
+**POSE:** Sitting comfortably on a luxurious light beige upholstered sofa. Upper body leaning slightly forward in a relaxed and approachable position. One elbow resting naturally on the sofa arm or cushion, with the hand gently supporting the chin. The opposite forearm resting across the lap, with the hand relaxed. Legs positioned naturally and elegantly. Looking directly into the camera with a beautiful warm smile. Medium waist-up portrait.
+
+**OUTFIT:** Sophisticated olive-green knitted sweater with a classic rounded neckline, long sleeves, and a soft luxurious ribbed knit texture. A crisp white collared shirt underneath, with the collar and cuffs visible. Elegant black tailored trousers. Gold wristwatch, delicate gold necklace or minimal jewelry, and subtle rings. Refined smart-casual executive style, comfortable yet polished.
+
+**BACKGROUND:** Elegant contemporary executive lounge or home office. Light beige textured upholstered sofa with soft cushions. Large window on the left allowing natural daylight inside, with softly blurred greenery visible outdoors. A decorative green leafy plant positioned in the background, warm beige walls, and a minimalist framed artwork. Natural wood and neutral decorative elements create a sophisticated and welcoming environment.
+
+**LIGHTING:** Soft natural daylight entering from the left side, illuminating the face evenly and creating beautiful subtle highlights in the hair. Gentle shadows, warm neutral tones, and a bright sophisticated atmosphere.
+
+**CAMERA:** Professional full-frame DSLR or mirrorless camera, 85mm portrait lens, f/2.0 aperture, medium close-up composition, eye-level perspective, shallow depth of field, extremely realistic facial details, visible knit fabric texture, elegant luxury corporate lifestyle photography, natural cinematic color grading, 8K photorealism.
+
+
+############################################################
+CATEGORIA: Ensaio Masculino Adulto
+TOTAL DE ITENS NESTA CATEGORIA: 15
+############################################################
+
+--- ITEM 01 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK POLO BIRTHDAY CAKE AND SPARKLER
+IMAGEM_PREVIA_URL: https://i.imgur.com/ZAC7xGg.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 01 — BLACK POLO BIRTHDAY CAKE AND SPARKLER 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury men's birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the absolute identity reference. Preserve my exact facial features, face shape, eyes, nose, lips, beard or facial hair if present, skin tone, natural skin texture, hair color, hairstyle, hairline, and body proportions. Do not change my identity, age, or physical appearance.
+
+POSE: Standing facing the camera, holding a round chocolate birthday cake with both hands at waist level. A lit golden sparkler rises from the center of the cake. Looking directly at the camera with a confident natural smile. Relaxed shoulders and elegant posture.
+
+OUTFIT: Black short-sleeved fitted polo shirt with a classic collar, dark elegant trousers, and a sophisticated minimalist style. No unnecessary accessories.
+
+CAKE: Round dark chocolate birthday cake with rich chocolate frosting, elegant decorative details, and a golden cursive birthday message. A bright fountain sparkler candle creates a festive effect.
+
+BACKGROUND: Deep black luxury birthday studio with subtle warm golden decorative lights and dark architectural details. Dramatic elegant atmosphere.
+
+LIGHTING: Cinematic low-key lighting, warm frontal illumination on the face, subtle golden reflections from the sparkler, and beautiful highlights on the chocolate cake.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.0, medium portrait composition, sharp facial focus, realistic skin texture, luxury men's birthday editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 02 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BEIGE BLAZER AND CHAMPAGNE BALLOONS
+IMAGEM_PREVIA_URL: https://i.imgur.com/bxd0toR.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 02 — BEIGE BLAZER AND CHAMPAGNE BALLOONS 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant ultra-realistic full-body men's birthday fashion portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial identity, facial anatomy, skin tone, natural skin texture, hair color, haircut, hair texture, and body proportions. Do not alter my face or physical characteristics.
+
+POSE: Standing confidently with one hand inside the front pocket of the trousers and the opposite arm relaxed alongside the body. Body slightly angled toward the camera, looking directly at the lens with a confident expression. One leg slightly forward.
+
+OUTFIT: Elegant beige tailored blazer with structured shoulders and classic lapels, worn over a simple white crew-neck T-shirt. Slim-fit dark navy-blue jeans and clean white minimalist sneakers. Sophisticated smart-casual styling.
+
+BACKGROUND: Luxurious champagne birthday studio decorated with large metallic silver and champagne-gold balloons. Transparent balloons with delicate metallic confetti, warm fairy lights, and reflective decorative elements. Beige and golden architectural backdrop with elegant birthday details.
+
+FLOOR: Reflective light beige floor with scattered metallic confetti.
+
+LIGHTING: Warm golden studio lighting with soft frontal illumination, realistic shadows, and beautiful reflections on metallic balloons.
+
+CAMERA: Professional full-frame DSLR, 50mm lens, f/3.5, full-body vertical composition, eye-level perspective, realistic clothing texture, luxury men's fashion editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 03 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK SHIRT SEATED LUXURY PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/nCjwxpA.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 03 — BLACK SHIRT SEATED LUXURY PORTRAIT
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic sophisticated men's birthday portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial features, skin tone, skin texture, hairstyle, hairline, and body structure. Do not change any physical characteristic or facial detail.
+
+POSE: Sitting comfortably in an elegant cream upholstered armchair. Body slightly leaning forward, forearms resting naturally on the thighs, hands gently joined together. Legs slightly apart, shoulders relaxed, looking directly at the camera with a warm confident smile.
+
+OUTFIT: Elegant black long-sleeved button-down shirt with the top buttons slightly open, paired with fitted black trousers. Discreet elegant wristwatch and minimal accessories.
+
+BACKGROUND: Dark luxury photography studio with black and silver metallic balloons arranged on both sides. Dramatic white starburst lighting effects projected onto the dark background. Elegant cream armchair providing contrast against the black outfit.
+
+LIGHTING: Cinematic studio lighting with a soft frontal key light illuminating the face, combined with dramatic white backlighting and subtle reflections on silver balloons.
+
+CAMERA: Full-frame mirrorless camera, 85mm lens, f/2.0, seated three-quarter portrait, shallow depth of field, sharp eye focus, realistic fabric textures, cinematic men's editorial photography, 8K realism.
+
+==================================================
+
+--- ITEM 04 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: ALL BLACK FULL-BODY BIRTHDAY PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/gzGqwJe.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 04 — ALL BLACK FULL-BODY BIRTHDAY PORTRAIT 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic full-body men's fashion birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my uploaded original face photograph as the exclusive identity reference. Maintain exact facial structure, skin tone, eyes, nose, lips, hair color, haircut, and natural body proportions.
+
+POSE: Standing upright, with one hand gently touching the back of the neck and the opposite hand inside the front pocket of the trousers. Legs slightly apart, body facing the camera, relaxed confident expression. Full-body composition.
+
+OUTFIT: Elegant all-black monochromatic ensemble consisting of a fitted black long-sleeved button-down shirt, black tailored trousers, and polished black leather dress shoes. Minimalist luxury styling.
+
+BACKGROUND: Modern minimalist studio with a large circular white illuminated backdrop behind the subject. Black and silver balloons arranged symmetrically along both sides. Metallic balloons and reflective silver decorations placed near the floor.
+
+LIGHTING: Bright circular backlight creating a dramatic halo effect around the subject. Soft frontal illumination and realistic shadows. Clean high-contrast black-and-white environment.
+
+CAMERA: Professional DSLR, 50mm lens, f/3.5, vertical full-body composition, eye-level perspective, sharp focus, luxury men's fashion editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 05 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: NAVY BLUE EXECUTIVE BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/phSB0KC.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 05 — NAVY BLUE EXECUTIVE BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant, hyper-realistic professional men's birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original facial identity, skin tone, skin texture, facial features, hairstyle, hairline, and body proportions. No changes to my face or physical appearance.
+
+POSE: Standing confidently, holding several blue and silver helium balloon ribbons with one hand raised slightly beside the shoulder. The opposite hand rests naturally inside the front pocket of the trousers. Looking directly at the camera with a warm professional smile.
+
+OUTFIT: Sophisticated navy-blue tailored business suit, matching fitted trousers, crisp white dress shirt, and elegant dark navy tie. Black leather belt and polished black dress shoes. Refined executive style.
+
+BACKGROUND: Elegant birthday studio decorated with large metallic navy-blue, silver, and light-blue balloons. A beautiful balloon arrangement positioned on the right side, with additional blue balloons behind the subject. Light neutral studio backdrop.
+
+LIGHTING: Soft professional studio lighting with warm frontal illumination, natural skin tones, and subtle reflections on metallic balloons.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.8, medium full-body composition, eye-level perspective, sharp facial details, luxury corporate birthday photography, 8K realism.
+
+==================================================
+
+--- ITEM 06 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: SILVER 55TH BIRTHDAY WITH NAVY SUIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/CUWjEXZ.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 06 — SILVER 55TH BIRTHDAY WITH NAVY SUIT 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated luxury milestone birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original face, facial features, skin tone, natural skin texture, hairstyle, hair color, and body proportions. Do not modify my appearance or identity.
+
+POSE: Seated casually on a large metallic silver number-shaped birthday decoration reading 55. One arm rests naturally on the upper part of the metallic number, while the opposite arm rests comfortably on the other side. Legs positioned naturally, torso slightly leaning forward, looking at the camera with a confident smile.
+
+OUTFIT: Elegant navy-blue tailored suit with a white dress shirt and matching dark tie. Structured blazer, refined lapels, and classic business styling.
+
+BACKGROUND: Luxury birthday studio with a large arrangement of navy-blue, metallic silver, and dark blue balloons. Large reflective silver number balloons reading 55. Soft light-colored background with subtle birthday decorations.
+
+LIGHTING: Soft frontal studio lighting, delicate highlights on the metallic silver numbers, realistic reflections, and natural skin tones.
+
+CAMERA: Professional full-frame DSLR, 50mm lens, f/2.8, seated three-quarter portrait, eye-level perspective, crisp facial details, luxury men's birthday editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 07 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK SHIRT GOLDEN STAR BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/2aNIMvu.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 07 — BLACK SHIRT GOLDEN STAR BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic elegant men's birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original facial identity, skin tone, natural skin texture, hairstyle, facial hair if present, and body proportions. No facial alterations or artificial enhancements.
+
+POSE: Sitting on a sophisticated beige upholstered stool or armchair. Upper body leaning slightly forward, both forearms resting naturally on the thighs, hands relaxed near the knees. Legs apart in a relaxed masculine posture. Looking directly at the camera with a genuine smile.
+
+OUTFIT: Dark navy-blue or black long-sleeved button-down shirt with the top buttons slightly open, paired with elegant dark trousers and brown leather dress shoes. Discreet wristwatch.
+
+BACKGROUND: Luxurious birthday studio decorated with metallic black, silver, and champagne-gold balloons. Large gold star-shaped decorations projected onto the dark background. Warm golden fairy lights and reflective metallic balloons positioned around the subject.
+
+FLOOR: Neutral beige studio floor with subtle reflections and elegant decorative details.
+
+LIGHTING: Warm cinematic lighting illuminating the face, with golden highlights on the balloons and subtle dramatic shadows.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.0, seated medium portrait, sharp eye focus, shallow depth of field, luxury men's birthday photography, 8K realism.
+
+==================================================
+
+--- ITEM 08 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK BUSINESS SUIT WITH GOLD BALLOONS
+IMAGEM_PREVIA_URL: https://i.imgur.com/dOvNG4n.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 08 — BLACK BUSINESS SUIT WITH GOLD BALLOONS 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated ultra-realistic full-body men's birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the absolute identity reference. Keep my exact facial anatomy, face shape, eyes, nose, lips, skin tone, hair color, hairstyle, and natural body proportions.
+
+POSE: Sitting elegantly on a minimalist white geometric pedestal. One leg bent with the foot resting on the floor, the opposite leg extended slightly forward. Hands resting naturally on the upper knee and thigh. Torso upright, looking directly at the camera with a confident expression.
+
+OUTFIT: Elegant black tailored business suit with a fitted black blazer, crisp white dress shirt, and slim black tie. Matching black tailored trousers and polished black leather dress shoes. Refined executive appearance.
+
+BACKGROUND: Minimalist light-gray studio with a beautiful cluster of metallic champagne-gold balloons positioned on the right side. Gold ribbons hanging naturally. Clean neutral floor and sophisticated modern environment.
+
+LIGHTING: Soft directional studio lighting from the front-left, creating natural facial dimension and delicate highlights on the suit.
+
+CAMERA: Professional DSLR, 50mm lens, f/2.8, full-body seated composition, vertical framing, sharp details, sophisticated business editorial photography, 8K photorealism.
+
+==================================================
+
+--- ITEM 09 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BEIGE BLAZER SILVER BALLOON CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/L1Y33md.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 09 — BEIGE BLAZER SILVER BALLOON CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a stylish, hyper-realistic men's birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial identity, skin tone, skin texture, hairstyle, hairline, hair color, and body proportions. Do not change any natural physical characteristics.
+
+POSE: Standing relaxed and confident, one hand inside the front pocket of the jeans while the opposite arm hangs naturally beside the body. Body slightly angled toward the camera, with a gentle confident smile. Full-body to three-quarter composition.
+
+OUTFIT: Sophisticated beige tailored blazer with classic lapels and structured shoulders, worn over a plain white crew-neck T-shirt. Classic blue denim jeans with a modern straight fit. Elegant casual shoes in a neutral tone.
+
+BACKGROUND: Bright luxury birthday studio with silver and white helium balloons arranged around the subject. Metallic silver balloons, transparent balloons, and elegant white decorations. Light marble or neutral textured background.
+
+LIGHTING: Bright soft studio lighting with natural skin tones, delicate reflections on silver balloons, and subtle shadows.
+
+CAMERA: Full-frame DSLR, 50mm lens, f/2.8, vertical three-quarter portrait, sharp facial details, modern men's fashion photography, 8K realism.
+
+==================================================
+
+--- ITEM 10 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: CHARCOAL BLAZER CHOCOLATE CAKE
+IMAGEM_PREVIA_URL: https://i.imgur.com/hRFwdrW.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 10 — CHARCOAL BLAZER CHOCOLATE CAKE 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic sophisticated birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial anatomy, eyes, nose, lips, skin tone, natural skin texture, hair color, hairstyle, and body structure. No artificial face alterations.
+
+POSE: Standing or sitting upright, holding a small round chocolate birthday cake with both hands at waist-to-chest level. Cake positioned centrally. Looking directly into the camera with a warm natural smile.
+
+OUTFIT: Elegant charcoal-gray textured blazer with classic lapels and refined tailoring, worn over a simple white crew-neck T-shirt. Dark trousers. Sophisticated smart-casual style.
+
+CAKE: Small round chocolate cake with rich chocolate frosting and decorative chocolate shavings. One illuminated birthday candle on top.
+
+BACKGROUND: Deep dark charcoal and black studio background. Large oversized dark decorative birthday number shapes positioned behind the subject, creating subtle dimensional contrast. Minimalist dramatic atmosphere.
+
+LIGHTING: Soft warm frontal lighting illuminating the face and cake. Subtle highlights on the blazer texture and chocolate frosting. Dark background with cinematic contrast.
+
+CAMERA: Professional full-frame DSLR, 85mm lens, f/2.0, medium portrait composition, shallow depth of field, sharp facial and cake details, luxury birthday editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 11 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK AND WHITE 29TH BIRTHDAY PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/yROKGWV.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 11 — BLACK AND WHITE 29TH BIRTHDAY PORTRAIT 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a dramatic black-and-white birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial identity, facial features, skin tone translated naturally into monochrome tonal values, hairstyle, hair texture, and body proportions. Do not modify my identity.
+
+POSE: Facing the camera, extending both hands toward the lens while holding two separate large number candles reading 29. The candles are positioned prominently in the foreground. Fingers naturally holding the candle bases. Looking directly at the camera with a genuine smile.
+
+OUTFIT: Black textured knitted sweater with a high rounded neckline, sophisticated minimalist styling.
+
+BACKGROUND: Completely neutral dark gray or black photographic studio. No additional decorations.
+
+VISUAL STYLE: Entire photograph must be strictly black and white, including skin, clothing, background, and candles. Preserve rich grayscale tones, deep blacks, and detailed highlights.
+
+LIGHTING: Soft directional studio lighting from the front, with gentle shadows defining the face and hands. Elegant monochromatic contrast.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/1.8, close-up portrait, strong foreground perspective, shallow depth of field, sharp facial details, artistic black-and-white birthday editorial, 8K realism.
+
+==================================================
+
+--- ITEM 12 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: WHITE SWEATER GOLDEN 39TH BIRTHDAY
+IMAGEM_PREVIA_URL: https://i.imgur.com/zG2olD4.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 12 — WHITE SWEATER GOLDEN 39TH BIRTHDAY 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant ultra-realistic men's birthday lifestyle portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, skin tone, facial structure, natural skin texture, hair color, hairstyle, and body proportions. No modifications to my physical identity.
+
+POSE: Sitting casually on a luxurious dark or neutral upholstered stool, legs slightly apart. One hand resting naturally on the thigh while the opposite hand rests on the other leg. Torso slightly leaning forward, looking at the camera with a warm confident smile.
+
+OUTFIT: Elegant fitted ivory-white long-sleeved knit sweater with a simple rounded neckline, paired with black tailored trousers. Delicate gold chain necklace and discreet bracelet. Sophisticated smart-casual styling.
+
+BACKGROUND: Dark elegant birthday studio with large illuminated metallic gold number balloons reading 39 positioned behind the subject. Warm golden fairy lights creating a beautiful bokeh effect. Luxurious dark brown seating and neutral decorative details.
+
+LIGHTING: Warm golden studio lighting illuminating the face and sweater, with soft shadows and elegant golden reflections on the number balloons.
+
+CAMERA: Professional DSLR, 50mm lens, f/2.2, medium seated portrait, sharp facial focus, luxury lifestyle birthday photography, cinematic golden color grading, 8K photorealism.
+
+==================================================
+
+--- ITEM 13 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK AND WHITE FORMAL TUXEDO PORTRAIT
+IMAGEM_PREVIA_URL: https://i.imgur.com/40NihCv.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 13 — BLACK AND WHITE FORMAL TUXEDO PORTRAIT 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a timeless, ultra-realistic black-and-white formal birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original face photograph as the absolute identity reference. Preserve exact facial anatomy, skin tone translated into natural monochrome tones, hairstyle, hairline, and body proportions. Do not alter my identity.
+
+POSE: Sitting elegantly on a minimalist dark studio stool, one hand holding several helium balloon ribbons. The opposite hand rests naturally on the thigh. Legs positioned elegantly, torso upright, looking directly at the camera with a sophisticated expression.
+
+OUTFIT: Classic black formal tuxedo with structured shoulders, satin lapels, crisp white dress shirt, elegant black bow tie, and tailored black trousers. Polished black leather dress shoes.
+
+BACKGROUND: Minimalist dark photographic studio with silver metallic helium balloons positioned on the left side and behind the subject. Elegant reflective silver surfaces.
+
+VISUAL STYLE: Entire photograph must be black and white. Rich monochromatic tones, dramatic shadows, silver highlights, and timeless luxury editorial aesthetics.
+
+LIGHTING: Soft cinematic lighting illuminating the face and tuxedo, with subtle rim lighting creating separation from the dark background.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.0, seated full-body composition, eye-level perspective, sharp facial details, timeless black-and-white men's fashion editorial, 8K photorealism.
+
+==================================================
+
+--- ITEM 14 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: BLACK TUXEDO GOLDEN SPARKLER
+IMAGEM_PREVIA_URL: https://i.imgur.com/6i9OVhS.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 14 — BLACK TUXEDO GOLDEN SPARKLER 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a dramatic, hyper-realistic luxury men's birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial identity, facial features, skin tone, natural skin texture, hairstyle, hair color, and body proportions. Do not change or reinterpret my physical appearance.
+
+POSE: Standing facing the camera, extending one arm toward the lens while holding a lit golden sparkler. The sparkler is prominently positioned in the foreground, creating a dramatic perspective. Opposite arm relaxed naturally beside the body. Looking at the camera with a confident expression.
+
+OUTFIT: Elegant black formal tuxedo with satin lapels, white dress shirt, classic black bow tie, and tailored black trousers. Sophisticated black formal styling.
+
+BACKGROUND: Deep charcoal or black studio background, minimalist and dramatic. No distracting decorations.
+
+LIGHTING: Cinematic low-key lighting, soft illumination on the face and tuxedo, bright golden sparkler particles in the foreground, realistic reflections on the white shirt, dramatic contrast.
+
+CAMERA: Professional full-frame DSLR, 50mm lens, f/1.8, medium portrait with strong foreground perspective, shallow depth of field, sharp facial details, realistic sparkler effects, cinematic birthday photography, 8K photorealism.
+
+==================================================
+
+--- ITEM 15 ---
+CATEGORIA: Ensaio Masculino Adulto
+TÍTULO: NAVY SUIT 30TH BIRTHDAY CELEBRATION
+IMAGEM_PREVIA_URL: https://i.imgur.com/wQaCIWi.png
+PROMPT_INTEGRAL (copiar exatamente o conteúdo abaixo; não incluir a URL):
+PROMPT 15 — NAVY SUIT 30TH BIRTHDAY CELEBRATION 
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a luxurious, hyper-realistic full-body milestone birthday portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the exclusive identity reference. Preserve my exact facial features, face shape, eyes, nose, lips, skin tone, natural skin texture, hairstyle, hair color, hairline, and body proportions. Do not change my identity or physical appearance.
+
+POSE: Standing confidently between two enormous metallic number-shaped helium balloons reading 30. Body facing the camera, arms relaxed naturally alongside the body. One leg slightly forward, shoulders relaxed, looking directly at the camera with a confident smile. Full-body vertical composition.
+
+OUTFIT: Elegant dark navy-blue tailored suit with a fitted blazer, matching trousers, crisp black or dark dress shirt, and polished black leather dress shoes. Sophisticated monochromatic executive styling.
+
+BACKGROUND: Dark luxury birthday studio with dramatic lighting. On the left, a large metallic red or magenta number balloon shaped like 3. On the right, a large metallic blue number balloon shaped like 0. Reflective floor and subtle atmospheric lighting.
+
+LIGHTING: Cinematic dual-color lighting. Rich red illumination from the left and cool blue illumination from the right, with soft frontal lighting preserving natural skin tones and facial details. Metallic balloons should have realistic reflective surfaces.
+
+CAMERA: Full-frame professional DSLR, 50mm lens, f/3.2, full-body vertical composition, eye-level perspective, sharp facial focus, luxury men's birthday campaign, dramatic cinematic color grading, ultra-realistic 8K quality.
+
+
+========================
+ENCERRAMENTO E RELATÓRIO
+========================
+
+Ao concluir, não faça alterações adicionais por iniciativa própria.
+Entregue um resumo objetivo:
+- Aniversário Feminino: itens adicionados / total esperado
+- Aniversário Gospel Evangélico: itens adicionados / total esperado
+- Profissional Feminino: itens adicionados / total esperado
+- Ensaio Masculino Adulto: itens adicionados / total esperado
+- Categoria Prévias: confirmação explícita de que permaneceu intocada
+- Confirmação de preservação das demais categorias e da estrutura visual
+- Testes desktop/mobile e cópia de prompts
+- Relação dos arquivos ou tabelas efetivamente alterados
+
+Se qualquer URL Imgur falhar, não substitua por outra imagem: informe exatamente qual item falhou e não faça substituição automática.

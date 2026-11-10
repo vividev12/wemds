@@ -19,65 +19,67 @@ export const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050505]/88 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md bg-[#141414] border border-[#2B2B2B] rounded-2xl overflow-hidden shadow-2xl p-6"
+        className="relative w-full max-w-md bg-[#121212] border border-[#242424] rounded-xl overflow-hidden shadow-2xl p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-neutral-400 hover:text-white p-1 rounded-lg hover:bg-[#202020] transition-colors cursor-pointer"
+          className="absolute top-4 right-4 text-[#929292] hover:text-[#EAE7E0] p-1.5 rounded-md hover:bg-[#1B1B1B] transition-colors cursor-pointer"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4 stroke-[1.5]" />
         </button>
 
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-red-950/40 border border-red-800/40 flex items-center justify-center text-red-400">
-            <AlertTriangle className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-lg bg-red-950/40 border border-red-800/40 flex items-center justify-center text-red-400">
+            <AlertTriangle className="w-4 h-4 stroke-[1.5]" />
           </div>
           <div>
-            <h3 className="text-base font-bold text-white">
+            <h3 className="font-display text-xl font-normal text-[#EAE7E0]">
               Confirmar Exclusão
             </h3>
-            <p className="text-xs text-neutral-400">
+            <p className="text-xs font-light text-[#929292]">
               Esta ação removerá a referência e o prompt permanentemente.
             </p>
           </div>
         </div>
 
-        <div className="my-4 p-3 bg-[#0E0E0E] rounded-xl border border-[#222222] flex items-center gap-3">
+        <div className="my-4 p-3 bg-[#0A0A0A] rounded-lg border border-[#1E1E1E] flex items-center gap-3">
           <img
             src={reference.imageUrl}
             alt={reference.title}
-            className="w-12 h-14 object-cover rounded-lg border border-[#333333]"
+            referrerPolicy="no-referrer"
+            className="w-12 h-14 object-cover rounded border border-[#282828]"
           />
           <div className="overflow-hidden">
-            <p className="text-xs font-semibold text-white truncate">{reference.title}</p>
-            <p className="text-[11px] text-[#D4AF37] mt-0.5">{reference.category}</p>
+            <p className="text-xs font-normal text-[#EAE7E0] truncate">{reference.title}</p>
+            <p className="text-[11px] font-light text-[#C6A75E] mt-0.5">{reference.category}</p>
           </div>
         </div>
 
-        <p className="text-xs text-neutral-400 mb-6">
-          Tem certeza de que deseja excluir <span className="text-white font-medium">"{reference.title}"</span> do catálogo?
+        <p className="text-xs font-light text-[#929292] mb-6 leading-relaxed">
+          Tem certeza de que deseja excluir{' '}
+          <span className="text-[#EAE7E0] font-normal">"{reference.title}"</span> do catálogo?
         </p>
 
-        <div className="flex items-center justify-end gap-3">
+        <div className="flex items-center justify-end gap-2.5">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2.5 rounded-lg border border-[#2A2A2A] text-neutral-300 hover:text-white hover:bg-[#1A1A1A] text-xs font-medium cursor-pointer"
+            className="px-4 py-2 rounded-md border border-[#242424] text-[#929292] hover:text-[#EAE7E0] hover:bg-[#181818] text-xs font-light cursor-pointer transition-colors"
           >
             Cancelar
           </button>
           <button
             type="button"
             onClick={onConfirm}
-            className="px-5 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5"
+            className="px-4 py-2 rounded-md bg-red-700 hover:bg-red-600 text-white font-medium text-xs uppercase tracking-[0.08em] transition-colors cursor-pointer flex items-center gap-1.5"
           >
-            <Trash2 className="w-3.5 h-3.5" />
-            <span>Excluir Definitivamente</span>
+            <Trash2 className="w-3.5 h-3.5 stroke-[1.5]" />
+            <span>Excluir</span>
           </button>
         </div>
       </div>

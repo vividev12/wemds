@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Header } from './components/Header';
 import { SearchBarAndFilters } from './components/SearchBarAndFilters';
 import { PhotoCard } from './components/PhotoCard';
@@ -9,7 +9,7 @@ import { DeleteConfirmModal } from './components/DeleteConfirmModal';
 import { SettingsAndCloudModal } from './components/SettingsAndCloudModal';
 import { storageService } from './services/storage';
 import { PhotoReference, Category, SortOption } from './types';
-import { Sparkles, Layers, SlidersHorizontal, ImageOff } from 'lucide-react';
+import { ImageOff } from 'lucide-react';
 
 export default function App() {
   // --- Persistent States ---
@@ -211,7 +211,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-white flex flex-col font-sans selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+    <div className="min-h-screen bg-[#0A0A0A] text-[#EAE7E0] flex flex-col font-sans selection:bg-[#C6A75E]/25 selection:text-[#D5BD83]">
       {/* 1. Header */}
       <Header
         isAdmin={isAdmin}
@@ -223,34 +223,42 @@ export default function App() {
       />
 
       {/* 2. Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-        {/* Editorial Subheader Banner */}
-        <section className="mb-8 pb-6 border-b border-[#1A1A1A] flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#D4AF37]">
-                COLEÇÃO EXCLUSIVA DE PROMPTS
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-9 pb-14 sm:pt-12 sm:pb-16">
+        {/* Apresentação Editorial Principal */}
+        <section className="mb-8 pb-7 border-b border-[#1A1A1A] flex flex-col md:flex-row md:items-end justify-between gap-5">
+          <div className="space-y-2.5 max-w-2xl">
+            <div className="flex items-center gap-3">
+              <span className="w-7 h-px bg-[#C6A75E]" aria-hidden="true" />
+              <span className="text-[10px] font-light uppercase tracking-[0.26em] text-[#C6A75E]">
+                Coleção Curada de Referências
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white font-display tracking-tight">
+
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-normal text-[#EAE7E0] tracking-[-0.01em] leading-[1.12] text-balance">
               Galeria de Referências Fotográficas
             </h2>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-1 max-w-2xl leading-relaxed">
-              Fotografias de alta classe organizadas por categoria. Clique em qualquer botão dourado para copiar o prompt integral instantaneamente.
+
+            <p className="text-xs sm:text-[14px] font-light text-[#929292] leading-relaxed">
+              Fotografias selecionadas por categoria editorial. Clique para ampliar ou copie o prompt integral instantaneamente.
             </p>
           </div>
 
-          {/* Quick Filter Info Tag */}
-          <div className="flex items-center gap-3 text-xs text-neutral-400 shrink-0">
-            <span className="tabular-nums font-semibold text-white">
-              {filteredReferences.length}
+          {/* Resumo Discreto da Seleção */}
+          <div className="flex items-center gap-2.5 text-xs font-light text-[#929292] shrink-0">
+            <span>
+              <span className="tabular-nums font-normal text-[#EAE7E0]">
+                {filteredReferences.length}
+              </span>{' '}
+              de{' '}
+              <span className="tabular-nums">{references.length}</span> referências
             </span>
-            <span>de {references.length} referências</span>
             {selectedCategory.toLowerCase() !== 'todas' && (
-              <span className="px-2 py-0.5 rounded bg-[#1F1F1F] text-[#D4AF37] font-medium text-[11px]">
-                {selectedCategory}
-              </span>
+              <>
+                <span aria-hidden="true" className="text-[#454545]">·</span>
+                <span className="text-[#D5BD83] font-normal">
+                  {selectedCategory}
+                </span>
+              </>
             )}
           </div>
         </section>
@@ -288,19 +296,19 @@ export default function App() {
           </div>
         ) : (
           /* Empty State */
-          <div className="py-20 px-4 text-center rounded-2xl border border-[#222222] bg-[#101010]/60 max-w-lg mx-auto my-8 flex flex-col items-center">
-            <div className="w-14 h-14 rounded-full bg-[#1A1A1A] border border-[#2B2B2B] flex items-center justify-center text-neutral-500 mb-4">
-              <ImageOff className="w-6 h-6 stroke-[1.5]" />
+          <div className="py-20 px-5 text-center rounded-lg border border-[#1E1E1E] bg-[#111111]/70 max-w-lg mx-auto my-8 flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-[#171717] border border-[#242424] flex items-center justify-center text-[#6E6E6E] mb-4">
+              <ImageOff className="w-5 h-5 stroke-[1.35]" />
             </div>
-            <h3 className="text-base font-bold text-white mb-1">
+            <h3 className="font-display text-xl font-normal text-[#EAE7E0] mb-1.5">
               Nenhuma referência encontrada
             </h3>
-            <p className="text-xs text-neutral-400 max-w-sm mb-5 leading-relaxed">
+            <p className="text-xs font-light text-[#929292] max-w-sm mb-6 leading-relaxed">
               {searchQuery || showOnlyFavorites || selectedCategory !== 'Todas'
-                ? 'Nenhum resultado corresponde aos filtros selecionados. Tente limpar a busca ou mudar de categoria.'
-                : 'Seu catálogo ainda está vazio. Clique em "+ ADICIONAR REFERÊNCIA" para cadastrar a primeira.'}
+                ? 'Nenhum resultado corresponde aos filtros selecionados. Tente limpar a busca ou escolher outra categoria.'
+                : 'Seu catálogo ainda está vazio. Adicione sua primeira referência pelo painel administrativo.'}
             </p>
-            <div className="flex gap-2.5">
+            <div className="flex flex-wrap items-center justify-center gap-2.5">
               {(searchQuery || showOnlyFavorites || selectedCategory !== 'Todas') && (
                 <button
                   onClick={() => {
@@ -308,7 +316,7 @@ export default function App() {
                     setSelectedCategory('Todas');
                     setShowOnlyFavorites(false);
                   }}
-                  className="px-4 py-2 rounded-lg bg-[#222222] hover:bg-[#2B2B2B] text-neutral-200 text-xs font-medium cursor-pointer transition-colors"
+                  className="px-4 py-2 rounded-md border border-[#262626] bg-[#171717] hover:border-[#C6A75E]/50 text-[#EAE7E0] text-xs font-light cursor-pointer transition-colors"
                 >
                   Limpar Filtros
                 </button>
@@ -316,9 +324,9 @@ export default function App() {
               {isAdmin && (
                 <button
                   onClick={handleOpenAddModal}
-                  className="px-4 py-2 rounded-lg bg-[#D4AF37] hover:bg-[#E5C158] text-black font-semibold text-xs cursor-pointer transition-colors"
+                  className="px-4 py-2 rounded-md bg-[#C6A75E] hover:bg-[#D5BD83] text-[#0A0A0A] font-medium text-xs tracking-wide cursor-pointer transition-colors"
                 >
-                  + Adicionar Referência
+                  Adicionar Referência
                 </button>
               )}
             </div>
@@ -326,29 +334,30 @@ export default function App() {
         )}
       </main>
 
-      {/* 5. Minimalist Elegant Footer */}
-      <footer className="border-t border-[#1A1A1A] bg-[#0A0A0A] py-8 text-neutral-500 text-xs">
+      {/* 5. Minimalist Editorial Footer */}
+      <footer className="border-t border-[#181818] bg-[#0A0A0A] py-8 text-[#929292] text-xs font-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="font-brand font-bold text-sm tracking-wider text-white">
-              Previas <span className="text-[#D4AF37] ml-0.5">We media</span>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
+            <span className="font-brand text-sm tracking-[0.08em] uppercase text-[#EAE7E0]">
+              PRÉVIAS <span className="text-[#C6A75E]">WE MEDIA</span>
             </span>
-            <span aria-hidden="true">·</span>
-            <span>Catálogo Particular de Referências &amp; Prompts</span>
+            <span aria-hidden="true" className="text-[#3A3A3A]">·</span>
+            <span className="text-[11px] tracking-[0.14em] uppercase text-[#7A7A7A]">
+              Catálogo e Mídia
+            </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px] text-neutral-500">
-            <span>Alta Fidelidade Fotográfica</span>
-            <span aria-hidden="true">·</span>
-            <span>Cópia Direta de Prompts</span>
-            <span aria-hidden="true">·</span>
-            <span className="text-neutral-400">© 2026 Previas We media</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-[11px] text-[#7A7A7A]">
+            <span>Curadoria Fotográfica</span>
+            <span aria-hidden="true" className="text-[#3A3A3A]">·</span>
+            <span>Prompts Integrais</span>
+            <span aria-hidden="true" className="text-[#3A3A3A]">·</span>
+            <span className="text-[#929292]">© 2026 We Media</span>
           </div>
         </div>
       </footer>
 
       {/* 6. Modals */}
-      {/* Detail / Lightbox Modal */}
       <ReferenceDetailModal
         reference={activeReference}
         isOpen={detailModalOpen}
@@ -366,7 +375,6 @@ export default function App() {
         onDelete={handleOpenDeleteConfirm}
       />
 
-      {/* Add / Edit Form Modal */}
       <ReferenceFormModal
         isOpen={formModalOpen}
         onClose={() => {
@@ -380,14 +388,12 @@ export default function App() {
         onAddNewCategory={handleAddNewCategory}
       />
 
-      {/* Admin Login Modal */}
       <AdminLoginModal
         isOpen={adminLoginModalOpen}
         onClose={() => setAdminLoginModalOpen(false)}
         onLogin={handleLoginAdmin}
       />
 
-      {/* Settings & Cloud Modal */}
       <SettingsAndCloudModal
         isOpen={settingsModalOpen}
         onClose={() => setSettingsModalOpen(false)}
@@ -397,7 +403,6 @@ export default function App() {
         onReloadData={reloadData}
       />
 
-      {/* Delete Confirmation Modal */}
       <DeleteConfirmModal
         reference={referenceToDelete}
         isOpen={deleteConfirmModalOpen}
