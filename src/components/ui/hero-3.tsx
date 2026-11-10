@@ -43,7 +43,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         return (
           <div
             key={`${prefix}-${item.id}-${idx}`}
-            className={`relative w-[176px] sm:w-[214px] lg:w-[240px] aspect-[3/4] shrink-0 rounded-2xl overflow-hidden bg-[#151515] border border-[#2C2C2C] shadow-[0_18px_36px_-12px_rgba(0,0,0,0.85)] ${comp.rotate} ${comp.offset}`}
+            className={`relative w-[204px] sm:w-[220px] lg:w-[244px] aspect-[3/4] shrink-0 rounded-2xl overflow-hidden bg-[#151515] border border-[#2C2C2C] shadow-[0_18px_36px_-12px_rgba(0,0,0,0.85)] ${comp.rotate} ${comp.offset}`}
           >
             <img
               src={item.src}
@@ -63,7 +63,7 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
   return (
     <section
       aria-label="Apresentação do Catálogo We Media"
-      className="hero-viewport-shell relative w-full overflow-x-clip bg-[#080808] border-b border-[#222222] flex flex-col justify-center pt-5 pb-8 sm:pt-8 sm:pb-12"
+      className="hero-viewport-shell relative w-full overflow-x-clip bg-[#080808] border-b border-[#222222] flex flex-col justify-evenly gap-6 sm:gap-8 pt-6 pb-0 sm:pt-8 sm:pb-2"
     >
       {/* Brilho ambiente sutil no topo */}
       <div
@@ -103,8 +103,8 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
         </div>
       </div>
 
-      {/* Camada Intermediária/Inferior: Galeria Marquee subindo parcialmente atrás da área do botão */}
-      <div className="relative z-10 -mt-6 sm:-mt-8 lg:-mt-10 w-full">
+      {/* Camada Inferior: Galeria Marquee posicionada abaixo do botão, sem sobreposição */}
+      <div className="relative z-10 w-full">
         {/* Gradientes sutis apenas nas extremidades laterais para entrada/saída suave sem escurecer as fotos */}
         <div
           aria-hidden="true"
