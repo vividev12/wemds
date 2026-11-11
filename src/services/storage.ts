@@ -45,6 +45,7 @@ const STORAGE_KEYS = {
   CATEGORIES: 'wemedia_categories_v3',
   BACKUP_PRE_PREVIAS: 'wemedia_backup_pre_previas_v1',
   RECLASS_52_V1: 'wemedia_reclass_52_v1',
+  REPLACE_CASUAL_FEM_V2: 'wemedia_replace_casual_fem_v2',
   PRUNE_EMPTY_CATS_V1: 'wemedia_prune_empty_cats_v1',
   ADMIN_AUTH: 'wemedia_admin_auth_v1',
   ADMIN_PIN: 'wemedia_admin_pin_v1',
@@ -147,12 +148,31 @@ class StorageService {
         refs = [...INITIAL_REFERENCES];
       }
       this.setInStorage(STORAGE_KEYS.REFERENCES, refs);
+      this.setInStorage(STORAGE_KEYS.REPLACE_CASUAL_FEM_V2, 'done');
       return refs;
     }
 
     // Ensure known seed fixes stay applied without overriding categories of future commercial entries
     let hasUpdated = false;
     const reclassDone = this.getFromStorage<string>(STORAGE_KEYS.RECLASS_52_V1, '') === 'done';
+    const replaceCasualFemDone =
+      this.getFromStorage<string>(STORAGE_KEYS.REPLACE_CASUAL_FEM_V2, '') === 'done';
+
+    // One-time full replacement of Casual Feminino with the official 30 entries from CASUAL_MULHER_d2ee65ef.txt
+    if (!replaceCasualFemDone) {
+      const casualSeedIds = new Set(
+        INITIAL_REFERENCES.filter((s) => s.category === 'Casual Feminino').map((s) => s.id)
+      );
+      const beforeLen = refs.length;
+      refs = refs.filter(
+        (r) =>
+          r.category.toLowerCase().trim() !== 'casual feminino' &&
+          !casualSeedIds.has(r.id)
+      );
+      if (refs.length !== beforeLen) {
+        hasUpdated = true;
+      }
+    }
 
     // Map ONLY the 52 new TXT references (ref-17..ref-68) by ID and Imgur URL (never by title)
     const previasIds = new Set(
@@ -203,6 +223,9 @@ class StorageService {
     }
     if (!reclassDone) {
       this.setInStorage(STORAGE_KEYS.RECLASS_52_V1, 'done');
+    }
+    if (!replaceCasualFemDone) {
+      this.setInStorage(STORAGE_KEYS.REPLACE_CASUAL_FEM_V2, 'done');
     }
 
     return refs;

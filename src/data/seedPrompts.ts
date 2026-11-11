@@ -884,8 +884,8 @@ export const SEED_PROMPTS = [
     "title": "TROPICAL BEACH ADVENTURE LOOK",
     "originalTitle": "TROPICAL BEACH ADVENTURE LOOK",
     "category": "Casual Feminino",
-    "imageUrl": "https://i.imgur.com/J6EFhRp.png",
-    "originalImage": "https://i.imgur.com/J6EFhRp.png",
+    "imageUrl": "https://i.imgur.com/CK3Ottt.png",
+    "originalImage": "https://i.imgur.com/CK3Ottt.png",
     "prompt": "I authorize the use of my original image for AI image generation.\n\nCreate a hyper-realistic luxury tropical lifestyle fashion portrait based on the attached reference.\n\nIDENTITY PRESERVATION: Use my original uploaded face photograph as the absolute identity reference. Keep my exact facial features, skin tone, natural skin texture, hair color, hairstyle, hair length, and body proportions unchanged.\n\nPOSE: Sitting casually on a dark off-road ATV parked at a scenic tropical coastal viewpoint. One hand resting on the vehicle and the opposite hand positioned naturally beside the body. Legs arranged comfortably, body turned toward the camera, smiling confidently.\n\nOUTFIT: Elegant white or ivory two-piece beach outfit consisting of a delicate fitted bikini-style top with subtle cutout or tie details and a high-waisted flowing ivory wrap skirt with a dramatic side slit. Minimal gold jewelry and stylish dark sunglasses.\n\nBACKGROUND: Stunning tropical coastal landscape with a bright turquoise-blue ocean, white sandy beaches, lush green vegetation, and distant rocky hills. A dark off-road ATV visible in the foreground.\n\nLIGHTING: Bright natural tropical sunlight with crisp shadows, vibrant blue ocean tones, realistic skin highlights, and a fresh summer atmosphere.\n\nCAMERA: Professional full-frame DSLR, 35mm lens, f/3.5, full-body environmental portrait, realistic vehicle details, luxury travel editorial photography, 8K photorealism.",
     "isFavorite": false,
     "createdAt": "2026-11-10T16:33:00.000Z"
@@ -895,8 +895,8 @@ export const SEED_PROMPTS = [
     "title": "NAVY BLUE STRAPLESS EVENING GOWN",
     "originalTitle": "NAVY BLUE STRAPLESS EVENING GOWN",
     "category": "Casual Feminino",
-    "imageUrl": "https://i.imgur.com/7YLKg3F.png",
-    "originalImage": "https://i.imgur.com/7YLKg3F.png",
+    "imageUrl": "https://i.imgur.com/J6EFhRp.png",
+    "originalImage": "https://i.imgur.com/J6EFhRp.png",
     "prompt": "I authorize the use of my original image for AI image generation.\n\nCreate an ultra-realistic luxurious formal fashion portrait based on the attached reference.\n\nIDENTITY PRESERVATION: Preserve my exact original face, facial anatomy, eyes, nose, lips, skin tone, natural skin texture, hair color, hair length, hairstyle, and body proportions. Do not modify my identity or physical appearance.\n\nPOSE: Standing elegantly in the center of a luxurious illuminated walkway. Both hands resting gently together in front of the waist. Shoulders relaxed, body facing the camera, looking directly at the lens with a confident warm smile. Full-body vertical composition.\n\nOUTFIT: Luxurious midnight-navy strapless evening gown with a structured fitted bodice and a dramatic voluminous floor-length satin skirt. Elegant sweetheart or straight neckline, refined waist, and rich satin texture with natural folds. Sophisticated formal styling.\n\nBACKGROUND: Grand luxury event entrance with symmetrical rows of warm golden fairy lights and illuminated vertical decorative elements on both sides. Elegant golden light reflections along the floor, creating a glamorous evening atmosphere.\n\nLIGHTING: Warm golden ambient lighting from the background combined with soft frontal illumination on the subject. Beautiful highlights on the navy satin gown and natural skin tones.\n\nCAMERA: Full-frame DSLR, 85mm lens, f/2.0, full-body vertical fashion portrait, eye-level perspective, cinematic luxury event photography, realistic fabric textures, 8K photorealism.",
     "isFavorite": false,
     "createdAt": "2026-11-10T16:32:00.000Z"
