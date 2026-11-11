@@ -1,0 +1,343 @@
+ENSAIO COM IA — PHOTO PROMPT
+15 MEN'S CORPORATE PHOTOGRAPHY PROMPTS
+GEMINI AI — EXACT ORDER OF THE REFERENCES
+
+==================================================
+PROMPT 01 — RELAXED EXECUTIVE IN COGNAC LEATHER CHAIRhttps://i.imgur.com/DSF7lvO.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic professional executive portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Use my original uploaded photograph as the absolute identity reference. Preserve my exact face, facial structure, eyes, nose, lips, skin tone, natural skin texture, hairstyle, hair color, hairline, facial hair if present, and body proportions. Do not modify my identity or physical appearance.
+
+POSE: Sitting comfortably in a luxurious cognac-brown leather armchair. One elbow resting on the armrest, with the hand gently touching the side of the forehead. The opposite arm resting naturally on the other armrest. Legs relaxed, slightly angled. Looking toward the camera with a calm, confident expression.
+
+OUTFIT: Dark navy-blue long-sleeved button-down shirt with the top buttons slightly open, paired with elegant black tailored trousers. Discreet wristwatch and minimalist accessories.
+
+BACKGROUND: Minimalist warm gray studio wall with a neutral floor. Large cognac-brown leather armchair with curved arms and elegant stitching. Clean, sophisticated executive environment.
+
+LIGHTING: Soft natural-looking studio light from the front-left, gentle shadows, warm highlights on the leather, and realistic skin tones.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.2, medium seated portrait, eye-level perspective, sharp facial focus, luxury corporate editorial photography, 8K photorealism.
+
+==================================================
+PROMPT 02 — NAVY BUSINESS SUIT IN MODERN OFFICE https://i.imgur.com/NOoUpnA.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, hyper-realistic corporate executive portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial identity, skin tone, skin texture, hair color, hairstyle, hairline, and natural body proportions. Do not reshape my face or modify any physical characteristic.
+
+POSE: Sitting elegantly on a modern dark upholstered sofa. Body facing the camera, torso slightly leaning forward, both hands joined naturally between the knees. Shoulders relaxed and legs positioned comfortably. Looking directly at the camera with a warm professional smile.
+
+OUTFIT: Sophisticated navy-blue tailored business suit, crisp white dress shirt, elegant white pocket square, and dark polished leather shoes. Premium executive styling.
+
+BACKGROUND: Bright contemporary executive office with large floor-to-ceiling windows, a softly blurred cityscape, elegant indoor green plants, and modern office furniture. A dark navy sofa provides contrast.
+
+LIGHTING: Soft natural daylight entering through the windows, illuminating the face evenly. Gentle shadows, realistic reflections, and refined neutral color grading.
+
+CAMERA: Professional full-frame mirrorless camera, 50mm lens, f/2.8, medium full-body seated composition, shallow depth of field, sharp facial details, luxury business photography, 8K realism.
+
+==================================================
+PROMPT 03 — BLUE SUIT CORPORATE LEADERSHIP PORTRAIT https://i.imgur.com/YSfl2Jg.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic high-end corporate portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial anatomy, eyes, nose, lips, skin tone, natural skin texture, hairstyle, hair color, and body proportions. No facial alterations or artificial beautification.
+
+POSE: Standing upright in a modern office environment. Both hands gently joined at waist level, fingers naturally interlaced. Shoulders straight but relaxed, torso slightly angled, looking directly into the camera with a serious and confident expression.
+
+OUTFIT: Premium navy-blue tailored business suit with structured shoulders, white dress shirt, and elegant medium-blue textured tie. White pocket square, refined wristwatch, and polished executive appearance.
+
+BACKGROUND: Contemporary corporate office with large glass windows, modern architectural columns, and softly blurred professionals working in the background. Bright natural office atmosphere.
+
+LIGHTING: Natural daylight entering through large windows, balanced with soft frontal illumination. Realistic skin tones, subtle shadows, and sophisticated neutral color grading.
+
+CAMERA: Full-frame DSLR, 85mm portrait lens, f/2.8, waist-up composition, eye-level perspective, shallow depth of field, crisp facial focus, professional corporate editorial photography, 8K photorealism.
+
+==================================================
+PROMPT 04 — ADJUSTING NAVY SUIT AND TIE https://i.imgur.com/6GedlDh.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant, ultra-realistic executive fashion portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face as the exact identity reference. Maintain my original facial structure, eyes, nose, lips, skin tone, skin texture, hairstyle, hairline, and body proportions. Do not change my identity.
+
+POSE: Standing confidently, facing the camera. One hand gently adjusting the tie knot near the collar while the opposite hand rests naturally near the lower front of the suit jacket. Shoulders relaxed, body upright, with a confident genuine smile.
+
+OUTFIT: Elegant dark navy-blue tailored business suit, crisp white dress shirt, and matching navy tie. Structured blazer with classic lapels and refined tailoring. Sophisticated metallic wristwatch.
+
+BACKGROUND: Deep dark navy corporate studio background with subtle architectural shadows. Minimalist luxury executive environment.
+
+LIGHTING: Soft frontal studio lighting illuminating the face, combined with subtle rim lighting behind the shoulders. Elegant highlights on the suit fabric and natural skin tones.
+
+CAMERA: Professional DSLR, 85mm lens, f/2.0, medium portrait composition, sharp eye focus, luxury executive fashion photography, cinematic contrast, 8K photorealism.
+
+==================================================
+PROMPT 05 — GRAY SUIT IN COGNAC LEATHER ARMCHAIR https://i.imgur.com/ISJZnwq.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, hyper-realistic executive portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial details, skin tone, natural skin texture, hair color, hairstyle, and body structure. Do not alter my identity or physical appearance.
+
+POSE: Sitting comfortably in a luxurious cognac-brown leather armchair. One arm resting naturally on the chair's armrest, with the hand relaxed. Opposite hand resting near the lap. Body slightly angled toward the camera, shoulders relaxed, and legs positioned naturally. Looking at the camera with a composed professional expression.
+
+OUTFIT: Elegant charcoal-gray or medium-gray tailored business suit, white dress shirt, and champagne-beige silk tie. Classic lapels, structured shoulders, refined tailoring, and a discreet wristwatch.
+
+BACKGROUND: Neutral gray minimalist studio with a luxurious cognac leather armchair featuring visible stitching and curved wooden or leather armrests.
+
+LIGHTING: Soft directional studio lighting from the upper left, creating gentle facial dimension and realistic shadows. Natural colors and balanced contrast.
+
+CAMERA: Full-frame mirrorless camera, 85mm lens, f/2.2, medium seated portrait, eye-level perspective, sharp facial focus, professional corporate editorial photography, 8K photorealism.
+
+==================================================
+PROMPT 06 — BLACK SWEATER CORPORATE OFFICE PORTRAIT https://i.imgur.com/sbgt0dY.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic professional corporate portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Keep my original facial identity exactly unchanged. Preserve my face shape, facial features, skin tone, skin texture, hairstyle, hairline, and body proportions.
+
+POSE: Sitting behind a wooden executive desk, elbows resting naturally on the surface. Both hands joined in front of the chin in a relaxed thoughtful gesture. Looking directly into the camera with a calm, confident expression.
+
+OUTFIT: Elegant black fine-knit sweater with a classic rounded neckline, worn over a white dress shirt with a subtle visible collar. Sophisticated wristwatch and minimal accessories.
+
+BACKGROUND: Bright contemporary office with large windows, natural greenery visible outside, and indoor decorative plants. Warm wooden desk in the foreground. An open silver laptop positioned on the left side of the desk.
+
+LIGHTING: Natural daylight entering from the left, softly illuminating the face and hands. Balanced shadows and professional warm-neutral tones.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.2, medium close-up portrait, shallow depth of field, sharp facial focus, elegant business lifestyle photography, 8K photorealism.
+
+==================================================
+PROMPT 07 — BLACK POLO SHIRT WITH TABLET https://i.imgur.com/ijg1gQw.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic sophisticated business lifestyle portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original facial features, skin tone, skin texture, hair color, hairstyle, hairline, and natural body proportions. No identity changes.
+
+POSE: Sitting comfortably on a light beige upholstered sofa. Holding a dark tablet horizontally with both hands, resting it naturally across the lap. Body slightly leaning forward, shoulders relaxed, looking toward the camera with a warm smile.
+
+OUTFIT: Elegant black short-sleeved polo shirt with a classic collar, paired with beige tailored chinos. Discreet wristwatch and minimalist accessories.
+
+BACKGROUND: Modern executive lounge with floor-to-ceiling windows covered by soft translucent beige curtains. Decorative pampas grass in a tall vase and elegant neutral interior details. Light beige sofa and natural wood accents.
+
+LIGHTING: Soft natural daylight filtering through the curtains, creating a warm, welcoming atmosphere with gentle shadows.
+
+CAMERA: Professional mirrorless camera, 50mm lens, f/2.8, medium seated portrait, sharp facial details, natural fabric texture, refined business lifestyle photography, 8K realism.
+
+==================================================
+PROMPT 08 — WHITE SHIRT MODERN EXECUTIVE PORTRAIT https://i.imgur.com/MJZVlx8.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an elegant, ultra-realistic business portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Maintain my exact original face, facial structure, eyes, nose, lips, skin tone, skin texture, hairstyle, and natural body proportions. Do not modify my identity.
+
+POSE: Standing casually in a modern office, one forearm resting naturally on a light-colored architectural railing. The opposite arm relaxed alongside the body. Body slightly angled toward the camera, shoulders relaxed, and a natural confident smile.
+
+OUTFIT: Elegant white long-sleeved button-down shirt with the sleeves casually rolled up to the forearms. Top buttons slightly open. Beige or light khaki tailored trousers. Minimalist wristwatch and refined accessories.
+
+BACKGROUND: Bright contemporary corporate office with a modern architectural corridor, large windows, neutral walls, and lush green indoor plants. Clean minimalist atmosphere with natural light.
+
+LIGHTING: Bright soft daylight entering from the windows, creating gentle shadows and natural highlights on the white shirt.
+
+CAMERA: Full-frame DSLR, 50mm lens, f/2.8, three-quarter portrait, eye-level perspective, realistic skin texture, natural colors, premium corporate lifestyle photography, 8K photorealism.
+
+==================================================
+PROMPT 09 — WHITE SHIRT FULL-BODY OFFICE PORTRAIT https://i.imgur.com/oMyA09W.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a professional ultra-realistic full-body executive portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Use my original face photograph as the absolute identity reference. Preserve my exact facial anatomy, skin tone, natural skin texture, hair color, hairstyle, and body proportions.
+
+POSE: Standing upright in a modern office, one hand resting casually inside the front pocket of the trousers. Opposite arm relaxed naturally beside the body. One leg slightly forward, shoulders relaxed, looking directly at the camera with a warm smile.
+
+OUTFIT: Crisp white long-sleeved button-down shirt with sleeves neatly rolled to the forearms. Dark charcoal-gray tailored trousers with a classic fit. Dark leather belt and discreet wristwatch.
+
+BACKGROUND: Sophisticated contemporary office with light beige stone walls, a dark modern table, elegant indoor plants, and neutral decorative objects. Bright architectural interior with a refined professional atmosphere.
+
+LIGHTING: Soft natural daylight combined with subtle warm interior lighting. Gentle shadows, realistic skin tones, and balanced exposure.
+
+CAMERA: Full-frame mirrorless camera, 50mm lens, f/3.5, full-body vertical composition, eye-level perspective, sharp facial details, professional corporate portrait photography, 8K realism.
+
+==================================================
+PROMPT 10 — RELAXED EXECUTIVE IN MODERN LOUNGE https://i.imgur.com/KzfNVhE.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, ultra-realistic executive lifestyle portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact facial identity, original skin tone, facial features, hair color, hairstyle, hairline, and natural body proportions. No changes to my physical appearance.
+
+POSE: Sitting comfortably in a modern light beige upholstered armchair. Legs crossed naturally, one arm resting on the armrest and the opposite hand resting near the lap. Body relaxed and slightly angled toward the camera. Looking directly at the camera with a friendly smile.
+
+OUTFIT: Elegant light beige long-sleeved button-down shirt with the collar open, paired with dark charcoal tailored trousers. A dark navy-blue blazer is casually draped over one armrest. Refined wristwatch.
+
+BACKGROUND: Sophisticated contemporary lounge with a large green monstera plant behind the chair, neutral walls, minimalist furniture, and a modern black floor lamp positioned to the left. Light beige armchair and elegant indoor decor.
+
+LIGHTING: Soft warm daylight combined with subtle interior lighting. Gentle facial shadows, natural highlights, and refined neutral color grading.
+
+CAMERA: Professional DSLR, 50mm lens, f/2.8, three-quarter seated portrait, eye-level perspective, realistic textures, luxury corporate lifestyle photography, 8K photorealism.
+ 
+==================================================
+PROMPT 11 — BLACK CASUAL MINIMALIST STUDIO PORTRAIT https://i.imgur.com/Ave1xeO.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic minimalist men's fashion portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial features, skin tone, natural skin texture, hairstyle, hairline, and body structure. Do not modify my identity.
+
+POSE: Sitting on a simple white geometric pedestal, body facing the camera. Hands gently joined and resting naturally between the thighs. Legs slightly apart with feet positioned comfortably on the floor. Shoulders relaxed, looking at the camera with a friendly smile.
+
+OUTFIT: Oversized black short-sleeved T-shirt with a relaxed modern fit, paired with black straight-leg trousers and gray-white casual sneakers. Minimalist urban styling.
+
+BACKGROUND: Clean light beige or warm off-white photography studio with a smooth seamless wall and matching floor. Simple white geometric pedestal.
+
+LIGHTING: Soft diffused studio lighting from the front, producing subtle shadows and natural skin tones. Bright minimalist aesthetic.
+
+CAMERA: Full-frame DSLR, 50mm lens, f/3.5, full-body vertical portrait, eye-level perspective, realistic proportions, modern men's fashion editorial, 8K photorealism.
+
+==================================================
+PROMPT 12 — ALL BLACK LUXURY EXECUTIVE PORTRAIT https://i.imgur.com/PMLs6Ge.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a dramatic luxury executive portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Maintain my exact original facial identity, skin tone, skin texture, facial features, hairstyle, hair color, hairline, and natural body proportions. Do not alter my appearance.
+
+POSE: Sitting on a dark minimalist chair or stool, torso upright and facing the camera. One hand resting casually inside the trouser pocket, opposite arm relaxed alongside the body. Legs positioned naturally. Looking directly at the camera with a serious, confident expression.
+
+OUTFIT: Sophisticated all-black monochromatic ensemble. Black tailored blazer with classic lapels, black shirt with the top buttons slightly open, and matching black tailored trousers. Discreet gold or silver wristwatch and subtle necklace.
+
+BACKGROUND: Deep charcoal-black minimalist studio background. No unnecessary decorative elements. Elegant dark luxury editorial environment.
+
+LIGHTING: Dramatic low-key studio lighting from the front-left, highlighting facial structure and blazer texture. Subtle rim light separating the shoulders from the dark background.
+
+CAMERA: Full-frame DSLR, 85mm lens, f/2.0, medium seated portrait, shallow depth of field, sharp facial focus, sophisticated men's luxury fashion photography, 8K realism.
+
+==================================================
+PROMPT 13 — BLACK MONOCHROME THOUGHTFUL PORTRAIT https://i.imgur.com/wjNDM5m.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic dramatic executive portrait based on the attached pose reference.
+
+IDENTITY PRESERVATION: Use my original uploaded face photograph as the exact identity reference. Preserve my original facial anatomy, eyes, nose, lips, skin tone, natural skin texture, hair color, hairstyle, and body proportions.
+
+POSE: Sitting in a dark elegant leather armchair. One arm crosses naturally in front of the torso, while the opposite hand is raised toward the chin in a thoughtful pose. Head slightly turned toward the right, gaze directed off-camera with a serious contemplative expression.
+
+OUTFIT: Elegant black tailored blazer worn over a black shirt, with the collar slightly open. Sophisticated gold wristwatch and discreet accessories.
+
+BACKGROUND: Completely black or deep charcoal studio background. Minimalist dramatic atmosphere without distracting objects.
+
+LIGHTING: Cinematic low-key lighting from the upper left, creating beautiful facial dimension and subtle highlights on the black clothing. Natural skin texture and deep shadows.
+
+CAMERA: Professional full-frame DSLR, 85mm lens, f/1.8, close-up seated portrait, shallow depth of field, sharp focus on the eyes, luxury editorial photography, 8K photorealism.
+
+==================================================
+PROMPT 14 — GRAY SUIT AND EYEGLASSES CORPORATE PORTRAIT https://i.imgur.com/w7FGRY9.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a sophisticated, ultra-realistic corporate executive portrait based on the attached reference.
+
+IDENTITY PRESERVATION: Preserve my exact original face, facial structure, eyes, nose, lips, skin tone, natural skin texture, hairstyle, hair color, and natural body proportions. Eyeglasses are part of the styling and must not modify the underlying facial identity.
+
+POSE: Sitting in a luxurious black leather armchair, leaning slightly forward. One forearm resting naturally on the armrest, with the opposite hand gently positioned near the chin. Hands relaxed. Looking directly at the camera with a confident friendly smile.
+
+OUTFIT: Elegant charcoal-gray tailored blazer, crisp white dress shirt, and sophisticated neutral-toned styling. Modern rectangular eyeglasses with thin dark frames. Premium metallic wristwatch.
+
+BACKGROUND: Dark warm-brown and charcoal executive studio with subtle textured walls. Luxurious black leather armchair with visible stitching. Elegant dramatic corporate atmosphere.
+
+LIGHTING: Soft warm studio lighting from the front-left, creating natural highlights on the face and eyeglasses. Gentle shadows and rich neutral tones.
+
+CAMERA: Full-frame DSLR, 85mm portrait lens, f/2.0, medium close-up composition, eye-level perspective, realistic skin texture, luxury executive editorial photography, 8K photorealism.
+
+==================================================
+PROMPT 15 — EMERALD GREEN POWER SUIT PORTRAIT https://i.imgur.com/rK1uKTA.png
+==================================================
+
+I authorize the use of my original image for AI image generation.
+
+Create a powerful, sophisticated, ultra-realistic corporate executive portrait based on the attached reference.
+
+**IDENTITY PRESERVATION — ABSOLUTE PRIORITY:**
+
+Use my original uploaded photograph as the exclusive identity reference. Maintain my exact face, facial anatomy, face shape, eyes, nose, lips, smile, skin tone, skin texture, hairstyle, hair color, hairline, and natural body proportions. Preserve my real age and all distinctive facial characteristics. Do not beautify, reshape, rejuvenate, slim, or reinterpret my appearance. The final image must look exactly like me.
+
+**POSE:**
+
+Standing confidently facing the camera. One arm extended slightly toward the lens, with the index finger pointing directly at the viewer in a friendly, engaging gesture. The opposite arm rests naturally alongside the torso. Shoulders relaxed, upright posture, and a broad genuine smile. The pointing hand should have anatomically correct proportions and realistic fingers.
+
+**OUTFIT:**
+
+Luxurious emerald-green tailored business suit with structured shoulders, classic lapels, and matching fitted trousers. Crisp white dress shirt and elegant dark green tie. Refined executive styling, sophisticated tailoring, and premium fabric texture. Elegant wristwatch and discreet accessories.
+
+**BACKGROUND:**
+
+Deep charcoal-gray or dark neutral corporate photography studio background with subtle texture and soft tonal variations. Minimalist environment without distracting objects. Sophisticated executive atmosphere that makes the emerald-green suit stand out.
+
+**LIGHTING:**
+
+Professional cinematic studio lighting. Soft frontal key light illuminating the face evenly, subtle side lighting creating depth, and gentle rim lighting separating the shoulders from the dark background. Natural skin tones, realistic facial shadows, detailed fabric highlights, and balanced contrast.
+
+**CAMERA AND COMPOSITION:**
+
+Professional full-frame DSLR or mirrorless camera, 85mm portrait lens, f/2.2 aperture. Medium waist-up portrait, eye-level perspective, with the pointing hand slightly closer to the lens to create natural depth. Sharp focus on the eyes and face, realistic hand anatomy, beautiful background separation, premium corporate magazine photography, cinematic color grading, ultra-detailed 8K photorealism.
+
+**REALISM REQUIREMENTS:**
+
+Maintain authentic skin pores, natural facial details, realistic hair strands, accurate hand anatomy, natural fabric folds, realistic lighting, and physically consistent proportions. Avoid artificial-looking skin, excessive retouching, or synthetic facial details.
+
+--------------------------------------------------
+NEGATIVE PROMPT — AVOID THESE ERRORS
+--------------------------------------------------
+
+Do not generate:
+
+- Different face, altered identity, face swapping errors, or facial reconstruction.
+- Changes to eye shape, nose, lips, jawline, cheeks, forehead, or smile.
+- Different skin tone, artificial skin color, excessive skin smoothing, plastic skin, or waxy appearance.
+- Changes to hair color, hairstyle, hairline, or natural hair texture.
+- Body reshaping, exaggerated muscles, altered height, distorted proportions, or unrealistic anatomy.
+- Deformed hands, extra fingers, missing fingers, fused fingers, duplicated hands, malformed wrists, or unnatural pointing gestures.
+- Asymmetrical eyes, distorted facial features, blurred face, or unnatural expressions.
+- Incorrect suit colors, different clothing, missing tie, distorted lapels, or unrealistic fabric.
+- Overexposure, underexposure, harsh artificial shadows, excessive saturation, or unnatural color grading.
+- Cartoon, illustration, painting, CGI, 3D rendering, anime, or artificial-looking photography.
+- Excessive beauty filters, artificial makeup, unrealistic retouching, or exaggerated facial enhancement.
+- Blurry image, pixelation, low resolution, excessive noise, motion blur, or out-of-focus eyes.
+- Watermarks, logos, captions, random letters, text artifacts, or unwanted objects.
+
+**FINAL INSTRUCTION:**
+
+The result must look like a real professional corporate photograph taken in a luxury photography studio. My original face, skin tone, hair, and body must remain completely faithful to my uploaded photograph. Only reproduce the pose, clothing, composition, and environment described in the reference image. Prioritize identity preservation and photographic realism above all stylistic effects.

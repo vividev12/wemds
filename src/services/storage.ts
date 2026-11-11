@@ -8,6 +8,8 @@ export const DEFAULT_CATEGORIES: Category[] = [
   { id: 'aniversario-gospel-evangelico', name: 'Aniversário Gospel Evangélico' },
   { id: 'profissional-feminino', name: 'Profissional Feminino' },
   { id: 'ensaio-masculino-adulto', name: 'Ensaio Masculino Adulto' },
+  { id: 'casual-feminino', name: 'Casual Feminino' },
+  { id: 'masculino-profissional', name: 'Masculino Profissional' },
 ];
 
 export function resolveImgurUrl(url: string): string {
@@ -126,7 +128,7 @@ class StorageService {
         // Merge any missing seeds from INITIAL_REFERENCES without duplicating
         for (const seed of INITIAL_REFERENCES) {
           const exists = migratedRefs.some(
-            (r) => r.id === seed.id || r.imageUrl === seed.imageUrl
+            (r) => r.id === seed.id || (r.imageUrl === seed.imageUrl && r.title === seed.title)
           );
           if (!exists) {
             migratedRefs.push({ ...seed });
@@ -158,7 +160,7 @@ class StorageService {
     );
     const txtById = new Map<string, string>();
     const txtByUrl = new Map<string, string>();
-    for (const seed of INITIAL_REFERENCES.slice(16)) {
+    for (const seed of INITIAL_REFERENCES.slice(16, 68)) {
       txtById.set(seed.id, seed.category);
       txtByUrl.set(seed.imageUrl, seed.category);
     }
@@ -188,7 +190,7 @@ class StorageService {
     // Ensure no seed item is missing from refs
     for (const seed of INITIAL_REFERENCES) {
       const exists = refs.some(
-        (r) => r.id === seed.id || r.imageUrl === seed.imageUrl
+        (r) => r.id === seed.id || (r.imageUrl === seed.imageUrl && r.title === seed.title)
       );
       if (!exists) {
         refs.push(seed);
