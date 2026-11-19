@@ -113,8 +113,8 @@ export const SearchBarAndFilters: React.FC<SearchBarAndFiltersProps> = ({
       </div>
 
       {/* Navegação das Categorias: Apenas categorias com conteúdo + "Todas" */}
-      <nav aria-label="Filtrar por categoria">
-        <div className="overflow-x-auto scrollbar-none flex items-center gap-2.5 pb-1.5">
+      <nav aria-label="Filtrar por categoria" className="w-full">
+        <div className="w-full flex flex-wrap items-stretch gap-2 xl:gap-2.5">
           {visibleCategories.map((cat) => {
             const isSelected = selectedCategory.toLowerCase() === cat.name.toLowerCase();
             const count =
@@ -127,15 +127,15 @@ export const SearchBarAndFilters: React.FC<SearchBarAndFiltersProps> = ({
                 key={cat.id}
                 type="button"
                 onClick={() => onSelectCategory(cat.name)}
-                className={`min-h-[44px] px-4 py-2.5 rounded-xl text-xs sm:text-sm whitespace-nowrap transition-colors duration-200 cursor-pointer flex items-center gap-2.5 shrink-0 border-2 ${
+                className={`min-h-[44px] min-w-0 flex-auto xl:min-w-[175px] px-3 lg:px-2.5 xl:px-4 py-2.5 rounded-xl text-xs lg:text-[13px] xl:text-sm leading-snug text-center transition-colors duration-200 cursor-pointer flex items-center justify-center gap-1.5 xl:gap-2 border-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFD400] ${
                   isSelected
                     ? 'bg-[#FFD400] border-[#FFD400] text-[#080808] font-bold shadow-[0_6px_20px_-4px_rgba(255,212,0,0.4)]'
                     : 'bg-[#151515] border-[#292929] hover:bg-[#202020] hover:border-[#FFD400]/70 text-white font-semibold'
                 }`}
               >
-                <span>{cat.name}</span>
+                <span className="break-words">{cat.name}</span>
                 <span
-                  className={`text-xs tabular-nums font-bold px-2 py-0.5 rounded-md ${
+                  className={`text-xs tabular-nums font-bold px-2 py-0.5 rounded-md shrink-0 ${
                     isSelected
                       ? 'bg-[#080808]/15 text-[#080808]'
                       : 'bg-[#222222] text-[#FFD400]'

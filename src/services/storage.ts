@@ -10,6 +10,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
   { id: 'ensaio-masculino-adulto', name: 'Ensaio Masculino Adulto' },
   { id: 'casual-feminino', name: 'Casual Feminino' },
   { id: 'masculino-profissional', name: 'Masculino Profissional' },
+  { id: 'natal-feminino', name: 'Natal Feminino' },
 ];
 
 export function resolveImgurUrl(url: string): string {

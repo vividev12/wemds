@@ -1,0 +1,223 @@
+# PROMPT 1 — LUXURY CHRISTMAS PORTRAIT WITH RED GOWN 
+https://i.imgur.com/9QNchuq.jpeg
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic luxury Christmas editorial portrait inspired by the first pose reference.
+
+IDENTITY: Use the client's uploaded personal photograph as the exclusive identity reference. Preserve her exact facial features, natural skin tone and texture, eye shape, nose, lips, eyebrows, hair color, hair texture, age, and original body proportions. Do not copy the reference model's identity. Never slim, enlarge, or reshape her body.
+
+POSE: The woman sits elegantly in a luxurious cream-colored upholstered armchair, positioned in front of a magnificent Christmas tree. Her legs are gracefully crossed, her head slightly tilted downward, and her eyes softly looking at a beautifully wrapped Christmas present resting on her lap. Her expression is peaceful, elegant, and sophisticated.
+
+OUTFIT: A luxurious deep-red off-the-shoulder evening gown with a structured sweetheart neckline, dramatic voluminous sleeves, a fitted waist, and an exceptionally long flowing skirt extending onto the wooden floor. Premium satin fabric with elegant folds and a subtle sheen. Silver pointed-toe heels and delicate jewelry.
+
+BACKGROUND: A luxurious Christmas living room with a tall, densely decorated Christmas tree covered in red, gold, and silver ornaments, warm fairy lights, elegant wrapped presents, a crystal chandelier, white decorative wall moldings, and a white fireplace with Christmas garlands and candles.
+
+LIGHTING: Warm cinematic Christmas lighting, golden fairy lights, soft frontal illumination, realistic fabric highlights, delicate shadows, and an elegant festive atmosphere.
+
+CAMERA: Professional full-frame mirrorless camera, 50mm lens, f/2.8, vertical 4:5 composition, full-body portrait, 8K photorealism.
+
+FINAL REQUIREMENTS: Preserve the client's exact identity and natural proportions. Maintain the elegant seated pose, luxurious decorations, and realistic Christmas atmosphere. No artificial skin smoothing, no text, no watermarks.
+
+---
+
+# PROMPT 2 — RED SEQUIN CHRISTMAS GLAMOUR https://i.imgur.com/aqbRml0.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury Christmas fashion editorial portrait inspired by the second reference image.
+
+IDENTITY: Preserve the client's exact facial identity, skin tone, hair characteristics, body structure, and natural proportions using her uploaded personal photograph. Never copy the reference woman's face.
+
+POSE: The woman sits sideways in an elegant burgundy velvet armchair, with her back and shoulders slightly turned toward the camera. She gently turns her head over her shoulder, looking directly into the lens with a sophisticated, confident expression and a subtle smile. One arm rests along the chair's back, while the other hand rests delicately on her lap.
+
+OUTFIT: A luxurious floor-length, fitted red sequin evening gown with delicate spaghetti straps, an elegant open back, and thousands of tiny reflective ruby-red sequins. The gown flows beautifully over the side of the armchair and onto the floor. Refined gold earrings and elegant evening accessories.
+
+HAIR: Preserve the client's original hair color, texture, and length. Style it in an elegant low updo with a few loose strands framing the face, if compatible with her natural hair.
+
+BACKGROUND: Deep burgundy velvet curtains covering the entire studio background, a matching burgundy velvet armchair, rich red carpeting, and a cluster of shiny red Christmas ornaments arranged on the floor beside the chair.
+
+LIGHTING: Dramatic editorial studio lighting, warm highlights reflecting on the sequins, soft facial illumination, delicate shadows, and luxurious cinematic contrast.
+
+CAMERA: Full-frame professional camera, 85mm portrait lens, f/2.0, vertical 4:5 composition, high-end fashion photography, 8K realism.
+
+FINAL REQUIREMENTS: Maintain the reference pose, glamorous red monochromatic environment, and realistic textures. Preserve the client's identity without facial or body modifications.
+
+---
+
+# PROMPT 3 — COZY CHRISTMAS WITH SANTA HAT https://i.imgur.com/T26iM2L.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic, warm, cozy Christmas lifestyle portrait inspired by the third reference.
+
+IDENTITY: Preserve the client's original facial features, skin tone, hair color, hair texture, body shape, and natural physical characteristics using her personal photograph.
+
+POSE: The woman sits comfortably on a soft carpet, leaning slightly forward toward the camera. Both elbows rest on her knees, and her hands gently support her cheeks. She looks directly into the camera with a joyful, natural, affectionate smile. Her posture is relaxed and playful.
+
+OUTFIT: A beautiful red Christmas knit sweater decorated with delicate gold sparkling details, comfortable full-length red tailored knit trousers, and a traditional red Santa hat with soft white faux-fur trim and a white pom-pom. Elegant, cozy, festive clothing.
+
+BACKGROUND: A warmly decorated Christmas living room featuring a large Christmas tree with glowing golden fairy lights, red and gold ornaments, softly blurred Christmas decorations, and wrapped presents. The background has beautiful circular golden bokeh.
+
+LIGHTING: Warm golden ambient Christmas lights combined with soft frontal portrait lighting, natural skin tones, gentle shadows, and a cozy holiday atmosphere.
+
+CAMERA: Professional mirrorless camera, 85mm lens, f/1.8, vertical 4:5 composition, shallow depth of field, realistic Christmas lifestyle photography, 8K detail.
+
+FINAL REQUIREMENTS: Preserve the reference's hand placement, joyful expression, and intimate composition. Keep the client's natural identity and proportions unchanged.
+
+---
+
+# PROMPT 4 — CHRISTMAS SWEATER FASHION PORTRAIT https://i.imgur.com/xVAWURL.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic festive Christmas fashion portrait inspired by the fourth reference image.
+
+IDENTITY: Preserve the client's exact face, skin tone, hair characteristics, age, and body proportions from her personal uploaded photograph.
+
+POSE: The woman stands in a relaxed, playful position, with her body slightly angled toward the camera. One arm is raised, and her hand gently touches the edge of her Santa hat. Her other arm hangs naturally beside her body. Her head tilts slightly downward, and she displays a joyful, authentic smile.
+
+OUTFIT: A festive red knitted Christmas sweater featuring white reindeer silhouettes, snowflakes, and traditional Nordic winter patterns. Pair it with an elegant high-waisted black faux-leather pleated midi skirt extending below the knees, creating a sophisticated, modest holiday outfit. Add a traditional red-and-white Santa hat.
+
+BACKGROUND: Beautiful Christmas living room with a white brick fireplace, green pine garlands decorated with warm fairy lights, a tall Christmas tree glowing with golden lights, smaller Christmas trees, wrapped gifts, and soft neutral furnishings.
+
+LIGHTING: Warm natural indoor lighting, delicate Christmas light reflections, soft shadows, and gentle golden bokeh.
+
+CAMERA: Professional full-frame camera, 50mm lens, f/2.2, vertical 4:5 composition, three-quarter-length portrait, realistic fashion photography, 8K photorealism.
+
+FINAL REQUIREMENTS: Preserve the client's identity, natural body proportions, and the playful festive pose. No facial changes, no text, no watermarks.
+
+---
+
+# PROMPT 5 — ELEGANT RED DRESS ON GRAY SOFA https://i.imgur.com/9Igx6xv.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create a luxurious, ultra-realistic Christmas portrait inspired by the fifth reference image.
+
+IDENTITY: Preserve the client's exact facial identity, natural skin tone and texture, hair color, hair texture, age, and original body structure.
+
+POSE: The woman sits elegantly beside a sophisticated gray upholstered sofa, leaning her upper body gently against the sofa's rounded armrest. One elbow rests on the armrest, with her hand lightly touching her hair near her temple. Her other hand rests delicately on the sofa. She looks directly at the camera with a calm, serious, sophisticated expression.
+
+OUTFIT: A luxurious red evening gown with wide shoulder straps, a refined neckline, a fitted waist, and a long flowing skirt that completely covers her legs. Premium satin-crepe fabric with natural folds. Delicate gold bracelets, a gold wristwatch, and elegant minimalist earrings.
+
+HAIR: Preserve the client's natural hair characteristics, styling it into elegant soft waves if compatible with her original hairstyle.
+
+BACKGROUND: Sophisticated Christmas living room featuring a tall Christmas tree decorated with red and gold ornaments, glowing golden fairy lights, a white fireplace adorned with Christmas garlands, and elegant cream-colored walls.
+
+LIGHTING: Soft professional portrait lighting, warm Christmas ambient lights, natural shadows, and beautifully blurred golden bokeh in the background.
+
+CAMERA: Full-frame professional camera, 85mm portrait lens, f/1.8, vertical 4:5 framing, shallow depth of field, luxury Christmas editorial photography, 8K realism.
+
+FINAL REQUIREMENTS: Maintain the reference pose, gray sofa, red dress, and Christmas decorations. Preserve the client's authentic identity and physical proportions.
+
+---
+
+# PROMPT 6 — RED CHRISTMAS STUDIO WITH GIANT ORNAMENT https://i.imgur.com/j3fwqYT.png
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic luxury Christmas studio portrait inspired by the sixth reference image.
+
+IDENTITY: Use the client's personal uploaded photograph as the exclusive reference for her face, skin tone, hair, age, and natural body proportions. Never copy the reference model's identity.
+
+POSE: The woman sits elegantly on a large white gift box decorated with a beautiful red satin ribbon and bow. Her legs are crossed gracefully, and her torso faces slightly toward the camera. One arm is raised, with her hand delicately holding a large shiny red Christmas ornament suspended beside her face. Her other hand rests naturally on her lap. She looks directly at the camera with a calm, confident, subtle smile.
+
+OUTFIT: A sophisticated bright-red tailored midi dress with an elegant sweetheart neckline, fitted bodice, structured waist, and a dramatic oversized satin bow at the back. The skirt extends below the knees, covering the thighs completely. Elegant red or nude heels.
+
+BACKGROUND: Monochromatic deep-red Christmas photography studio featuring a rich burgundy backdrop, suspended red Christmas ornaments, delicate vertical strands of warm fairy lights, and numerous white and red gift boxes with luxurious satin ribbons arranged around the subject.
+
+LIGHTING: Professional softbox lighting, warm highlights on the glossy ornaments, controlled studio shadows, and elegant cinematic contrast.
+
+CAMERA: Professional full-frame mirrorless camera, 50mm lens, f/2.8, vertical 4:5 composition, seated fashion portrait, 8K photorealism.
+
+FINAL REQUIREMENTS: Preserve the reference composition, seated pose, ornament placement, and elegant red Christmas setting. Maintain the client's original identity and natural proportions.
+
+---
+
+# PROMPT 7 — CHRISTMAS PORTRAIT WITH RED DRESS AND GOLDEN LIGHTS https://i.imgur.com/hkRJqkN.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic, elegant Christmas portrait inspired by the seventh reference image.
+
+IDENTITY: Preserve the client's exact facial features, skin tone, hair color, hair texture, body shape, and original proportions using her uploaded personal photograph.
+
+POSE: The woman is seated beside an elegant light-gray upholstered armchair, leaning slightly forward with her forearms resting naturally on the rounded back of the chair. Her hands are gently placed one over the other. She looks directly into the camera with a calm, sophisticated, slightly serious expression.
+
+OUTFIT: A beautiful sleeveless red evening dress with a modest round neckline, fitted waist, and long flowing skirt. Premium smooth satin-crepe fabric, elegant gold wristwatch, delicate rings, and polished red nails.
+
+HAIR: Preserve the client's original hair color, length, and texture, arranging it in soft, voluminous waves over one shoulder if compatible with her natural hairstyle.
+
+BACKGROUND: Large Christmas tree decorated with red and gold ornaments, golden fairy lights, red garlands, and warm neutral Christmas decorations. The Christmas tree fills most of the background, creating a beautiful soft golden bokeh.
+
+LIGHTING: Warm cinematic portrait lighting, soft frontal illumination, delicate facial shadows, and realistic golden reflections.
+
+CAMERA: Professional full-frame camera, 85mm lens, f/1.8, vertical 4:5 composition, medium-close portrait, shallow depth of field, luxury Christmas photography, 8K realism.
+
+FINAL REQUIREMENTS: Reproduce the reference's elegant hand placement, relaxed posture, red dress, gray chair, and glowing Christmas background. Preserve the client's exact identity.
+
+---
+
+# PROMPT 8 — CHRISTMAS PORTRAIT HOLDING A RED ORNAMENT https://i.imgur.com/KgrBxjy.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create a hyper-realistic, luxurious Christmas editorial portrait inspired by the eighth reference image.
+
+IDENTITY: Preserve the client's exact facial identity, natural skin tone, skin texture, eye shape, hair color, hair length, hair texture, and original body proportions from her uploaded personal photograph.
+
+POSE: The woman leans slightly forward toward the camera, holding a large glossy red Christmas ornament delicately between both hands, positioned just below her chin. Her elbows rest naturally on a soft surface. She looks directly into the camera with a serene, confident expression and relaxed lips.
+
+OUTFIT: A luxurious long-sleeved burgundy-red velvet blouse with subtle satin reflections, elegant cuffs, and a sophisticated high neckline. The velvet has a rich, soft texture with realistic folds and highlights.
+
+HAIR: Preserve the client's original hair characteristics, styling it in soft, polished waves around the shoulders when compatible with her natural hair.
+
+BACKGROUND: A beautifully decorated Christmas tree with red and gold ornaments, warm golden fairy lights, wrapped Christmas gifts, and softly blurred festive decorations. In the foreground, several glossy and glittering red and gold Christmas ornaments are arranged with delicate pine branches, pinecones, and warm micro fairy lights.
+
+LIGHTING: Warm professional portrait lighting, soft golden Christmas glow, natural skin texture, elegant highlights on the red ornament, and beautiful background bokeh.
+
+CAMERA: Professional full-frame mirrorless camera, 85mm portrait lens, f/1.8, vertical 4:5 composition, intimate close-up portrait, cinematic depth of field, 8K photorealism.
+
+FINAL REQUIREMENTS: Maintain the reference pose, ornament placement, warm Christmas atmosphere, and realistic velvet texture. Preserve the client's authentic identity without alterations.
+
+---
+
+# PROMPT 9 — CHRISTMAS CELEBRATION WITH CHAMPAGNE https://i.imgur.com/UFzJZFp.jpeg
+
+I authorize the use of my original image for AI image generation.
+
+Create an ultra-realistic, luxurious Christmas celebration portrait inspired by the ninth reference image.
+
+IDENTITY: Use the client's uploaded personal photograph as the exclusive reference for her facial identity, natural skin tone, hair color, hair texture, age, and body proportions. Do not copy the reference woman's face or body.
+
+POSE: The woman sits gracefully on a luxurious white fluffy carpet in front of a magnificent Christmas tree. Her legs are folded naturally to one side, creating a relaxed, elegant seated posture. One hand holds a delicate champagne flute containing a golden sparkling beverage, raised slightly in a festive toast. Her other hand rests naturally on her lap. She looks directly into the camera with a joyful, authentic smile.
+
+OUTFIT: A glamorous sparkling red evening gown with an elegant off-the-shoulder neckline, a soft ruffled overlay across the shoulders, a fitted waist, and a flowing floor-length skirt covering the legs. Premium shimmering fabric with subtle glitter and sophisticated movement. Large elegant gold statement earrings, gold bracelets, and delicate rings.
+
+HAIR: Preserve the client's natural hair color, length, density, and texture. Style it in a sophisticated half-up hairstyle with soft waves if compatible with her original hair.
+
+BACKGROUND: A magnificent Christmas tree filled with red and gold ornaments, sparkling gold poinsettias, warm fairy lights, decorative candy canes, red Christmas stockings, and numerous gold-wrapped presents with elegant ribbons. Cream-colored walls with decorative moldings create a luxurious festive environment.
+
+LIGHTING: Warm cinematic Christmas lighting, golden highlights, soft frontal portrait illumination, natural shadows, realistic fabric reflections, and an elegant festive atmosphere.
+
+CAMERA: Professional full-frame camera, 50mm lens, f/2.8, vertical 4:5 composition, seated three-quarter portrait, high-end Christmas editorial photography, 8K photorealism.
+
+FINAL REQUIREMENTS: Maintain the exact seated pose, champagne glass placement, Christmas decorations, luxurious red outfit, and festive atmosphere. Preserve the client's authentic identity and original physical proportions.
+
+---
+
+# GLOBAL IDENTITY AND REALISM INSTRUCTIONS — APPLY TO ALL NINE PROMPTS
+
+Use the pose reference images exclusively for pose, wardrobe, background, lighting, framing, and visual composition.
+
+Use the client's uploaded personal photograph exclusively for facial identity, skin tone, hair characteristics, age, and natural body structure.
+
+Preserve the client's facial features and body proportions with maximum possible fidelity. Never copy the face of a reference model.
+
+Do not artificially slim, enlarge, reshape, rejuvenate, or beautify the client.
+
+Maintain realistic anatomy, natural hands and fingers, authentic facial expressions, natural skin pores, realistic fabric textures, accurate lighting, and professional photographic quality.
+
+The final images must look like authentic high-end Christmas photography sessions, not AI-generated illustrations.
+
+No distorted hands, no extra fingers, no artificial facial features, no plastic skin, no unwanted text, no logos, and no watermarks.
